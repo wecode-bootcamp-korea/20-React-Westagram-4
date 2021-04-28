@@ -1,0 +1,178 @@
+// Mixin을 사용하기 위해 직접 import해줌
+// @import "../../styles/Common.scss";
+// @import "../../styles/Reset.scss";
+// @import "../../styles/Variables.scss";
+
+.feed-box {
+  @extend %flex-column;
+  width: 616px;
+}
+
+.feed {
+  @extend %flex-column;
+  margin-bottom: 60px;
+  border: $border-gray-style;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 14px;
+
+  &__author-box {
+    // @include flexSet(space-between);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 5px 15px;
+  }
+
+  &__author-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__author-info {
+    @extend %flex-column;
+    font-size: 12px;
+  }
+
+  &__author-info-text {
+    &:first-child {
+      margin-bottom: 4px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 25px;
+  }
+
+  &__feature-btn-box {
+    display: flex;
+  }
+
+  &__feature-btn-list {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__feature-btn {
+    all: unset;
+  }
+
+  &__texts {
+    padding: 0px 20px;
+    margin-bottom: 10px;
+  }
+
+  &__texts-column {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__likes {
+    font-weight: 600;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+  }
+
+  &__summary-id {
+    margin-right: 5px;
+    font-weight: 600;
+  }
+
+  &__summary-btn {
+    all: unset;
+    margin-left: 10px;
+    color: $sub-text-gray;
+  }
+
+  &__time {
+    font-size: 10px;
+    color: $sub-text-gray;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: $border-gray-style;
+  }
+
+  &__input {
+    width: 87%;
+    border: none;
+  }
+
+  &__submit-btn {
+    all: unset;
+    font-weight: 600;
+    color: $blue;
+  }
+
+  &__submit-btn--opacity {
+    opacity: 30%;
+  }
+}
+
+.js-feed-comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.js-feed-comment span:first-of-type {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.js-feed-comment span:nth-of-type(2) {
+  width: 80%;
+}
+
+.js-comment-btns {
+  @extend %flex-center;
+}
+
+.js-comment-btn {
+  all: unset;
+  margin-left: 10px;
+}
+
+.feed__form > .fa-smile {
+  font-size: 25px;
+}
+
+/* 웹 */
+@media only screen and (max-width: 710px) {
+  .feed-box {
+    width: 95vw;
+  }
+}
+/* 모바일 */
+@media only screen and (max-width: 414px) {
+  .feed-box {
+    width: 95vw;
+  }
+
+  .feed__input {
+    width: 65vw;
+  }
+
+  .feed__feature {
+    padding: 10px;
+  }
+
+  .feed__texts {
+    padding: 0px 10px;
+  }
+}

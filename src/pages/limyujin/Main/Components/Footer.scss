@@ -1,0 +1,18 @@
+.main-footer {
+  @extend %flex-column;
+  margin-top: 15px;
+  padding: 0px 5px;
+  font-size: 11px;
+  color: #c7c7c7;
+
+  &__nav {
+    margin-bottom: 10px;
+    list-style: '-';
+  }
+
+  &__list {
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 16px;
+  }
+}

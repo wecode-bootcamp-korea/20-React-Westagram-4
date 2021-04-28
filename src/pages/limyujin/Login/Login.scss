@@ -1,0 +1,129 @@
+.login-page {
+  @extend %flex-column-center;
+  font-size: 14px;
+}
+
+.login-box {
+  @extend %flex-column-center;
+  width: 350px;
+  height: 380px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  border: $border-gray-style;
+  border-radius: 1px;
+  background-color: white;
+
+  &__title {
+    padding: 20px 0px;
+    font: {
+      family: "Lobster", cursive;
+      size: 40px;
+    }
+  }
+}
+
+.login-form {
+  @extend %flex-column-center;
+  padding: 10px 0px;
+
+  &__input {
+    width: 268px;
+    height: 38px;
+    margin-bottom: 7px;
+    padding: 0px 10px;
+    border: $border-gray-style;
+    border-radius: 3px;
+    background-color: $lightgray;
+    font-size: 12px;
+  }
+
+  &__button {
+    all: unset;
+    width: 250px;
+    height: 32px;
+    margin-top: 10px;
+    padding: 0px 9px;
+    border-radius: 4px;
+    background-color: $blue;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+
+    &--opacity {
+      opacity: 30%;
+    }
+  }
+
+  &__other {
+    @extend %flex-center;
+    margin: 20px 0px;
+  }
+
+  &__sns-login--facebook {
+    @extend %flex-center;
+    font-weight: 600;
+    color: $facebook-blue;
+  }
+}
+
+.line {
+  width: 104px;
+  height: 1px;
+  background-color: $border-gray;
+}
+
+.other-text {
+  margin: 0px 18px;
+  font: {
+    size: 13px;
+    weight: 600;
+  }
+  color: $sub-text-gray;
+}
+
+.login-form .facebook {
+  margin-right: 5px;
+}
+
+.login-box .find-password__text {
+  font-size: 12px;
+  color: $facebook-blue;
+}
+
+.join-box {
+  @extend %flex-center;
+  width: 350px;
+  height: 63px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  border: $border-gray-style;
+  border-radius: 1px;
+  background-color: white;
+
+  &__link {
+    margin-left: 5px;
+    font-weight: 600;
+    color: $blue;
+  }
+}
+
+.app-download-box {
+  @extend %flex-column-center;
+  width: 350px;
+  height: 102px;
+  font-size: 12px;
+
+  &__title {
+    margin: 10px 0px;
+  }
+
+  &__banner {
+    width: 136px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+
+  &__banners {
+    margin: 10px 0px;
+  }
+}
