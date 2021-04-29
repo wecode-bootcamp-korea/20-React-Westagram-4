@@ -1,6 +1,4 @@
 import React from 'react';
-// mixin 직접 하려면
-// import "./Feeds.scss";
 import CommentColumn from './CommentColumn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +15,6 @@ class Feeds extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isCommentExists: false,
       isCommentBtnDisabled: true,
       commentValue: '',
       commentTexts: [],
@@ -32,30 +29,28 @@ class Feeds extends React.Component {
       () => {
         this.state.commentValue
           ? this.setState({
-              isCommentExists: true,
               isCommentBtnDisabled: false,
             })
           : this.setState({
-              isCommentExists: false,
               isCommentBtnDisabled: true,
             });
-      },
-      () => {
-        console.log(this.state.commentValue);
       }
     );
   };
 
   handleSubmitBtn = e => {
     e.preventDefault();
-    this.setState({
-      //inputValue들을 버튼 누를 때마다 배열에 저장
-      commentTexts: [...this.state.commentTexts, this.state.commentValue],
-    });
+    //비어있을 때 X
+    if (this.state.commentValue) {
+      this.setState({
+        //inputValue들을 버튼 누를 때마다 배열에 저장
+        commentTexts: [...this.state.commentTexts, this.state.commentValue],
+        commentValue: '',
+      });
+    }
   };
 
   render() {
-    //비구조할당
     const { commentTexts } = this.state;
     const {
       author,
@@ -142,14 +137,18 @@ class Feeds extends React.Component {
           <form name="comment-form" className="feed__form">
             <FontAwesomeIcon icon={faSmile} className="smile" />
             <input
+              id="mainInput"
               type="text"
               placeholder="댓글달기..."
+              value={this.state.commentValue}
               className="feed__input"
               onChange={this.handleInput}
             />
             <button
               className={`feed__submit-btn ${
-                this.state.isCommentExists ? '' : 'feed__submit-btn--opacity'
+                this.state.commentValue.length > 0
+                  ? ''
+                  : 'feed__submit-btn--opacity'
               }`}
               disabled={this.state.isCommentBtnDisabled}
               onClick={this.handleSubmitBtn}

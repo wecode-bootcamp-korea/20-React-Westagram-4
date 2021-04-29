@@ -24,7 +24,6 @@ class Login extends React.Component {
       {
         [e.target.name]: e.target.value,
       },
-      //과제2번
       () => {
         this.state.id.includes('@') && this.state.pw.length >= 5
           ? this.setState({
