@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import '../../../../styles/leejiyon/common.scss';
 
+const emptyHeartStyle = {
+  backgroundPosition: `-130px -478px`,
+};
+const likedHeartStyle = {
+  backgroundPosition: `-156px -478px`,
+};
+
 class Article extends Component {
+  state = {
+    isArticleLiked: false,
+  };
+
+  onClickBtn = btn => {
+    this.setState({
+      isArticleLiked: !this.state.isArticleLiked,
+    });
+  };
+
   render() {
+    console.log(this.state.isArticleLiked);
     return (
       <article className="Article">
         <div className="articleHeader">
@@ -22,18 +40,16 @@ class Article extends Component {
           src="/images/leejiyon/nature.jpg"
         />
         <div className="articleLnb">
-          <a href="#">
-            <div className="lnbImg heartImg"></div>
-          </a>
-          <a href="#">
-            <div className="lnbImg msgImg"></div>
-          </a>
-          <a href="#">
-            <div className="lnbImg shareImg"></div>
-          </a>
-          <a href="#">
-            <div className="lnbImg bookmarkImg"></div>
-          </a>
+          <button
+            className="lnbImg heartImg"
+            onClick={e => this.onClickBtn(e.target)}
+            style={
+              this.state.isArticleLiked ? likedHeartStyle : emptyHeartStyle
+            }
+          ></button>
+          <button className="lnbImg msgImg"></button>
+          <button className="lnbImg shareImg"></button>
+          <button className="lnbImg bookmarkImg"></button>
         </div>
         <div className="articleComment">
           <div className="articleLikes">
