@@ -45,7 +45,6 @@ class TopNav extends React.Component {
           <div className="top-nav__column">
             <input className="top-nav__input" type="text" placeholder="검색" />
             <FontAwesomeIcon icon={faSearch} className="top-nav__search" />
-            <i class="fas fa-search"></i>
           </div>
           <div className="top-nav__column">
             <ul className="top-nav__menus">
