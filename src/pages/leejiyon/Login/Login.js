@@ -3,6 +3,30 @@ import { Link } from 'react-router-dom';
 import './login.scss';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: '',
+      pw: '',
+      validation: false,
+    };
+  }
+
+  onChangeInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.id !== this.state.id || prevState.pw !== this.state.pw) {
+      if (this.state.id.includes('@') && this.state.pw.length > 4) {
+        this.setState({ validation: true });
+      } else {
+        this.setState({ validation: false });
+      }
+    }
+  }
   render() {
     return (
       <div className="Login">
@@ -10,19 +34,29 @@ class Login extends React.Component {
           <h1 className="title">Westagram</h1>
           <div className="login">
             <input
-              class="loginInputs loginId"
+              className="loginInputs loginId"
+              name="id"
+              value={this.state.id}
+              onChange={this.onChangeInput}
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
-              class="loginInputs loginPw"
+              className="loginInputs loginPw"
+              name="pw"
+              value={this.state.pw}
+              onChange={this.onChangeInput}
               type="password"
               placeholder="비밀번호"
             />
           </div>
 
           <Link to="/mainjy">
-            <button className="loginBtn">로그인</button>
+            {this.state.validation ? (
+              <button className="loginBtn blueBackgroundColor">로그인</button>
+            ) : (
+              <button className="loginBtn ">로그인</button>
+            )}
           </Link>
           <a
             className="findPw"
