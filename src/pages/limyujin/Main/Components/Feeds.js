@@ -1,7 +1,7 @@
 import React from 'react';
 // mixin 직접 하려면
 // import "./Feeds.scss";
-// import CommentColumn from './CommentColumn';
+import CommentColumn from './CommentColumn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,6 +20,7 @@ class Feeds extends React.Component {
       isCommentExists: false,
       isCommentBtnDisabled: true,
       commentValue: '',
+      comments: [],
     };
   }
 
@@ -44,6 +45,17 @@ class Feeds extends React.Component {
       }
     );
   };
+
+  handleSubmitBtn = e => {
+    e.preventDefault();
+    this.setState({
+      comments: [
+        ...this.state.comments,
+        <CommentColumn inputValue={this.state.commentValue} />,
+      ],
+    });
+  };
+
   render() {
     return (
       <>
@@ -109,7 +121,9 @@ class Feeds extends React.Component {
                 <span>...</span>
                 <button className="feed__summary-btn">더 보기</button>
               </div>
-              <div className="feed__texts-column js-feed-comments"></div>
+              <div className="feed__texts-column js-feed-comments">
+                {this.state.comments}
+              </div>
               <div className="feed__time feed__texts-column">
                 <span>17시간 전</span>
               </div>
@@ -127,6 +141,7 @@ class Feeds extends React.Component {
                   this.state.isCommentExists ? '' : 'feed__submit-btn--opacity'
                 }`}
                 disabled={this.state.isCommentBtnDisabled}
+                onClick={this.handleSubmitBtn}
               >
                 게시
               </button>

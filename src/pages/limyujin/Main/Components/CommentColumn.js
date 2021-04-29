@@ -5,8 +5,8 @@ class CommentColumn extends React.Component {
     return (
       <>
         <div class="js-feed-comment">
-          <span>${myID}</span>
-          <span>${inputValue}</span>
+          <span>wecode_bootcamp</span>
+          <span>{this.props.inputValue}</span>
           <div class="js-comment-btns">
             <button class="js-comment-btn like-btn">
               <i class="far fa-heart"></i>
