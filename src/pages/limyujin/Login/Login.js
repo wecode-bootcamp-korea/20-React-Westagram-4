@@ -6,7 +6,7 @@ import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
 class Login extends React.Component {
   goToMain = () => {
-    this.props.history.push('/main');
+    this.props.history.push('/mainyj');
   };
 
   render() {
