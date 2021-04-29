@@ -1,0 +1,60 @@
+@import '/src/styles/leejiyon/_variables.scss';
+
+.AsideContainer {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  margin-bottom: 10px;
+
+  .asideHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .title {
+      color: grey;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .viewMore {
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+
+  .asideMain {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    .ProfileList {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    img {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    img::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      border: 1px solid red;
+    }
+
+    .ProfileList {
+      font-size: $main-padding;
+    }
+
+    .id {
+      margin-bottom: 5px;
+    }
+  }
+}

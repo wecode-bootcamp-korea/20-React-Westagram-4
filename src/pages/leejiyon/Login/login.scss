@@ -1,0 +1,74 @@
+.Login {
+    & {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        background-color: #fafafa;
+    }
+
+    .LoginBox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        height: 380px;
+        background-color: #fff;
+        border: 1px solid #e6e6e6;
+
+        @media screen and (max-width: 450px) {
+            & {
+                background-color: #fafafa;
+                border: none;
+            }
+        }
+
+        .title {
+            margin: 30px 0 40px 0;
+            font-weight: 300;
+            font-size: 50px;
+            font-family: "Lobster", cursive;
+        }
+
+        input {
+            display: block;
+            width: 268px;
+            height: 38px;
+            text-indent: 10px;
+            background-color: #fafafa;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+        }
+
+        .loginId {
+            margin-bottom: 7px;
+        }
+
+        .loginPw {
+            margin-bottom: 20px;
+        }
+    }
+
+    .loginBtn {
+        width: 268px;
+        height: 35px;
+        color: #fff;
+        font-weight: bold;
+        background-color: #c5e1fa;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .blueBackgroundColor {
+        background-color: blue;
+    }
+
+    .findPw {
+        position: absolute;
+        bottom: 20px;
+        font-size: 0.8rem;
+        color: #043667;
+        cursor: pointer;
+    }
+}
