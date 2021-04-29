@@ -27,6 +27,22 @@ class TopNav extends React.Component {
   };
 
   render() {
+    // const navLeftItem = [
+    //   {
+    //     icon: faCompass,
+    //     onClick: () => {},
+    //   },
+    //   {
+    //     icon: faHeart,
+    //     onClick: () => {},
+    //   },
+    //   {
+    //     icon: faUser,
+    //     onClick: () => {
+    //       this.toggleModal;
+    //     },
+    //   },
+    // ];
     // const { isModalVisible } = this.state;
 
     return (

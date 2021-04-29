@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 import {
-  faHeart,
   faComment,
   faPaperPlane,
   faBookmark,
@@ -18,6 +17,7 @@ class Feeds extends React.Component {
       isCommentBtnDisabled: true,
       commentValue: '',
       commentTexts: [],
+      isFeedLikePressed: false,
     };
   }
 
@@ -48,6 +48,13 @@ class Feeds extends React.Component {
         commentValue: '',
       });
     }
+  };
+
+  handleLike = e => {
+    e.preventDefault();
+    this.setState({
+      isFeedLikePressed: !this.state.isFeedLikePressed,
+    });
   };
 
   render() {
@@ -87,8 +94,14 @@ class Feeds extends React.Component {
           <section className="feed__feature">
             <ul className="feed__feature-btn-box">
               <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn">
-                  <FontAwesomeIcon icon={faHeart} className="heart" />
+                <button className="feed__feature-btn" onClick={this.handleLike}>
+                  <i
+                    className={`${
+                      this.state.isFeedLikePressed
+                        ? 'fas fa-heart'
+                        : 'far fa-heart'
+                    }`}
+                  ></i>
                 </button>
               </li>
               <li className="feed__feature-btn-list">
@@ -113,7 +126,9 @@ class Feeds extends React.Component {
           <section className="feed__texts">
             <div className="feed__texts-column feed__likes">
               <span>좋아요 </span>
-              <span className="js-likes-count">{like}</span>
+              <span className="js-likes-count">
+                {this.state.isFeedLikePressed ? like + 1 : like}
+              </span>
               <span>개</span>
             </div>
             <div className="feed__texts-column feed__summary">

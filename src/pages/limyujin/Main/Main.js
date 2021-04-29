@@ -37,7 +37,7 @@ class Main extends React.Component {
             'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/163663946_197803795082398_1924950408015660072_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Jvc5nBmQBVYAX-SQowW&edm=AEF8tYYAAAAA&ccb=7-4&oh=f33f3a525c2908fd436991a6de94643d&oe=60A7CC97&_nc_sid=a9513d',
           location: '',
           mainImg:
-            'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/175810080_497894738013789_23924597793451987_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=Tu_Wnsa9tiwAX80ztR3&edm=AIQHJ4wAAAAA&ccb=7-4&oh=d91ccc0c9d232e280584d62e6c2b4652&oe=60A513B3&_nc_sid=7b02f1',
+            'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/176282393_1404333343292706_135428849258000862_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=tH6ZNMQ8JUoAX9tGaTC&tn=E3vZwT1zJnhTn-R6&edm=AIQHJ4wAAAAA&ccb=7-4&oh=53efa849b2a73835e8ea08a5f35ce7dc&oe=60A6C3FF&_nc_sid=7b02f1',
           text: '알박기 제법...',
           time: '20시간 전',
           like: 13,

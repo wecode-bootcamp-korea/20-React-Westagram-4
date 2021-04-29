@@ -6,6 +6,24 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 class Modal extends React.Component {
   render() {
+    const modalItem = [
+      {
+        icon: faUserCircle,
+        text: '프로필',
+      },
+      {
+        icon: faBookmark,
+        text: '저장됨',
+      },
+      {
+        icon: faCog,
+        text: '설정',
+      },
+      {
+        icon: '',
+        text: '로그아웃',
+      },
+    ];
     return (
       <>
         <div
@@ -15,19 +33,12 @@ class Modal extends React.Component {
         >
           <div className="modal">
             <ul>
-              <li className="modal__list">
-                <FontAwesomeIcon icon={faUserCircle} className="user-circle" />
-                <span className="modal__menu">프로필</span>
-              </li>
-              <li className="modal__list">
-                <FontAwesomeIcon icon={faBookmark} className="bookmark" />
-                <span className="modal__menu">저장됨</span>
-              </li>
-              <li className="modal__list">
-                <FontAwesomeIcon icon={faCog} className="cog" />
-                <span className="modal__menu">설정</span>
-              </li>
-              <li className="modal__list">로그아웃</li>
+              {modalItem.map(el => (
+                <li className="modal__list">
+                  <FontAwesomeIcon icon={el.icon} />
+                  <span className="modal__menu">{el.text}</span>
+                </li>
+              ))}
             </ul>
             <div className="modal__line"></div>
           </div>
