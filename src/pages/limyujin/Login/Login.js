@@ -10,25 +10,35 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
+      isEveryInputValueExists: false,
+      isBtnDisabled: true,
     };
-    this.handleIdInput = this.handleIdInput.bind(this);
-    this.handlePwInput = this.handlePwInput.bind(this);
   }
+
   goToMain = () => {
     this.props.history.push('/mainyj');
   };
-  handleIdInput(e) {
-    this.setState({
-      id: e.target.value,
-    });
-    console.log(this.state.id);
-  }
-  handlePwInput(e) {
-    this.setState({
-      pw: e.target.value,
-    });
-    console.log(this.state.pw);
-  }
+
+  handleLoginInput = e => {
+    this.setState(
+      {
+        [e.target.name]: e.target.value,
+      },
+      //과제2번
+      () => {
+        this.state.id.includes('@') && this.state.pw.length >= 5
+          ? this.setState({
+              isEveryInputValueExists: true,
+              isBtnDisabled: false,
+            })
+          : this.setState({
+              isEveryInputValueExists: false,
+              isBtnDisabled: true,
+            });
+      }
+    );
+  };
+
   render() {
     return (
       <>
@@ -42,20 +52,27 @@ class Login extends React.Component {
                 className="login-form__input"
                 type="email"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                name="id"
                 required
-                onChange={this.handleIdInput}
+                onChange={this.handleLoginInput}
               />
               <input
                 className="login-form__input"
                 type="password"
                 placeholder="비밀번호"
-                required
+                name="pw"
                 minlength="5"
-                onChange={this.handlePwInput}
+                required
+                onChange={this.handleLoginInput}
               />
               <button
-                className="login-form__button login-form__button--opacity"
+                className={`login-form__button ${
+                  this.state.isEveryInputValueExists
+                    ? ''
+                    : 'login-form__button login-form__button--opacity'
+                }`}
                 onClick={this.goToMain}
+                disabled={this.state.isBtnDisabled}
               >
                 로그인
               </button>

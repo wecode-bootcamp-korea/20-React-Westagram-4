@@ -1,7 +1,7 @@
 import React from 'react';
-// mixin 직접 하려고
+// mixin 직접 하려면
 // import "./Feeds.scss";
-
+// import CommentColumn from './CommentColumn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,6 +14,36 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 class Feeds extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isCommentExists: false,
+      isCommentBtnDisabled: true,
+      commentValue: '',
+    };
+  }
+
+  handleInput = e => {
+    this.setState(
+      {
+        commentValue: e.target.value,
+      },
+      () => {
+        this.state.commentValue
+          ? this.setState({
+              isCommentExists: true,
+              isCommentBtnDisabled: false,
+            })
+          : this.setState({
+              isCommentExists: false,
+              isCommentBtnDisabled: true,
+            });
+      },
+      () => {
+        console.log(this.state.commentValue);
+      }
+    );
+  };
   render() {
     return (
       <>
@@ -90,8 +120,14 @@ class Feeds extends React.Component {
                 type="text"
                 placeholder="댓글달기..."
                 className="feed__input"
+                onChange={this.handleInput}
               />
-              <button className="feed__submit-btn feed__submit-btn--opacity">
+              <button
+                className={`feed__submit-btn ${
+                  this.state.isCommentExists ? '' : 'feed__submit-btn--opacity'
+                }`}
+                disabled={this.state.isCommentBtnDisabled}
+              >
                 게시
               </button>
             </form>

@@ -124,30 +124,6 @@
   }
 }
 
-.js-feed-comment {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.js-feed-comment span:first-of-type {
-  margin-right: 5px;
-  font-weight: 600;
-}
-
-.js-feed-comment span:nth-of-type(2) {
-  width: 80%;
-}
-
-.js-comment-btns {
-  @extend %flex-center;
-}
-
-.js-comment-btn {
-  all: unset;
-  margin-left: 10px;
-}
-
 .feed__form > .fa-smile {
   font-size: 25px;
 }
