@@ -1,6 +1,5 @@
 import React from 'react';
-// import profileImg from '/imges/drake-profile.jpg';
-// import feedImg from '/imges/drake-img';
+import './Feed.scss';
 
 class Feed extends React.Component {
   render() {
