@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './components/Comment';
 import './Feed.scss';
 
 class Feed extends React.Component {
@@ -59,26 +60,14 @@ class Feed extends React.Component {
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
-                    <li>
-                      <div className="sectionArticleCommentContents">
-                        <p>
-                          <a href="#" className="sectionArticleFanslink">
-                            yongmin
-                          </a>
-                          I love your songs
-                        </p>
-                        <button className="sectionArticleCommentLinkButton">
-                          <i className="far fa-heart"></i>
-                        </button>
-                      </div>
-                    </li>
+                    <Comment />
                   </ul>
                 </div>
               </div>
               <p className="sectionArticleSinceCommentTime">42분 전</p>
             </div>
           </div>
-          <div className="sectionArticleCommentContents">
+          <div className="sectionArticleCommentInputContainer">
             <button>
               <i className="far fa-smile"></i>
             </button>

@@ -92,8 +92,7 @@
   cursor: pointer;
 }
 
-.sectionArticleUserlink,
-.sectionArticleFanslink {
+.sectionArticleUserlink {
   font-weight: 700;
 }
 
@@ -103,25 +102,21 @@
   cursor: pointer;
 }
 
-.sectionArticleCommentContents {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sectionArticleCommentContents .fa-smile {
-  margin-left: 15px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 50px;
-  cursor: pointer;
-}
-
-.sectionArticleCommentLinkButton {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 /* section-article-commentInput */
+
+.sectionArticleCommentInputContainer {
+  display: flex;
+  line-height: 30px;
+
+  .fa-smile {
+    margin-left: 15px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+}
+
 .sectionArticleCommentInput {
   width: 100%;
   height: 50px;
@@ -132,11 +127,6 @@
 
 .sectionArticleCommentInput::-webkit-scrollbar {
   display: none;
-}
-
-.sectionArticleCommentContents {
-  display: flex;
-  line-height: 30px;
 }
 
 .sectionArticleCommentUpload {
