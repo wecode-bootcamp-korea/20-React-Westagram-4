@@ -1,0 +1,32 @@
+.recommendOfUser {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.recommendOfUserContent {
+  display: flex;
+}
+
+.recommendOfUserProfileInformation {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.recommendOfUserProfileInformation span:last-child {
+  color: var(--color-gray);
+  font-weight: 700;
+}
+
+.recommendOfUserProfileImg {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.recommendOfUser button {
+  color: var(--color-blue);
+  font-weight: 700;
+  cursor: pointer;
+}

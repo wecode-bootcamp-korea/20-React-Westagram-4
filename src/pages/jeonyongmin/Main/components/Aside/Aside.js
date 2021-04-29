@@ -1,4 +1,6 @@
 import React from 'react';
+import Story from './components/Story/Story';
+import Recommend from './components/Recommend/Recommend';
 import './Aside.scss';
 
 class Aside extends React.Component {
@@ -25,32 +27,16 @@ class Aside extends React.Component {
               <button>모두 보기</button>
             </div>
             <div className="asideCenterContents">
-              <div>
-                <a href="#">
-                  <img
-                    src="/images/jeonyongmin/yongmin.jpg"
-                    alt="profile-image"
-                    className="asideCenterContentYongminImg"
-                  />
-                </a>
-                <div className="asideCenterContent">
-                  <a href="#">yongmin</a>
-                  <span>5분전</span>
-                </div>
-              </div>
-              <div>
-                <a href="#">
-                  <img
-                    src="/images/jeonyongmin/weeknd.jpg"
-                    alt="profile-image"
-                    className="asideCenterContentImg"
-                  />
-                </a>
-                <div className="asideCenterContent">
-                  <a href="#">The Weeknd</a>
-                  <span>16분전</span>
-                </div>
-              </div>
+              <Story
+                name="bruno Mars"
+                img="/images/jeonyongmin/brunomars.jpg"
+                timeAfterFeedUpload="5분전"
+              />
+              <Story
+                name="The Weeknd"
+                img="/images/jeonyongmin/weeknd.jpg"
+                timeAfterFeedUpload="16분전"
+              />
             </div>
           </div>
           <div className="asideBottomContainer">
@@ -58,38 +44,16 @@ class Aside extends React.Component {
               <span>회원을 위한 추천</span>
               <a href="">모두 보기</a>
             </div>
-            <div className="recommendOfUser">
-              <div className="recommendOfUserContent">
-                <a href="#">
-                  <img
-                    src="/images/jeonyongmin/justin.jpg"
-                    alt="justin bieber"
-                    className="recommendOfUserProfileImg"
-                  />
-                </a>
-                <div className="recommendOfUserProfileInformation">
-                  <span>justinbieber</span>
-                  <span>_legend_a님 외 2명이...</span>
-                </div>
-              </div>
-              <button>팔로우</button>
-            </div>
-            <div className="recommendOfUser">
-              <div className="recommendOfUserContent">
-                <a href="#">
-                  <img
-                    src="/images/jeonyongmin/ariana.jpg"
-                    alt="ariana grande"
-                    className="recommendOfUserProfileImg"
-                  />
-                </a>
-                <div className="recommendOfUserProfileInformation">
-                  <span>arianagrande</span>
-                  <span>_legend_a님 외 2명이...</span>
-                </div>
-              </div>
-              <button>팔로우</button>
-            </div>
+            <Recommend
+              name="justin bieber"
+              img="/images/jeonyongmin/justin.jpg"
+              recommendInformation="_legend_a님 외 2명이..."
+            />
+            <Recommend
+              name="ariana grande"
+              img="/images/jeonyongmin/ariana.jpg"
+              recommendInformation="_sl-2k523님 외 2명이..."
+            />
           </div>
           <footer className="footerSection">
             <p className="footerContainer">

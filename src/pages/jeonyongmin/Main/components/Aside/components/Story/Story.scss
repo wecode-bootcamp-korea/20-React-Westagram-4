@@ -1,0 +1,21 @@
+.asideCenterContentContainer {
+  display: flex;
+}
+
+.asideCenterContentImg {
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.asideCenterContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.asideCenterContent span {
+  color: var(--color-gray);
+  font-weight: bold;
+}
