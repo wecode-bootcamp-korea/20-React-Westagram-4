@@ -21,7 +21,7 @@ class Login extends React.Component {
             />
           </div>
 
-          <Link to="/main">
+          <Link to="/mainjy">
             <button className="loginBtn">로그인</button>
           </Link>
           <a

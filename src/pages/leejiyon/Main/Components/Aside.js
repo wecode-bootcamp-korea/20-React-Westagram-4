@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AsideContainer from './AsideContainer';
-import './Aside.scss';
-import '../../../../styles/leejiyon/_variables.scss';
-// import '../../sprite.png';
+import '../../../../styles/leejiyon/common.scss';
 
 class Aside extends Component {
   render() {

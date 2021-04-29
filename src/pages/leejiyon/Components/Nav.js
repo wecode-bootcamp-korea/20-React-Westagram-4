@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './Nav.scss';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom'; // 로그인할 떄 주로 이거 사용
+import '../../../styles/leejiyon/common.scss';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   goToMain = () => {
-    this.props.history.push('/');
+    this.props.history.push('/loginjy');
   };
 
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Article.scss';
+import '../../../../styles/leejiyon/common.scss';
 
 class Article extends Component {
   render() {

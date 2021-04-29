@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Feeds from './Feeds';
 import Aside from './Aside';
-import './MainSection.scss';
+import '../../../../styles/leejiyon/common.scss';
 
 class MainSection extends Component {
   render() {

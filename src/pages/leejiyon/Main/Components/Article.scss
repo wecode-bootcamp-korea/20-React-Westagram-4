@@ -47,6 +47,12 @@
       margin-right: 10px;
     }
 
+    .lnbImg {
+      background: url('http://localhost:3000/images/leejiyon/sprite.png');
+      width: 25px;
+      height: 25px;
+    }
+
     .heartImg {
       background-position: -130px -478px;
     }
@@ -64,12 +70,6 @@
       right: 14px;
       background-position: -517px -260px;
     }
-  }
-
-  .lnbImg {
-    background: url('http://localhost:3000/src/pages/leejiyon/Main/sprite.png');
-    width: 25px;
-    height: 25px;
   }
 
   .articleComment {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProfileList from './ProfileList';
-import './AsideContainer.scss';
+import '../../../../styles/leejiyon/common.scss';
 
 class AsideContainer extends Component {
   render() {
