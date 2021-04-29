@@ -5,10 +5,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: '',
+      pw: '',
+    };
+    this.handleIdInput = this.handleIdInput.bind(this);
+    this.handlePwInput = this.handlePwInput.bind(this);
+  }
   goToMain = () => {
     this.props.history.push('/mainyj');
   };
-
+  handleIdInput(e) {
+    this.setState({
+      id: e.target.value,
+    });
+    console.log(this.state.id);
+  }
+  handlePwInput(e) {
+    this.setState({
+      pw: e.target.value,
+    });
+    console.log(this.state.pw);
+  }
   render() {
     return (
       <>
@@ -23,6 +43,7 @@ class Login extends React.Component {
                 type="email"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 required
+                onChange={this.handleIdInput}
               />
               <input
                 className="login-form__input"
@@ -30,6 +51,7 @@ class Login extends React.Component {
                 placeholder="비밀번호"
                 required
                 minlength="5"
+                onChange={this.handlePwInput}
               />
               <button
                 className="login-form__button login-form__button--opacity"
