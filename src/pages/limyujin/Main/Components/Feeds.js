@@ -152,7 +152,6 @@ class Feeds extends React.Component {
           <form name="comment-form" className="feed__form">
             <FontAwesomeIcon icon={faSmile} className="smile" />
             <input
-              id="mainInput"
               type="text"
               placeholder="댓글달기..."
               value={this.state.commentValue}

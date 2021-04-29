@@ -51,7 +51,7 @@ class Main extends React.Component {
     return (
       <>
         <TopNav />
-        <main class="main-page">
+        <main className="main-page">
           <div className="feed-box">
             {feedInfo.map((el, index) => (
               <Feeds
