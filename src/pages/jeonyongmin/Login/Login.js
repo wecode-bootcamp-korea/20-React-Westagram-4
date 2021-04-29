@@ -31,7 +31,6 @@ class Login extends React.Component {
                 placeholder="비밀번호"
                 required
               />
-              {/* <Link to="/main"> */}
               <button
                 className="loginButton"
                 type="submit"
@@ -40,7 +39,6 @@ class Login extends React.Component {
                 {/* 버튼 disabled 잠시 해제해놓음 */}
                 로그인
               </button>
-              {/* </Link> */}
             </form>
           </div>
           <a
