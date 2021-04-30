@@ -37,8 +37,9 @@ class Aside extends React.Component {
       ],
     };
   }
-
+  // 구조분해 문법으로 바꿔보기
   render() {
+    const { storyContents, recommendContents } = this.state;
     return (
       <>
         <aside className="asideSection">
@@ -61,7 +62,7 @@ class Aside extends React.Component {
               <button>모두 보기</button>
             </div>
             <div className="asideCenterContents">
-              <Story data={this.state.storyContents} />
+              <Story data={storyContents} />
             </div>
           </div>
           <div className="asideBottomContainer">
@@ -69,7 +70,7 @@ class Aside extends React.Component {
               <span>회원을 위한 추천</span>
               <a href="">모두 보기</a>
             </div>
-            <Recommend data={this.state.recommendContents} />
+            <Recommend data={recommendContents} />
           </div>
           <footer className="footerSection">
             <p className="footerContainer">

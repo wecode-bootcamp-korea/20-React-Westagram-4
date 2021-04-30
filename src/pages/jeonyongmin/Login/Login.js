@@ -4,8 +4,21 @@ import './common.scss';
 import './Login.scss';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { id: '', password: '' };
+  }
+
   goToMain = () => {
     this.props.history.push('./mainym');
+  };
+
+  handleIdInput = e => {
+    this.setState({ id: e.target.value });
+  };
+
+  handlePasswordInput = e => {
+    this.setState({ password: e.target.value });
   };
 
   render() {
@@ -24,19 +37,21 @@ class Login extends React.Component {
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 required
+                onChange={this.handleIdInput}
               />
               <input
                 className="loginInputPassword input"
                 type="password"
                 placeholder="비밀번호"
                 required
+                onChange={this.handlePasswordInput}
               />
               <button
                 className="loginButton"
                 type="submit"
                 onClick={this.goToMain}
+                // disabled
               >
-                {/* 버튼 disabled 잠시 해제해놓음 */}
                 로그인
               </button>
             </form>
