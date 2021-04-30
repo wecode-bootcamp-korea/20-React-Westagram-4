@@ -1,4 +1,55 @@
+$boderCol1: #dbdbdb;
+$inputBgCol1: #fafafa;
+$white: white;
+$activeBtnCol: #0095f6;
+$passiveBtnCol: #c4e1fb;
+$fotgetPW: #00376b;
+$border1: 1px solid #dbdbdb;
+
 * {
   box-sizing: border-box;
   margin: 0px;
+}
+
+.unset {
+  all: unset;
+}
+
+.border1 {
+  border: 1px solid #dbdbdb;
+}
+
+.flexR {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCS {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.flexRS {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.flexRB {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fixedTR {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.button {
+  background-color: $white;
+  border: none;
+  font-size: 24px;
 }

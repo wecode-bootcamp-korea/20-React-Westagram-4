@@ -1,5 +1,6 @@
 import React from 'react';
 import './Aside.scss';
+import RecommendProfiles from './recommendprofile';
 
 class Aside extends React.Component {
   render() {
@@ -19,46 +20,7 @@ class Aside extends React.Component {
             <button>모두 보기</button>
           </div>
           <div className="recommnedList">
-            <div className="recommendProfile">
-              <img src="/images/kwonojae/r_profile1.jpeg" />
-              <dl>
-                <dt>jennierubyjane</dt>
-                <dd>인기</dd>
-              </dl>
-              <button>팔로우</button>
-            </div>
-            <div className="recommendProfile">
-              <img src="/images/kwonojae/r_profile2.jpeg" />
-              <dl>
-                <dt>sooyaaa__</dt>
-                <dd>인기</dd>
-              </dl>
-              <button>팔로우</button>
-            </div>
-            <div className="recommendProfile">
-              <img src="/images/kwonojae/r_profile3.jpeg" />
-              <dl>
-                <dt>roses_are_rosie</dt>
-                <dd>인기</dd>
-              </dl>
-              <button>팔로우</button>
-            </div>
-            <div className="recommendProfile">
-              <img src="/images/kwonojae/r_profile4.jpeg" />
-              <dl>
-                <dt>dlwlrma</dt>
-                <dd>인기</dd>
-              </dl>
-              <button>팔로우</button>
-            </div>
-            <div className="recommendProfile">
-              <img src="/images/kwonojae/r_profile5.jpeg" />
-              <dl>
-                <dt>_imyour_joy</dt>
-                <dd>인기</dd>
-              </dl>
-              <button>팔로우</button>
-            </div>
+            <RecommendProfiles />
           </div>
         </div>
       </aside>

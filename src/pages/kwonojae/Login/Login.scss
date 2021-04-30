@@ -1,12 +1,12 @@
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+@import '../../../styles/kwonojae/common.scss';
+
+.loginoj {
+  @extend .flexCS;
   align-items: center;
   width: 350px;
   height: 380px;
   margin: 50px auto 0px auto;
-  border: 1px solid #dbdbdb;
+  border: $border1;
   border-radius: 1px;
 
   h1 {
@@ -20,8 +20,8 @@
     width: 268px;
     height: 38px;
     padding: 9px 0px 7px 8px;
-    background-color: #fafafa;
-    border: rgb(219, 219, 219) 1px solid;
+    background-color: $inputBgCol1;
+    border: $border1;
     border-radius: 3px;
     &::placeholder {
       color: #8c8c8c;
@@ -38,22 +38,22 @@
     margin-top: 14px;
     width: 268px;
     height: 30px;
-    color: white;
+    color: $white;
     border: none;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
   }
   .btnActiveColor {
-    background-color: #0095f6;
+    background-color: $activeBtnCol;
   }
   .btnPassiveColor {
-    background-color: #c4e1fb;
+    background-color: $passiveBtnCol;
   }
 
   span {
     margin: 99px 0px 0px 0px;
-    color: #00376b;
+    color: $fotgetPW;
     font-size: 12px;
   }
 }

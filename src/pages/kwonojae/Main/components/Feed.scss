@@ -1,24 +1,21 @@
+@import '../../../../styles/kwonojae/common.scss';
+
 .feeds {
-  display: flex;
-  flex-direction: column;
+  @extend .flexCS;
   align-items: flex-end;
-  justify-content: start;
   article {
     width: 600px;
     margin-right: 20px;
-    border: 1px solid #dbdbdb;
+    border: $border1;
     .feedHeader {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      @extend .flexRB;
       align-items: center;
       width: 600px;
       height: 60px;
       padding: 16px;
-      background-color: white;
+      background-color: $white;
       .writer {
-        display: flex;
-        flex-direction: row;
+        @extend .flexR;
         align-items: center;
         img {
           width: 32px;
@@ -29,7 +26,7 @@
         }
       }
       button {
-        background-color: white;
+        background-color: $white;
         border: none;
       }
     }
@@ -43,28 +40,22 @@
 
     .feedBottomBox {
       width: 600px;
-      background-color: white;
+      background-color: $white;
       .feedButtons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @extend .flexRB;
         align-items: center;
         margin: 0px;
         padding: 0px 12px;
         width: 600px;
         height: 40px;
-        background-color: white;
+        background-color: $white;
         div {
           button {
-            background-color: white;
-            border: none;
-            font-size: 24px;
+            @extend .button;
           }
         }
         button {
-          background-color: white;
-          border: none;
-          font-size: 24px;
+          @extend .button;
         }
       }
       .feedLike {
@@ -72,55 +63,53 @@
         height: 18px;
         margin: 6px 0px 0px 0px;
         padding: 0px 0px 0px 16px;
-        background-color: white;
+        background-color: $white;
         button {
-          all: unset;
+          @extend .unset;
         }
       }
       .feedText {
         padding: 0px 16px;
         margin: 10px 0px 0px 0px;
         width: 600px;
-        background-color: white;
+        background-color: $white;
         button {
-          all: unset;
+          @extend .unset;
         }
       }
       .feedComment {
         padding: 0px 16px;
         button {
-          all: unset;
+          @extend .unset;
         }
       }
       .feedTime {
         width: 600px;
         margin: 12px 0px 0px 0px;
         padding: 0px 16px;
-        background-color: white;
+        background-color: $white;
       }
     }
     div {
       .writeHereComment {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @extend .flexRB;
         width: 600px;
         height: 56px;
         margin: 12px 0px 0px 0px;
         padding: 0px 16px;
-        background-color: white;
-        border-top: 1px solid #dbdbdb;
+        background-color: $white;
+        border-top: $border1;
         .fa-smile {
           font-size: 24px;
         }
         input {
           width: 80%;
           height: 100%;
-          background-color: white;
+          background-color: $white;
           border: none;
         }
         button {
-          all: unset;
+          @extend .unset;
         }
       }
     }

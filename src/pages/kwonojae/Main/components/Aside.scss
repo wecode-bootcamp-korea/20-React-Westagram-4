@@ -1,21 +1,19 @@
-.aside {
-  position: fixed;
-  right: 0;
-  top: 0;
+@import '../../../../styles/kwonojae/common.scss';
+
+aside {
+  @extend .fixedTR;
   width: 40%;
   height: 100%;
   margin: 55px 0px 0px 0px;
-  background-color: white;
+  background-color: $white;
   .profilewithrecommend {
     margin: 50px 0px 0px 20px;
     .myProfile {
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
+      @extend .flexRS;
       align-items: center;
       width: 300px;
       height: 56px;
-      background-color: white;
+      background-color: $white;
       img {
         width: 56px;
         height: 56px;
@@ -27,37 +25,33 @@
         font-size: 14px;
       }
       button {
-        all: unset;
+        @extend .unset;
         font-size: 12px;
       }
     }
     .recommendForYou {
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
+      @extend .flexRS;
       width: 300px;
       margin: 20px 0px 0px 0px;
-      background-color: white;
+      background-color: $white;
       span {
         width: 250px;
         font-size: 14px;
       }
       button {
-        all: unset;
+        @extend .unset;
         font-size: 12px;
       }
     }
     .recommnedList {
       width: 300px;
-      background-color: white;
+      background-color: $white;
       .recommendProfile {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
+        @extend .flexRS;
         align-items: center;
         width: 300px;
         margin: 16px 0px 0px 0px;
-        background-color: white;
+        background-color: $white;
         img {
           width: 32px;
           border-radius: 50%;
@@ -68,8 +62,9 @@
           font-size: 14px;
         }
         button {
-          all: unset;
+          @extend .unset;
           font-size: 12px;
+          color: $activeBtnCol;
         }
       }
     }
