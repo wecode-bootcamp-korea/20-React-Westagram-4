@@ -20,34 +20,34 @@ class TopNav extends React.Component {
       isModalVisible: false,
     };
   }
-  toggleModal = () => {
+
+  toggleModal = e => {
+    console.log(e);
     this.setState(prevState => ({
       isModalVisible: !prevState.isModalVisible,
     }));
   };
 
   render() {
-    // const navLeftItem = [
-    //   {
-    //     icon: faCompass,
-    //     onClick: () => {},
-    //   },
-    //   {
-    //     icon: faHeart,
-    //     onClick: () => {},
-    //   },
-    //   {
-    //     icon: faUser,
-    //     onClick: () => {
-    //       this.toggleModal;
-    //     },
-    //   },
-    // ];
-    // const { isModalVisible } = this.state;
+    const navLeftItem = [
+      {
+        icon: faCompass,
+        onClick: () => {},
+      },
+      {
+        icon: faHeart,
+        onClick: () => {},
+      },
+      {
+        icon: faUser,
+        onClick: this.toggleModal,
+      },
+    ];
+    const { isModalVisible } = this.state;
 
     return (
       <>
-        <Modal isModalVisible={this.state.isModalVisible} />
+        <Modal isModalVisible={isModalVisible} />
         <nav className="top-nav">
           <div className="top-nav__column">
             <Link to="/">
@@ -64,24 +64,13 @@ class TopNav extends React.Component {
           </div>
           <div className="top-nav__column">
             <ul className="top-nav__menus">
-              <li className="top-nav__menu">
-                <button className="top-nav__menu-btn">
-                  <FontAwesomeIcon icon={faCompass} className="compass" />
-                </button>
-              </li>
-              <li className="top-nav__menu">
-                <button className="top-nav__menu-btn">
-                  <FontAwesomeIcon icon={faHeart} className="heart" />
-                </button>
-              </li>
-              <li className="top-nav__menu">
-                <button
-                  onClick={this.toggleModal}
-                  className="top-nav__menu-btn"
-                >
-                  <FontAwesomeIcon icon={faUser} className="user" />
-                </button>
-              </li>
+              {navLeftItem.map(el => (
+                <li className="top-nav__menu">
+                  <button onClick={el.onClick} className="top-nav__menu-btn">
+                    <FontAwesomeIcon icon={el.icon} className="user" />
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>

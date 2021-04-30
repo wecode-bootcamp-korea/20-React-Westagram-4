@@ -15,18 +15,14 @@ class CommentColumn extends React.Component {
     });
   };
 
-  handleDelete = e => {
-    // () => {
-    //   console.log(e.target);
-    //   // e.target.removeChild();
-    // };
-  };
   render() {
+    const { isFeedLikePressed } = this.state;
+    const { commentTexts } = this.props;
     return (
       <>
         <div className="js-feed-comment">
           <span>wecode_bootcamp</span>
-          <span>{this.props.commentTexts.slice(0, 40)}</span>
+          <span>{commentTexts.slice(0, 40)}</span>
           <div className="js-comment-btns">
             <button
               className="js-comment-btn like-btn"
@@ -34,14 +30,11 @@ class CommentColumn extends React.Component {
             >
               <i
                 className={`${
-                  this.state.isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
+                  isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
                 }`}
               ></i>
             </button>
-            <button
-              className="js-comment-btn delete-btn"
-              onClick={this.handleDelete}
-            >
+            <button className="js-comment-btn delete-btn">
               <i className="fas fa-times"></i>
             </button>
           </div>

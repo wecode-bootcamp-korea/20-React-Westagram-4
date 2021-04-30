@@ -10,8 +10,6 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      isEveryInputValueExists: false,
-      isBtnDisabled: true,
     };
   }
 
@@ -20,25 +18,14 @@ class Login extends React.Component {
   };
 
   handleLoginInput = e => {
-    this.setState(
-      {
-        [e.target.name]: e.target.value,
-      },
-      () => {
-        this.state.id.includes('@') && this.state.pw.length >= 5
-          ? this.setState({
-              isEveryInputValueExists: true,
-              isBtnDisabled: false,
-            })
-          : this.setState({
-              isEveryInputValueExists: false,
-              isBtnDisabled: true,
-            });
-      }
-    );
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   render() {
+    const { id, pw, handleLoginInput, goToMain } = this.state;
+    const isEveryInputValueExists = id.includes('@') && pw.length >= 5;
     return (
       <>
         <main className="login-page">
@@ -53,7 +40,7 @@ class Login extends React.Component {
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 name="id"
                 required
-                onChange={this.handleLoginInput}
+                onChange={handleLoginInput}
               />
               <input
                 className="login-form__input"
@@ -62,16 +49,16 @@ class Login extends React.Component {
                 name="pw"
                 minlength="5"
                 required
-                onChange={this.handleLoginInput}
+                onChange={handleLoginInput}
               />
               <button
-                className={`login-form__button ${
-                  this.state.isEveryInputValueExists
-                    ? ''
+                className={
+                  isEveryInputValueExists
+                    ? 'login-form__button'
                     : 'login-form__button login-form__button--opacity'
-                }`}
-                onClick={this.goToMain}
-                disabled={this.state.isBtnDisabled}
+                }
+                onClick={goToMain}
+                disabled={isEveryInputValueExists ? false : true}
               >
                 로그인
               </button>

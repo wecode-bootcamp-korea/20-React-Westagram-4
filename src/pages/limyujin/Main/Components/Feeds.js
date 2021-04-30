@@ -14,7 +14,6 @@ class Feeds extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isCommentBtnDisabled: true,
       commentValue: '',
       commentTexts: [],
       isFeedLikePressed: false,
@@ -22,20 +21,9 @@ class Feeds extends React.Component {
   }
 
   handleInput = e => {
-    this.setState(
-      {
-        commentValue: e.target.value,
-      },
-      () => {
-        this.state.commentValue
-          ? this.setState({
-              isCommentBtnDisabled: false,
-            })
-          : this.setState({
-              isCommentBtnDisabled: true,
-            });
-      }
-    );
+    this.setState({
+      commentValue: e.target.value,
+    });
   };
 
   handleSubmitBtn = e => {
@@ -58,7 +46,7 @@ class Feeds extends React.Component {
   };
 
   render() {
-    const { commentTexts } = this.state;
+    const { commentTexts, isFeedLikePressed, commentValue } = this.state;
     const {
       author,
       profileImg,
@@ -97,9 +85,7 @@ class Feeds extends React.Component {
                 <button className="feed__feature-btn" onClick={this.handleLike}>
                   <i
                     className={`${
-                      this.state.isFeedLikePressed
-                        ? 'fas fa-heart'
-                        : 'far fa-heart'
+                      isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
                     }`}
                   ></i>
                 </button>
@@ -127,7 +113,7 @@ class Feeds extends React.Component {
             <div className="feed__texts-column feed__likes">
               <span>좋아요 </span>
               <span className="js-likes-count">
-                {this.state.isFeedLikePressed ? like + 1 : like}
+                {isFeedLikePressed ? like + 1 : like}
               </span>
               <span>개</span>
             </div>
@@ -154,17 +140,15 @@ class Feeds extends React.Component {
             <input
               type="text"
               placeholder="댓글달기..."
-              value={this.state.commentValue}
+              value={commentValue}
               className="feed__input"
               onChange={this.handleInput}
             />
             <button
               className={`feed__submit-btn ${
-                this.state.commentValue.length > 0
-                  ? ''
-                  : 'feed__submit-btn--opacity'
+                commentValue.length > 0 ? '' : 'feed__submit-btn--opacity'
               }`}
-              disabled={this.state.isCommentBtnDisabled}
+              disabled={commentValue ? false : true}
               onClick={this.handleSubmitBtn}
             >
               게시

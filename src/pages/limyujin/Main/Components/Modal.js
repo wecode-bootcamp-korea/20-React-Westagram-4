@@ -6,6 +6,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 class Modal extends React.Component {
   render() {
+    const { isModalVisible } = this.props;
     const modalItem = [
       {
         icon: faUserCircle,
@@ -27,15 +28,13 @@ class Modal extends React.Component {
     return (
       <>
         <div
-          className={`modal-container ${
-            this.props.isModalVisible ? 'modal-open' : ''
-          }`}
+          className={`modal-container ${isModalVisible ? 'modal-open' : ''}`}
         >
           <div className="modal">
             <ul>
               {modalItem.map(el => (
                 <li className="modal__list">
-                  <FontAwesomeIcon icon={el.icon} />
+                  <FontAwesomeIcon icon={el.icon} className="modal__icon" />
                   <span className="modal__menu">{el.text}</span>
                 </li>
               ))}

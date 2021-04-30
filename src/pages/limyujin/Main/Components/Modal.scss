@@ -26,7 +26,11 @@
     }
   }
 
-  &__menu {
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__menu:not(:last-of-type) {
     margin-left: 10px;
   }
 
