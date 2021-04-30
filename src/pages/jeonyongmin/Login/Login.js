@@ -6,7 +6,7 @@ import './Login.scss';
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { id: '', password: '' };
+    this.state = { id: '', password: '', buttonColor: false };
   }
 
   goToMain = () => {
@@ -14,14 +14,21 @@ class Login extends React.Component {
   };
 
   handleIdInput = e => {
-    this.setState({ id: e.target.value });
+    this.setState({ id: e.target.value }, this.validation);
   };
 
   handlePasswordInput = e => {
-    this.setState({ password: e.target.value });
+    this.setState({ password: e.target.value }, this.validation);
+  };
+
+  validation = () => {
+    const { id, password } = this.state;
+    const condition = id.includes('@') && password.length >= 5;
+    this.setState({ buttonColor: condition });
   };
 
   render() {
+    const { buttonColor } = this.state;
     return (
       <main className="login">
         <div className="loginPage">
@@ -47,10 +54,9 @@ class Login extends React.Component {
                 onChange={this.handlePasswordInput}
               />
               <button
-                className="loginButton"
+                className={buttonColor ? 'loginButtonActive' : 'loginButton'}
                 type="submit"
                 onClick={this.goToMain}
-                // disabled
               >
                 로그인
               </button>
