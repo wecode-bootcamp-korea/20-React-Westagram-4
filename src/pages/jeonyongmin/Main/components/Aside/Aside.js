@@ -4,6 +4,40 @@ import Recommend from './components/Recommend/Recommend';
 import './Aside.scss';
 
 class Aside extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      storyContents: [
+        {
+          id: 1,
+          name: 'bruno Mars',
+          img: '/images/jeonyongmin/brunomars.jpg',
+          timeAfterFeedUpload: '5분전',
+        },
+        {
+          id: 2,
+          name: 'The Weeknd',
+          img: '/images/jeonyongmin/weeknd.jpg',
+          timeAfterFeedUpload: '16분전',
+        },
+      ],
+      recommendContents: [
+        {
+          id: 1,
+          name: 'justin bieber',
+          img: '/images/jeonyongmin/justin.jpg',
+          recommendInformation: '_legend_a님 외 2명이...',
+        },
+        {
+          id: 2,
+          name: 'ariana grande',
+          img: '/images/jeonyongmin/ariana.jpg',
+          recommendInformation: '_ske6634님 외 9명이...',
+        },
+      ],
+    };
+  }
+
   render() {
     return (
       <>
@@ -27,16 +61,7 @@ class Aside extends React.Component {
               <button>모두 보기</button>
             </div>
             <div className="asideCenterContents">
-              <Story
-                name="bruno Mars"
-                img="/images/jeonyongmin/brunomars.jpg"
-                timeAfterFeedUpload="5분전"
-              />
-              <Story
-                name="The Weeknd"
-                img="/images/jeonyongmin/weeknd.jpg"
-                timeAfterFeedUpload="16분전"
-              />
+              <Story data={this.state.storyContents} />
             </div>
           </div>
           <div className="asideBottomContainer">
@@ -44,16 +69,7 @@ class Aside extends React.Component {
               <span>회원을 위한 추천</span>
               <a href="">모두 보기</a>
             </div>
-            <Recommend
-              name="justin bieber"
-              img="/images/jeonyongmin/justin.jpg"
-              recommendInformation="_legend_a님 외 2명이..."
-            />
-            <Recommend
-              name="ariana grande"
-              img="/images/jeonyongmin/ariana.jpg"
-              recommendInformation="_sl-2k523님 외 2명이..."
-            />
+            <Recommend data={this.state.recommendContents} />
           </div>
           <footer className="footerSection">
             <p className="footerContainer">
