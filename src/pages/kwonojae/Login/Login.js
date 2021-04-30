@@ -7,20 +7,22 @@ class LoginOJ extends React.Component {
   constructor() {
     super();
     this.state = {
-      idInput: '',
-      pwInput: '',
+      id: '',
+      pw: '',
     };
   }
 
-  handleIinputdInput = e => {
-    this.setState({ idInput: e.target.value });
+  handleIdInput = e => {
+    this.setState({ id: e.target.value });
   };
 
   handlePwInput = e => {
-    this.setState({ pwInput: e.target.value });
+    this.setState({ pw: e.target.value });
   };
 
   render() {
+    const { id, pw } = this.state;
+    console.log(id, pw);
     return (
       <div className="loginoj">
         <h1>westargram</h1>
@@ -28,14 +30,14 @@ class LoginOJ extends React.Component {
           className="inputID"
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
-          value={this.state.idInput}
+          value={id}
           onChange={this.handleIdInput}
         />
         <input
           className="inputPW"
           type="password"
           placeholder="비밀번호"
-          value={this.state.pwInput}
+          value={pw}
           onChange={this.handlePwInput}
         />
         <Link to="/mainoj">
