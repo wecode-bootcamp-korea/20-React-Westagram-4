@@ -1,5 +1,4 @@
 import React from 'react';
-// import ''
 
 class RecommendProfiles extends React.Component {
   constructor() {
@@ -17,9 +16,9 @@ class RecommendProfiles extends React.Component {
   render() {
     return (
       <>
-        {this.state.recommendProfileList.map(profile => {
+        {this.state.recommendProfileList.map((profile, index) => {
           return (
-            <div className="recommendProfile">
+            <div className="recommendProfile" key={index}>
               <img src={`/images/kwonojae/${profile.src}`} />
               <dl>
                 <dt>{profile.name}</dt>

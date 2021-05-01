@@ -68,49 +68,12 @@
           @extend .unset;
         }
       }
-      .feedText {
-        padding: 0px 16px;
-        margin: 10px 0px 0px 0px;
-        width: 600px;
-        background-color: $white;
-        button {
-          @extend .unset;
-        }
-      }
-      .feedComment {
-        padding: 0px 16px;
-        button {
-          @extend .unset;
-        }
-      }
+
       .feedTime {
         width: 600px;
         margin: 12px 0px 0px 0px;
         padding: 0px 16px;
         background-color: $white;
-      }
-    }
-    div {
-      .writeHereComment {
-        @extend .flexRB;
-        width: 600px;
-        height: 56px;
-        margin: 12px 0px 0px 0px;
-        padding: 0px 16px;
-        background-color: $white;
-        border-top: $border1;
-        .fa-smile {
-          font-size: 24px;
-        }
-        input {
-          width: 80%;
-          height: 100%;
-          background-color: $white;
-          border: none;
-        }
-        button {
-          @extend .unset;
-        }
       }
     }
   }

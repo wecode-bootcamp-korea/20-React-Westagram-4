@@ -1,0 +1,15 @@
+@import '../../../../styles/kwonojae/common.scss';
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 16px;
+  background-color: $white;
+  button {
+    @extend .unset;
+  }
+  i {
+    padding-left: 4px;
+  }
+}
