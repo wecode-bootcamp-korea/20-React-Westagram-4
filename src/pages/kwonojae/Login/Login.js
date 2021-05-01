@@ -12,36 +12,47 @@ class LoginOJ extends React.Component {
     };
   }
 
-  handleIdInput = e => {
-    this.setState({ id: e.target.value });
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handlePwInput = e => {
-    this.setState({ pw: e.target.value });
+  validation = () => {
+    const { id, pw } = this.state;
+    const isValidId = id.includes('@');
+    const isValidPw = pw.length > 4;
+    return isValidId && isValidPw;
   };
 
   render() {
     const { id, pw } = this.state;
-    console.log(id, pw);
+    // console.log(pw.length);
     return (
       <div className="loginoj">
         <h1>westargram</h1>
         <input
           className="inputID"
+          name="id"
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           value={id}
-          onChange={this.handleIdInput}
+          onChange={this.handleInput}
         />
         <input
           className="inputPW"
+          name="pw"
           type="password"
           placeholder="비밀번호"
           value={pw}
-          onChange={this.handlePwInput}
+          onChange={this.handleInput}
         />
         <Link to="/mainoj">
-          <button className="loginBtn btnPassiveColor">로그인</button>
+          <button
+            className={`loginBtn ${
+              this.validation() ? 'btnActiveColor' : 'btnPassiveColor'
+            }`}
+          >
+            로그인
+          </button>
         </Link>
         <span> 비밀번호를 잊으셨나요? </span>
       </div>
