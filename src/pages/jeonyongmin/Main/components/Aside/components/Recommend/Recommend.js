@@ -12,7 +12,6 @@ class Recommend extends React.Component {
             <a href="#">
               <img
                 src={recommendData[i].img}
-                recommendData
                 alt={recommendData[i].name}
                 className="recommendOfUserProfileImg"
               />

@@ -3,7 +3,27 @@ import Comment from './components/Comment';
 import './Feed.scss';
 
 class Feed extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { inputValue: '', buttonColor: false };
+  }
+
+  handleRepleInput = e => {
+    if (e.target.value) {
+      this.setState({ inputValue: e.target.value }, () => {
+        console.log(this.state);
+      });
+    }
+  };
+
+  validation = () => {
+    const { inputValue } = this.state;
+    const condition = inputValue.value > 0;
+    this.setState({ buttonColor: condition });
+  };
+
   render() {
+    const { buttonColor } = this.state;
     return (
       <>
         <article className="sectionArticle">
@@ -74,11 +94,16 @@ class Feed extends React.Component {
             <input
               placeholder="댓글 달기..."
               className="sectionArticleCommentInput"
-              maxlength="25"
+              maxLength="25"
+              onChange={this.handleRepleInput}
             />
             <button
               type="button"
-              className="sectionArticleCommentUpload"
+              className={
+                buttonColor
+                  ? 'sectionArticleCommentUploadActive'
+                  : 'sectionArticleCommentUpload'
+              }
               disabled
             >
               게시
