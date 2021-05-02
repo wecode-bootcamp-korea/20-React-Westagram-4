@@ -123,7 +123,6 @@ class Article extends Component {
   };
 
   render() {
-    console.log(this.state.userComments);
     return (
       <article className="Article">
         <div className="articleHeader">
@@ -172,6 +171,7 @@ class Article extends Component {
           {this.state.userComments.map(userComment => {
             return (
               <Comments
+                key={userComment.id}
                 userComment={userComment}
                 onClickDeleteBtn={() => {
                   this.onClickDeleteBtn(userComment);
