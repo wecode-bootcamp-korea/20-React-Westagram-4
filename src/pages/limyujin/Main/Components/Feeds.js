@@ -15,6 +15,7 @@ class Feeds extends React.Component {
     super(props);
     this.state = {
       commentValue: '',
+      commentCounter: 0,
       commentTexts: [],
       isFeedLikePressed: false,
     };
@@ -29,10 +30,16 @@ class Feeds extends React.Component {
   handleSubmitBtn = e => {
     e.preventDefault();
     //비어있을 때 X
+
     if (this.state.commentValue) {
+      const createComment = () => ({
+        id: this.state.commentCounter++,
+        text: this.state.commentValue,
+      });
+
       this.setState({
         //inputValue들을 버튼 누를 때마다 배열에 저장
-        commentTexts: [...this.state.commentTexts, this.state.commentValue],
+        commentTexts: [...this.state.commentTexts, createComment()],
         commentValue: '',
       });
     }
@@ -56,7 +63,6 @@ class Feeds extends React.Component {
       time,
       like,
     } = this.props;
-
     return (
       <>
         <article className="feed">
@@ -125,10 +131,9 @@ class Feeds extends React.Component {
             </div>
             <div className="feed__texts-column js-feed-comments">
               {/* 댓글 들어갈 자리 */}
-              {commentTexts.map((el, index) => (
-                //unique해야 하기 때문에 index를 key로 전달 (임시)
+              {commentTexts.map(el => (
                 //time을 기준으로 key를 생성하는 방법 찾아볼 것
-                <CommentColumn commentTexts={el} key={index} />
+                <CommentColumn commentTexts={el.text} key={el.id} />
               ))}
             </div>
             <div className="feed__time feed__texts-column">

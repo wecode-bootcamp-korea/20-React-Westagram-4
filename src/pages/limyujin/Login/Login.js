@@ -24,7 +24,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { id, pw, handleLoginInput, goToMain } = this.state;
+    const { id, pw } = this.state;
     const isEveryInputValueExists = id.includes('@') && pw.length >= 5;
     return (
       <>
@@ -40,16 +40,16 @@ class Login extends React.Component {
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 name="id"
                 required
-                onChange={handleLoginInput}
+                onChange={this.handleLoginInput}
               />
               <input
                 className="login-form__input"
                 type="password"
                 placeholder="비밀번호"
                 name="pw"
-                minlength="5"
+                minLength="5"
                 required
-                onChange={handleLoginInput}
+                onChange={this.handleLoginInput}
               />
               <button
                 className={
@@ -57,7 +57,7 @@ class Login extends React.Component {
                     ? 'login-form__button'
                     : 'login-form__button login-form__button--opacity'
                 }
-                onClick={goToMain}
+                onClick={this.goToMain}
                 disabled={isEveryInputValueExists ? false : true}
               >
                 로그인
