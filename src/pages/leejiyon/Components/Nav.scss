@@ -90,6 +90,10 @@
 
   .navLink {
     min-width: 130px;
+
+    li {
+      cursor: pointer;
+    }
   }
 
   .navLink img {

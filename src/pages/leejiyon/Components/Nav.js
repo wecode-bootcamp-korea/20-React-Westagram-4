@@ -21,28 +21,22 @@ class Nav extends Component {
           </div>
           <ul className="navLink">
             <li>
-              <a href="#">
-                <img
-                  alt="추천하는 사람들"
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-                />
-              </a>
+              <img
+                alt="추천하는 사람들"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
+              />
             </li>
             <li>
-              <a href="#">
-                <img
-                  alt="새롭게 나를 팔로우한 사람들"
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                />
-              </a>
+              <img
+                alt="새롭게 나를 팔로우한 사람들"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+              />
             </li>
-            <li>
-              <a onClick={this.goToMain}>
-                <img
-                  alt="내 계정"
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-                />
-              </a>
+            <li onClick={this.goToMain}>
+              <img
+                alt="내 계정"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
+              />
             </li>
           </ul>
         </nav>
