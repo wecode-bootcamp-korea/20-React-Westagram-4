@@ -65,10 +65,6 @@
     font-weight: bold;
   }
 
-  .loginButton:active {
-    opacity: 0.8;
-  }
-
   /* login button active class */
   .loginButtonActive {
     width: 320px;
@@ -79,6 +75,10 @@
     color: white;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  .loginButtonActive:active {
+    opacity: 0.8;
   }
 
   .loginFindPassword {

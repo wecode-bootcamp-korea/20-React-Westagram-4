@@ -5,25 +5,51 @@ import './Feed.scss';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputValue: '', buttonColor: false };
+    this.state = {
+      inputValue: '',
+      buttonColor: false,
+      commentList: [],
+    };
+    this.inputLocation = React.createRef();
   }
 
-  handleRepleInput = e => {
-    if (e.target.value) {
-      this.setState({ inputValue: e.target.value }, () => {
-        console.log(this.state);
-      });
+  pressEnter = e => {
+    if (e.charCode === 13) {
+      e.target.value = '';
+
+      this.addComment();
     }
+  };
+
+  addComment = () => {
+    const { commentList } = this.state;
+    this.setState(
+      {
+        inputValue: '',
+        commentList: commentList.concat(this.state.inputValue),
+      },
+      () => {
+        this.setState({ buttonColor: false });
+        this.inputLocation.current.value = '';
+      }
+    );
+  };
+
+  handleCommentInput = e => {
+    this.setState({ inputValue: e.target.value }, () => {
+      this.validation();
+    });
   };
 
   validation = () => {
     const { inputValue } = this.state;
-    const condition = inputValue.value > 0;
+    const condition = inputValue.length > 0;
     this.setState({ buttonColor: condition });
   };
 
   render() {
-    const { buttonColor } = this.state;
+    const { inputValue, buttonColor, commentList } = this.state;
+    const conditionOfButtonActivated = inputValue.length > 0;
     return (
       <>
         <article className="sectionArticle">
@@ -80,7 +106,7 @@ class Feed extends React.Component {
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
-                    <Comment />
+                    <Comment inputData={commentList} />
                   </ul>
                 </div>
               </div>
@@ -95,7 +121,9 @@ class Feed extends React.Component {
               placeholder="댓글 달기..."
               className="sectionArticleCommentInput"
               maxLength="25"
-              onChange={this.handleRepleInput}
+              onChange={this.handleCommentInput}
+              onKeyPress={this.pressEnter}
+              ref={this.inputLocation}
             />
             <button
               type="button"
@@ -104,7 +132,8 @@ class Feed extends React.Component {
                   ? 'sectionArticleCommentUploadActive'
                   : 'sectionArticleCommentUpload'
               }
-              disabled
+              disabled={conditionOfButtonActivated ? false : true}
+              onClick={this.addComment}
             >
               게시
             </button>

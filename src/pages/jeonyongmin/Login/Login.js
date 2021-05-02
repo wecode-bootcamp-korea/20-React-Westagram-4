@@ -39,11 +39,7 @@ class Login extends React.Component {
         <div className="loginPage">
           <h1 className="loginTitle">Westagram</h1>
           <div className="loginContents">
-            <form
-              action="./main.html"
-              method="get"
-              className="loginInformation"
-            >
+            <form action="#" method="get" className="loginInformation">
               <input
                 className="loginInputId input"
                 type="text"
@@ -62,7 +58,7 @@ class Login extends React.Component {
                 className={
                   buttonColor ? 'loginButtonActive' : 'loginButtonDeactive'
                 }
-                type="button"
+                type="submit"
                 onClick={this.goToMain}
                 disabled={condtionOfButtonActivated ? false : true}
               >
