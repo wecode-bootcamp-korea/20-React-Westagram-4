@@ -22,7 +22,6 @@ class TopNav extends React.Component {
   }
 
   toggleModal = e => {
-    console.log(e);
     this.setState(prevState => ({
       isModalVisible: !prevState.isModalVisible,
     }));
