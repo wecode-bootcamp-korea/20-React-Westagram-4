@@ -100,11 +100,13 @@
       font-weight: bold;
       font-size: $comment-fontsize;
       margin-right: 10px;
+      vertical-align: top;
     }
 
     .myComment {
       display: inline-block;
       width: 190px;
+      height: 13px;
       font-size: $comment-fontsize;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -113,6 +115,7 @@
 
     .comment {
       font-size: $comment-fontsize;
+      vertical-align: top;
     }
 
     .commentBtn {

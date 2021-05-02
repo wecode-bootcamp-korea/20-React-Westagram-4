@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comments from './Comments';
 import '../../../../styles/leejiyon/common.scss';
 
 const emptyHeartStyle = {
@@ -15,6 +16,8 @@ class Article extends Component {
     isCommentInputEntered: false,
     commentInputValue: '',
     currentUser: 'hao',
+    lastPostedCommentTIme: '42분 전',
+    commentLikeNum: '9',
     userComments: [
       {
         id: 1,
@@ -45,6 +48,15 @@ class Article extends Component {
     this.setState({
       isArticleLiked: !this.state.isArticleLiked,
     });
+    if (this.state.commentLikeNum === 10) {
+      this.setState({
+        commentLikeNum: 9,
+      });
+    } else {
+      this.setState({
+        commentLikeNum: 10,
+      });
+    }
   };
 
   onClickPostCommentInput = e => {
@@ -82,32 +94,27 @@ class Article extends Component {
       }),
       commentInputValue: '',
       id: this.state.id + 1,
+      lastPostedCommentTIme: '방금',
     });
     this.inputRef.current.focus();
   };
 
-  onClickCommentHeartBtn = e => {
-    const currentCommentWrap = e.target.parentNode.parentNode;
-    const commentWraps = currentCommentWrap.parentNode.querySelectorAll(
-      '.commentWrap'
-    );
-    const clickedCommentIndex = Array.prototype.indexOf.call(
-      commentWraps,
-      currentCommentWrap
-    );
-
+  onClickCommentHeartBtn = userComment => {
+    let currentClickedCommentIdx = this.state.userComments.indexOf(userComment);
     let userComments = [...this.state.userComments];
-    let user = { ...userComments[clickedCommentIndex - 1] };
+    let user = {
+      ...userComment,
+    };
     if (user.liked) {
       user.liked = false;
     } else {
       user.liked = true;
     }
-    userComments[clickedCommentIndex - 1] = user;
+    userComments[currentClickedCommentIdx] = user;
     this.setState({ userComments });
   };
 
-  onClickDeleteBtn = (e, v) => {
+  onClickDeleteBtn = v => {
     this.setState({
       userComments: this.state.userComments.filter(user => {
         return user.id !== v.id;
@@ -151,7 +158,7 @@ class Article extends Component {
           <div className="articleLikes">
             <span>wecode</span>님
             <span>
-              외 <span className="likeNum">10</span>명
+              외 <span className="likeNum">{this.state.commentLikeNum}</span>명
             </span>
             이 좋아합니다
           </div>
@@ -162,35 +169,20 @@ class Article extends Component {
             </span>
           </div>
 
-          {this.state.userComments.map(v => {
+          {this.state.userComments.map(userComment => {
             return (
-              <div className="commentWrap" key={v.id}>
-                <span className="commenter">{v.userId}</span>
-                <span className="comment">{v.comment}</span>
-                <button
-                  className="commentBtn commentDeleteBtn"
-                  onClick={e => {
-                    this.onClickDeleteBtn(e, v);
-                  }}
-                >
-                  {v.showTrashBtn ? <i className="far fa-trash-alt"></i> : null}
-                </button>
-                <button
-                  className="commentBtn commentLikesBtn"
-                  onClick={e => {
-                    this.onClickCommentHeartBtn(e);
-                  }}
-                >
-                  {v.liked ? (
-                    <i className="redHeart fas fa-heart red"></i>
-                  ) : (
-                    <i className="emptyHeart far fa-heart"></i>
-                  )}
-                </button>
-              </div>
+              <Comments
+                userComment={userComment}
+                onClickDeleteBtn={() => {
+                  this.onClickDeleteBtn(userComment);
+                }}
+                onClickCommentHeartBtn={() => {
+                  this.onClickCommentHeartBtn(userComment);
+                }}
+              />
             );
           })}
-          <div className="commentTime">42분 전</div>
+          <div className="commentTime">{this.state.lastPostedCommentTIme}</div>
         </div>
         <div className="articlePostComment">
           <input
