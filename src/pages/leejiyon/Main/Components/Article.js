@@ -15,26 +15,30 @@ class Article extends Component {
     isCommentInputEntered: false,
     commentInputValue: '',
     currentUser: 'hao',
-    users: [
+    userComments: [
       {
-        id: 'iu',
+        id: 1,
+        userId: 'iu',
         comment: '아자아자',
         showTrashBtn: false,
         liked: true,
       },
       {
-        id: 'jiyon',
+        id: 2,
+        userId: 'jiyon',
         comment: '공부를 하자',
         showTrashBtn: false,
         liked: false,
       },
       {
-        id: 'Shaman_king',
+        id: 3,
+        userId: 'Shaman_king',
         comment: '벨로그 쓰기',
         showTrashBtn: false,
         liked: false,
       },
     ],
+    id: 4,
   };
 
   onClickArticleHeartBtn = () => {
@@ -70,12 +74,14 @@ class Article extends Component {
       return;
     }
     this.setState({
-      users: this.state.users.concat({
-        id: this.state.currentUser,
+      userComments: this.state.userComments.concat({
+        id: this.state.id,
+        userId: this.state.currentUser,
         comment: this.state.commentInputValue,
         showTrashBtn: true,
       }),
       commentInputValue: '',
+      id: this.state.id + 1,
     });
     this.inputRef.current.focus();
   };
@@ -90,20 +96,27 @@ class Article extends Component {
       currentCommentWrap
     );
 
-    let users = [...this.state.users];
-    let user = { ...users[clickedCommentIndex - 1] };
+    let userComments = [...this.state.userComments];
+    let user = { ...userComments[clickedCommentIndex - 1] };
     if (user.liked) {
       user.liked = false;
     } else {
       user.liked = true;
     }
-    users[clickedCommentIndex - 1] = user;
-    this.setState({ users });
+    userComments[clickedCommentIndex - 1] = user;
+    this.setState({ userComments });
   };
 
-  onClickDeleteBtn = e => {};
+  onClickDeleteBtn = (e, v) => {
+    this.setState({
+      userComments: this.state.userComments.filter(user => {
+        return user.id !== v.id;
+      }),
+    });
+  };
 
   render() {
+    console.log(this.state.userComments);
     return (
       <article className="Article">
         <div className="articleHeader">
@@ -149,15 +162,15 @@ class Article extends Component {
             </span>
           </div>
 
-          {this.state.users.map(v => {
+          {this.state.userComments.map(v => {
             return (
-              <div className="commentWrap">
-                <span className="commenter">{v.id}</span>
+              <div className="commentWrap" key={v.id}>
+                <span className="commenter">{v.userId}</span>
                 <span className="comment">{v.comment}</span>
                 <button
                   className="commentBtn commentDeleteBtn"
                   onClick={e => {
-                    this.onClickDeleteBtn(e);
+                    this.onClickDeleteBtn(e, v);
                   }}
                 >
                   {v.showTrashBtn ? <i className="far fa-trash-alt"></i> : null}
