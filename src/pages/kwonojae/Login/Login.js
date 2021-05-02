@@ -13,6 +13,7 @@ class LoginOJ extends React.Component {
   }
 
   handleInput = e => {
+    const { id } = this.state;
     this.setState({ [e.target.name]: e.target.value });
   };
 

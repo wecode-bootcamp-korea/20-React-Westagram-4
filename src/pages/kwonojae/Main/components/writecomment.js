@@ -32,29 +32,36 @@ export default class Writecomment extends Component {
   };
 
   clickPost = e => {
-    const { commentdata } = this.state;
+    const { commentdata, current } = this.state;
 
-    if (this.state.current) {
-      console.log(e);
-      this.setState({
-        commentdata: commentdata.concat({
-          value: this.state.current,
-        }),
-      });
-      this.state.current = '';
+    if (current) {
+      this.setState(
+        {
+          commentdata: commentdata.concat({
+            value: this.state.current,
+          }),
+        },
+        () => {
+          this.setState({ current: '' });
+        }
+      );
     }
   };
 
   enterPost = e => {
-    const { commentdata } = this.state;
+    const { commentdata, current } = this.state;
 
-    if (this.state.current && e.keyCode === 13) {
-      this.setState({
-        commentdata: commentdata.concat({
-          value: this.state.current,
-        }),
-      });
-      this.state.current = '';
+    if (current && e.keyCode === 13) {
+      this.setState(
+        {
+          commentdata: commentdata.concat({
+            value: this.state.current,
+          }),
+        },
+        () => {
+          this.setState({ current: '' });
+        }
+      );
     }
   };
 
