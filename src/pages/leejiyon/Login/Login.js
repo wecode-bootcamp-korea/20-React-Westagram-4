@@ -8,7 +8,6 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      validation: false,
     };
   }
 
@@ -18,16 +17,8 @@ class Login extends React.Component {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.id !== this.state.id || prevState.pw !== this.state.pw) {
-      if (this.state.id.includes('@') && this.state.pw.length > 4) {
-        this.setState({ validation: true });
-      } else {
-        this.setState({ validation: false });
-      }
-    }
-  }
   render() {
+    const validation = this.state.id.includes('@') && this.state.pw.length > 4;
     return (
       <div className="Login">
         <main className="LoginBox">
@@ -52,7 +43,7 @@ class Login extends React.Component {
           </div>
 
           <Link to="/mainjy">
-            {this.state.validation ? (
+            {validation ? (
               <button className="loginBtn blueBackgroundColor">로그인</button>
             ) : (
               <button className="loginBtn ">로그인</button>
