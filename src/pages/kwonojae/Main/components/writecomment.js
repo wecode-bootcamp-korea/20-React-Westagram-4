@@ -10,13 +10,16 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import './writecomment.scss';
 import Comment from './comment';
-import './writecomment.scss';
 
 export default class Writecomment extends Component {
   constructor() {
     super();
     this.state = {
       commentdata: [
+        {
+          value:
+            'As always, inspired by your fan art. So grateful and blessed to have such a great team behind the Fast Saga.',
+        },
         { value: 'The fast family is ready' },
         { value: 'R.I.P Paul' },
       ],
@@ -24,34 +27,34 @@ export default class Writecomment extends Component {
     };
   }
 
-  handleInput = e => {
+  currentCommentInput = e => {
     this.setState({ current: e.target.value });
   };
 
   clickPost = e => {
-    const { commentdata, current } = this.state;
-    e.preventDefault();
+    const { commentdata } = this.state;
 
-    if (current) {
+    if (this.state.current) {
       console.log(e);
       this.setState({
         commentdata: commentdata.concat({
-          value: current,
+          value: this.state.current,
         }),
       });
+      this.state.current = '';
     }
   };
 
   enterPost = e => {
-    const { commentdata, current } = this.state;
+    const { commentdata } = this.state;
 
-    if (current && e.keyCode === 13) {
+    if (this.state.current && e.keyCode === 13) {
       this.setState({
         commentdata: commentdata.concat({
-          value: current,
+          value: this.state.current,
         }),
       });
-      e.target.value = '';
+      this.state.current = '';
     }
   };
 
@@ -60,13 +63,6 @@ export default class Writecomment extends Component {
 
     return (
       <div>
-        <div className="feedText">
-          <p>
-            <a href="#">글쓴이ID</a> As always, inspired by your fan art. So
-            grateful and blessed to have such a great team behind the Fast Saga.{' '}
-            <button type="button">더 보기</button>
-          </p>
-        </div>
         {commentdata.map((commentdata, index) => {
           return <Comment value={commentdata.value} key={index} />;
         })}
@@ -80,8 +76,9 @@ export default class Writecomment extends Component {
           <input
             type="text"
             placeholder="댓글 달기..."
-            onChange={this.handleInput}
+            onChange={this.currentCommentInput}
             onKeyDown={this.enterPost}
+            value={this.state.current}
           />
           <button className="postComment" onClick={this.clickPost}>
             게시

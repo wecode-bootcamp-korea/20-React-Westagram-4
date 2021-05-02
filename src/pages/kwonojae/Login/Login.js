@@ -25,7 +25,7 @@ class LoginOJ extends React.Component {
 
   render() {
     const { id, pw } = this.state;
-    // console.log(pw.length);
+
     return (
       <div className="loginoj">
         <h1>westargram</h1>
@@ -50,6 +50,7 @@ class LoginOJ extends React.Component {
             className={`loginBtn ${
               this.validation() ? 'btnActiveColor' : 'btnPassiveColor'
             }`}
+            disabled={!this.validation() ? 'disabled' : ''}
           >
             로그인
           </button>

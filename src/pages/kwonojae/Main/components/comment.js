@@ -5,10 +5,10 @@ export default class Comment extends Component {
   render() {
     return (
       <p className="comment">
-        <span>
+        <span className="commentContent">
           <a href="">글쓴이ID</a> {this.props.value}
         </span>
-        <span className="likeDelete">
+        <span>
           <i className="far fa-heart"></i>
           <i className="fas fa-times"></i>
         </span>
