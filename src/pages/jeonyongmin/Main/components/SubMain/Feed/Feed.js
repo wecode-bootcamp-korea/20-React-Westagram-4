@@ -15,7 +15,7 @@ class Feed extends React.Component {
 
   pressEnter = e => {
     if (e.charCode === 13) {
-      e.target.value = '';
+      // e.target.value = '';
 
       this.addComment();
     }
@@ -106,6 +106,19 @@ class Feed extends React.Component {
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
+                    <li classname="sectionArticleCommentContentsContainer">
+                      <div className="sectionArticleCommentContents">
+                        <p>
+                          <a href="#" className="sectionArticleFanslink">
+                            joybadass
+                          </a>
+                          when is your online concert?
+                        </p>
+                        <button className="sectionArticleCommentLinkButton">
+                          <i className="far fa-heart"></i>
+                        </button>
+                      </div>
+                    </li>
                     <Comment inputData={commentList} />
                   </ul>
                 </div>

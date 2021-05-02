@@ -15,7 +15,9 @@
   margin-bottom: 5px;
 }
 
-.asideCenterContent span {
-  color: var(--color-gray);
-  font-weight: bold;
+.asideCenterContent {
+  span {
+    color: var(--color-gray);
+    font-weight: bold;
+  }
 }

@@ -14,9 +14,11 @@
   margin-bottom: 5px;
 }
 
-.recommendOfUserProfileInformation span:last-child {
-  color: var(--color-gray);
-  font-weight: 700;
+.recommendOfUserProfileInformation {
+  span:last-child {
+    color: var(--color-gray);
+    font-weight: 700;
+  }
 }
 
 .recommendOfUserProfileImg {
@@ -25,8 +27,10 @@
   margin-right: 10px;
 }
 
-.recommendOfUser button {
-  color: var(--color-blue);
-  font-weight: 700;
-  cursor: pointer;
+.recommendOfUser {
+  button {
+    color: var(--color-blue);
+    font-weight: 700;
+    cursor: pointer;
+  }
 }

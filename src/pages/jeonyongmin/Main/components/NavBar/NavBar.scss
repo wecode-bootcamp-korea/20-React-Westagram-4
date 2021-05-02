@@ -34,13 +34,15 @@
   text-align: center;
 }
 
-.headerNavLeftSideTitle::before {
-  display: inline;
-  width: 10px;
-  height: 20px;
-  border-left: 1px solid var(--color-black);
-  margin-right: 10px;
-  content: ' ';
+.headerNavLeftSideTitle {
+  &::before {
+    display: inline;
+    width: 10px;
+    height: 20px;
+    border-left: 1px solid var(--color-black);
+    margin-right: 10px;
+    content: ' ';
+  }
 }
 
 .headerNavLeftSideTitle {
@@ -53,16 +55,16 @@
 
 .headerNavCenter {
   position: relative;
+
+  .fa-search {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    color: var(--color-border);
+  }
 }
 
-.headerNavCenter .fa-search {
-  position: absolute;
-  left: 30%;
-  top: 30%;
-  color: var(--color-border);
-}
-
-.headerNavInput {
+.headerNavCenter .headerNavInput {
   padding: 8px;
   border: 1px solid var(--color-border);
   border-radius: 5px;

@@ -11,13 +11,13 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-}
 
-.sectionArticleUser div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 0;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+  }
 }
 
 .sectionArticleUserImg {
@@ -49,9 +49,11 @@
   opacity: 0.5;
 }
 
-.sectionArticleIconbar .far {
-  font-size: 30px;
-  cursor: pointer;
+.sectionArticleIconbar {
+  .far {
+    font-size: 30px;
+    cursor: pointer;
+  }
 }
 
 .section .sectionArticleIconbarLeftSide {
@@ -66,14 +68,14 @@
 .sectionArticleCommentlistScroll {
   height: 50px;
   overflow: auto;
-}
 
-.sectionArticleCommentlistScroll::-webkit-scrollbar {
-  display: none;
-}
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-.sectionArticleCommentList {
-  margin-bottom: 20px;
+  .sectionArticleCommentList {
+    margin-bottom: 20px;
+  }
 }
 
 .sectionArticleSinceCommentTime {
@@ -125,10 +127,10 @@
   padding: 10px 20px;
   border: none;
   font-size: 15px;
-}
 
-.sectionArticleCommentInput::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .sectionArticleCommentUpload {
@@ -145,13 +147,13 @@
   font-size: 15px;
   font-weight: bold;
   opacity: 1;
-}
 
-.sectionArticleCommentUploadActive:hover {
-  width: 80px;
-  color: rgb(0, 149, 246);
-  font-size: 15px;
-  font-weight: bold;
-  opacity: 1;
-  cursor: pointer;
+  &:hover {
+    width: 80px;
+    color: rgb(0, 149, 246);
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    cursor: pointer;
+  }
 }
