@@ -56,8 +56,10 @@
   }
 }
 
-.section .sectionArticleIconbarLeftSide {
-  display: flex;
+.section {
+  .sectionArticleIconbarLeftSide {
+    display: flex;
+  }
 }
 
 .sectionArticleLikeButton,
