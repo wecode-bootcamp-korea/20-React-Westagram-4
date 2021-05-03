@@ -8,7 +8,9 @@ class Feed extends React.Component {
     this.state = {
       inputValue: '',
       buttonColor: false,
-      commentList: [],
+      commentList: [
+        { id: 1, name: 'joybadass', comment: 'when is your online concert?' },
+      ],
     };
     this.inputLocation = React.createRef();
   }
@@ -22,23 +24,26 @@ class Feed extends React.Component {
   };
 
   addComment = () => {
-    const { commentList } = this.state;
+    const { commentList, inputValue } = this.state;
     this.setState(
       {
         inputValue: '',
-        commentList: commentList.concat(this.state.inputValue),
+        commentList: commentList.concat({
+          id: commentList.length + 1,
+          name: 'yongmin',
+          comment: inputValue,
+        }),
       },
       () => {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
+        this.inputLocation.current.focus();
       }
     );
   };
 
   handleCommentInput = e => {
-    this.setState({ inputValue: e.target.value }, () => {
-      this.validation();
-    });
+    this.setState({ inputValue: e.target.value }, this.validation);
   };
 
   validation = () => {
@@ -106,19 +111,6 @@ class Feed extends React.Component {
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
-                    <li classname="sectionArticleCommentContentsContainer">
-                      <div className="sectionArticleCommentContents">
-                        <p>
-                          <a href="#" className="sectionArticleFanslink">
-                            joybadass
-                          </a>
-                          when is your online concert?
-                        </p>
-                        <button className="sectionArticleCommentLinkButton">
-                          <i className="far fa-heart"></i>
-                        </button>
-                      </div>
-                    </li>
                     <Comment inputData={commentList} />
                   </ul>
                 </div>

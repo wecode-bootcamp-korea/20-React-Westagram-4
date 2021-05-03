@@ -6,13 +6,13 @@ class Comment extends React.Component {
     const commentList = this.props.inputData;
     const result = commentList.map(element => {
       return (
-        <li classname="sectionArticleCommentContentsContainer">
+        <li classname="sectionArticleCommentContentsContainer" key={element.id}>
           <div className="sectionArticleCommentContents">
             <p>
               <a href="#" className="sectionArticleFanslink">
-                yongmin
+                {element.name}
               </a>
-              {element}
+              {element.comment}
             </p>
             <button className="sectionArticleCommentLinkButton">
               <i className="far fa-heart"></i>
@@ -21,7 +21,7 @@ class Comment extends React.Component {
         </li>
       );
     });
-    return <>{result} </>;
+    return <> {result} </>;
   }
 }
 
