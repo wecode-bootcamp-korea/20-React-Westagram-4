@@ -3,26 +3,26 @@ import './Comment.scss';
 
 class Comment extends React.Component {
   render() {
-    const commentList = this.props.inputData;
-
-    const result = commentList.map(element => {
-      return (
-        <li classname="sectionArticleCommentContentsContainer" key={element.id}>
+    return (
+      <>
+        <li
+          classname="sectionArticleCommentContentsContainer"
+          // key={this.props.id}
+        >
           <div className="sectionArticleCommentContents">
             <p>
               <a href="#" className="sectionArticleFanslink">
-                {element.name}
+                {this.props.name}
               </a>
-              {element.comment}
+              {this.props.comment}
             </p>
             <button className="sectionArticleCommentLinkButton">
               <i className="far fa-heart"></i>
             </button>
           </div>
         </li>
-      );
-    });
-    return <> {result} </>;
+      </>
+    );
   }
 }
 

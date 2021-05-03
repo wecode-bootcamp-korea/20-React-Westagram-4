@@ -24,7 +24,18 @@ class SubMain extends React.Component {
     const { feedList } = this.state;
     return (
       <div className="feedContainer">
-        <Feed feedListData={feedList} />
+        {feedList.map(element => {
+          return (
+            <Feed
+              key={element.id}
+              name={element.name}
+              feedImg={element.feedImg}
+              profileImg={element.profileImg}
+              comment={element.comment}
+              like={element.like}
+            />
+          );
+        })}
       </div>
     );
   }

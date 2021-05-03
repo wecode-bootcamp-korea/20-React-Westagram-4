@@ -47,6 +47,7 @@ class Feed extends React.Component {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
         this.inputLocation.current.focus();
+        console.log(this.state);
       }
     );
   };
@@ -64,19 +65,19 @@ class Feed extends React.Component {
   render() {
     const { inputValue, buttonColor, commentList } = this.state;
     const conditionOfButtonActivated = inputValue.length > 0;
-    const feedList = this.props.feedListData;
-    const result = feedList.map(element => {
-      return (
-        <article className="sectionArticle" key={element.id}>
+
+    return (
+      <>
+        <article className="sectionArticle">
           <div className="sectionArticleUser">
             <div>
               <img
-                src={element.profileImg}
-                alt={element.name}
+                src={this.props.profileImg}
+                alt="drake profile"
                 className="sectionArticleUserImg"
               />
               <a href="" className="sectionArticleUsername">
-                {element.name}
+                {this.props.name}
               </a>
             </div>
             <button className="sectionArticleModal">
@@ -84,7 +85,7 @@ class Feed extends React.Component {
             </button>
           </div>
           <img
-            src={element.feedImg}
+            src={this.props.feedImg}
             alt="feed image"
             className="sectionArticleImg"
           />
@@ -105,21 +106,31 @@ class Feed extends React.Component {
                 <i className="far fa-bookmark"></i>
               </button>
             </div>
-            <button className="sectionArticleLikeNumber">{element.like}</button>
+            <button className="sectionArticleLikeNumber">
+              {this.props.like}
+            </button>
             <div>
               <div className="sectionArticleCommentList">
                 <p>
                   <a href="#" className="sectionArticleUserlink">
-                    {element.name}
+                    {this.props.name}
                   </a>
-                  {element.comment}
+                  {this.props.comment}
                   <button className="sectionArticleShowFullComment">
                     더 보기
                   </button>
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
-                    <Comment inputData={commentList} />
+                    {commentList.map((element, index) => {
+                      return (
+                        <Comment
+                          key={element.id}
+                          name={element.name}
+                          comment={element.comment}
+                        />
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -152,10 +163,8 @@ class Feed extends React.Component {
             </button>
           </div>
         </article>
-      );
-    });
-
-    return <>{result}</>;
+      </>
+    );
   }
 }
 
