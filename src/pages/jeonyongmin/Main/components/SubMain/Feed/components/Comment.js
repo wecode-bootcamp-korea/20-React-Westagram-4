@@ -4,6 +4,7 @@ import './Comment.scss';
 class Comment extends React.Component {
   render() {
     const commentList = this.props.inputData;
+
     const result = commentList.map(element => {
       return (
         <li classname="sectionArticleCommentContentsContainer" key={element.id}>

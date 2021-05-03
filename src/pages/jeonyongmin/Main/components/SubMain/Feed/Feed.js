@@ -47,7 +47,6 @@ class Feed extends React.Component {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
         this.inputLocation.current.focus();
-        console.log(this.state.commentList);
       }
     );
   };
@@ -66,20 +65,18 @@ class Feed extends React.Component {
     const { inputValue, buttonColor, commentList } = this.state;
     const conditionOfButtonActivated = inputValue.length > 0;
     const feedList = this.props.feedListData;
-    console.log(feedList);
-
-    return (
-      <>
-        <article className="sectionArticle">
+    const result = feedList.map(element => {
+      return (
+        <article className="sectionArticle" key={element.id}>
           <div className="sectionArticleUser">
             <div>
               <img
-                src="/images/jeonyongmin/drake-profile.jpg"
-                alt="drake profile"
+                src={element.profileImg}
+                alt={element.name}
                 className="sectionArticleUserImg"
               />
               <a href="" className="sectionArticleUsername">
-                drakeofficial
+                {element.name}
               </a>
             </div>
             <button className="sectionArticleModal">
@@ -87,7 +84,7 @@ class Feed extends React.Component {
             </button>
           </div>
           <img
-            src="/images/jeonyongmin/drake-img.jpg"
+            src={element.feedImg}
             alt="feed image"
             className="sectionArticleImg"
           />
@@ -108,16 +105,14 @@ class Feed extends React.Component {
                 <i className="far fa-bookmark"></i>
               </button>
             </div>
-            <button className="sectionArticleLikeNumber">
-              좋아요 21,622개
-            </button>
+            <button className="sectionArticleLikeNumber">{element.like}</button>
             <div>
               <div className="sectionArticleCommentList">
                 <p>
                   <a href="#" className="sectionArticleUserlink">
-                    drakeofficials
+                    {element.name}
                   </a>
-                  in LA 😍😍😍
+                  {element.comment}
                   <button className="sectionArticleShowFullComment">
                     더 보기
                   </button>
@@ -157,8 +152,10 @@ class Feed extends React.Component {
             </button>
           </div>
         </article>
-      </>
-    );
+      );
+    });
+
+    return <>{result}</>;
   }
 }
 
