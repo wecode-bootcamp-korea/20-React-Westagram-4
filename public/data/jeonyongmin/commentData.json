@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Wecode", "comment": "함께해서 위코드" },
+  { "id": 2, "name": "yongmin", "comment": "안녕하세요 반갑습니다.!" },
+  { "id": 3, "name": "gildong", "comment": "둘리 어디갔니?!" },
+  {
+    "id": 4,
+    "name": "huidong",
+    "comment": "둘리형아 놀러갔어요!"
+  }
+]

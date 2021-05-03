@@ -8,36 +8,46 @@ class Feed extends React.Component {
     this.state = {
       inputValue: '',
       buttonColor: false,
-      commentList: [
-        { id: 1, name: 'joybadass', comment: 'when is your online concert?' },
-      ],
+      commentList: [],
     };
     this.inputLocation = React.createRef();
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/jeonyongmin/commentData.json', {
+      method: 'GET',
+    })
+      .then(result => result.json())
+      .then(data => {
+        this.setState({ commentList: data });
+      });
+  }
+
   pressEnter = e => {
     if (e.charCode === 13) {
-      // e.target.value = '';
-
       this.addComment();
     }
   };
 
-  addComment = () => {
+  addComment = e => {
     const { commentList, inputValue } = this.state;
     this.setState(
       {
         inputValue: '',
-        commentList: commentList.concat({
-          id: commentList.length + 1,
-          name: 'yongmin',
-          comment: inputValue,
-        }),
+        commentList: [
+          ...commentList,
+          {
+            id: commentList.length + 1,
+            name: 'yongmin',
+            comment: inputValue,
+          },
+        ],
       },
       () => {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
         this.inputLocation.current.focus();
+        console.log(this.state.commentList);
       }
     );
   };
@@ -55,6 +65,9 @@ class Feed extends React.Component {
   render() {
     const { inputValue, buttonColor, commentList } = this.state;
     const conditionOfButtonActivated = inputValue.length > 0;
+    const feedList = this.props.feedListData;
+    console.log(feedList);
+
     return (
       <>
         <article className="sectionArticle">
