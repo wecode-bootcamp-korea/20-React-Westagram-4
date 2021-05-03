@@ -69,6 +69,19 @@ class Feeds extends React.Component {
       like,
       story,
     } = this.props;
+    const { handleDelete, handleInput, handleLike, handleSubmitBtn } = this;
+    const getTime = t => {
+      let result = '';
+      if (t / 60 / 60 / 1000 < 1) {
+        result = t / 60 / 1000 + '분 전';
+      } else if (t > 86400000) {
+        result = '1일 전';
+      } else {
+        result = t / 60 / 60 / 1000 + '시간 전';
+      }
+      return result;
+    };
+
     return (
       <>
         <article className="feed">
@@ -101,7 +114,7 @@ class Feeds extends React.Component {
           <section className="feed__feature">
             <ul className="feed__feature-btn-box">
               <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn" onClick={this.handleLike}>
+                <button className="feed__feature-btn" onClick={handleLike}>
                   <i
                     className={`${
                       isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
@@ -132,7 +145,9 @@ class Feeds extends React.Component {
             <div className="feed__texts-column feed__likes">
               <span>좋아요 </span>
               <span className="js-likes-count">
-                {isFeedLikePressed ? like + 1 : like}
+                {isFeedLikePressed
+                  ? (like + 1).toLocaleString()
+                  : like.toLocaleString()}
               </span>
               <span>개</span>
             </div>
@@ -149,12 +164,12 @@ class Feeds extends React.Component {
                   commentTexts={el.text}
                   key={el.id}
                   id={el.id}
-                  handleDelete={this.handleDelete}
+                  handleDelete={handleDelete}
                 />
               ))}
             </div>
             <div className="feed__time feed__texts-column">
-              <span>{time}</span>
+              <span>{getTime(time)}</span>
             </div>
           </section>
           <form name="comment-form" className="feed__form">
@@ -164,14 +179,14 @@ class Feeds extends React.Component {
               placeholder="댓글달기..."
               value={commentValue}
               className="feed__input"
-              onChange={this.handleInput}
+              onChange={handleInput}
             />
             <button
               className={`feed__submit-btn ${
                 commentValue.length > 0 ? '' : 'feed__submit-btn--opacity'
               }`}
               disabled={commentValue ? false : true}
-              onClick={this.handleSubmitBtn}
+              onClick={handleSubmitBtn}
             >
               게시
             </button>

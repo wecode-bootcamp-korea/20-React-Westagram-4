@@ -32,9 +32,13 @@ class Modal extends React.Component {
         >
           <div className="modal">
             <ul>
-              {modalItem.map(el => (
-                <li className="modal__list">
-                  <FontAwesomeIcon icon={el.icon} className="modal__icon" />
+              {modalItem.map((el, index) => (
+                <li key={index} className="modal__list">
+                  <FontAwesomeIcon
+                    icon={el.icon}
+                    key={index}
+                    className="modal__icon"
+                  />
                   <span className="modal__menu">{el.text}</span>
                 </li>
               ))}

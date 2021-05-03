@@ -25,9 +25,9 @@ class TopNav extends React.Component {
   }
 
   toggleModal = () => {
-    this.setState(prevState => ({
-      isModalVisible: !prevState.isModalVisible,
-    }));
+    this.setState({
+      isModalVisible: !this.state.isModalVisible,
+    });
   };
 
   focusInput = () => {
@@ -51,14 +51,17 @@ class TopNav extends React.Component {
   render() {
     const navLeftItem = [
       {
+        id: '1',
         icon: faCompass,
         onClick: () => {},
       },
       {
+        id: '2',
         icon: faHeart,
         onClick: () => {},
       },
       {
+        id: '3',
         icon: faUser,
         onClick: this.toggleModal,
       },
@@ -69,7 +72,7 @@ class TopNav extends React.Component {
       searchText,
       isInputChanged,
     } = this.state;
-
+    const { focusInput, blurInput, handleInput } = this;
     const yesInputNoDisplay =
       isInputChanged || searchText ? 'display-none' : '';
 
@@ -92,9 +95,9 @@ class TopNav extends React.Component {
                 className="top-nav__input"
                 type="text"
                 value={searchText}
-                onFocus={this.focusInput}
-                onBlur={this.blurInput}
-                onChange={this.handleInput}
+                onFocus={focusInput}
+                onBlur={blurInput}
+                onChange={handleInput}
               />
               <span
                 className={`top-nav__input-text ${
@@ -113,7 +116,7 @@ class TopNav extends React.Component {
           <div className="top-nav__column">
             <ul className="top-nav__menus">
               {navLeftItem.map(el => (
-                <li className="top-nav__menu">
+                <li className="top-nav__menu" key={el.id}>
                   <button onClick={el.onClick} className="top-nav__menu-btn">
                     <FontAwesomeIcon icon={el.icon} className="user" />
                   </button>

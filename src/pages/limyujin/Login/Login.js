@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../styles/limyujin/Common.scss';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
@@ -18,13 +17,15 @@ class Login extends React.Component {
   };
 
   handleLoginInput = e => {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
   render() {
     const { id, pw } = this.state;
+    const { handleLoginInput, goToMain } = this;
     const isEveryInputValueExists = id.includes('@') && pw.length >= 5;
     return (
       <>
@@ -40,7 +41,7 @@ class Login extends React.Component {
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 name="id"
                 required
-                onChange={this.handleLoginInput}
+                onChange={handleLoginInput}
               />
               <input
                 className="login-form__input"
@@ -49,7 +50,7 @@ class Login extends React.Component {
                 name="pw"
                 minLength="5"
                 required
-                onChange={this.handleLoginInput}
+                onChange={handleLoginInput}
               />
               <button
                 className={
@@ -57,7 +58,7 @@ class Login extends React.Component {
                     ? 'login-form__button'
                     : 'login-form__button login-form__button--opacity'
                 }
-                onClick={this.goToMain}
+                onClick={goToMain}
                 disabled={isEveryInputValueExists ? false : true}
               >
                 로그인
@@ -86,9 +87,7 @@ class Login extends React.Component {
           <section className="join-box">
             <span>
               계정이 없으신가요?
-              <a className="join-box__link" href="#">
-                가입하기
-              </a>
+              <a className="join-box__link">가입하기</a>
             </span>
           </section>
           <section className="app-download-box">
@@ -96,6 +95,7 @@ class Login extends React.Component {
             <div className="app-download-box__banners">
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://apps.apple.com/app/instagram/id389801252?vt=lo"
               >
                 <img
@@ -106,6 +106,7 @@ class Login extends React.Component {
               </a>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=E426F5DC-0466-4CEF-9B63-131B0512F345&utm_content=lo&utm_medium=badge"
               >
                 <img

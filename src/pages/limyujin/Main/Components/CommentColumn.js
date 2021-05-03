@@ -18,6 +18,7 @@ class CommentColumn extends React.Component {
   render() {
     const { isFeedLikePressed } = this.state;
     const { commentTexts, handleDelete } = this.props;
+    const { handleLike } = this;
     const clickDelete = () => {
       handleDelete(this.props.id);
     };
@@ -28,10 +29,7 @@ class CommentColumn extends React.Component {
           <span>wecode_bootcamp</span>
           <span>{commentTexts.slice(0, 40)}</span>
           <div className="js-comment-btns">
-            <button
-              className="js-comment-btn like-btn"
-              onClick={this.handleLike}
-            >
+            <button className="js-comment-btn like-btn" onClick={handleLike}>
               <i
                 className={`${
                   isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'

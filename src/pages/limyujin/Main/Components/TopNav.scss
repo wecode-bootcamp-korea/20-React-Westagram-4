@@ -104,6 +104,10 @@
       display: none;
     }
 
+    &__input-text {
+      display: none;
+    }
+
     &__menus {
       margin: 0;
     }
@@ -122,6 +126,10 @@
     font-size: 20px;
 
     &__left-text {
+      display: none;
+    }
+
+    &__input-text {
       display: none;
     }
 

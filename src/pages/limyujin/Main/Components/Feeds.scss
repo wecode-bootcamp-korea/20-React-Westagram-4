@@ -68,7 +68,10 @@
 
   &__texts-column {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 4px;
+    }
+    &:first-child {
+      margin-bottom: 8px;
     }
   }
 
@@ -79,6 +82,8 @@
   &__summary {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
   }
 
   &__summary-id {

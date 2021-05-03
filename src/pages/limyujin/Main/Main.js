@@ -2,35 +2,77 @@ import React from 'react';
 import Feeds from '../Main/Components/Feeds';
 import TopNav from '../Main/Components/TopNav';
 import MainRight from '../Main/Components/MainRight';
-import '../../../styles/limyujin/Common.scss';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       feedInfo: [],
+      recommendData: [],
+      preItems: 0,
+      items: 2,
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/limyujin/westaData.json', {
+    this.getFeedData();
+    this.getRecommendData();
+    window.addEventListener('scroll', this.infinityScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.infinityScroll);
+  }
+
+  getFeedData = () => {
+    const { preItems, items, feedInfo } = this.state;
+    fetch('http://localhost:3000/Data/limyujin/feedData.json', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ feedInfo: data });
+        let sliceData = data.slice(preItems, items);
+        this.setState({ feedInfo: [...feedInfo, ...sliceData] });
       });
-  }
+  };
+
+  getRecommendData = () => {
+    fetch('http://localhost:3000/Data/limyujin/recommendData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ recommendData: data });
+      });
+  };
+  infinityScroll = () => {
+    const scrollHeight = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight
+    );
+    const scrollTop = Math.max(
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    );
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight) {
+      this.setState({
+        preItems: this.state.items,
+        items: this.state.items + 3,
+      });
+      this.getFeedData();
+    }
+  };
 
   render() {
-    const { feedInfo } = this.state;
-
+    const { feedInfo, recommendData } = this.state;
     return (
       <>
         <TopNav />
         <main className="main-page">
           <div className="feed-box">
-            {feedInfo.map((el, index) => (
+            {feedInfo.map(el => (
               <Feeds
                 author={el.author}
                 profileImg={el.profileImg}
@@ -40,11 +82,11 @@ class Main extends React.Component {
                 time={el.time}
                 like={el.like}
                 story={el.story}
-                key={index}
+                key={el.id}
               />
             ))}
           </div>
-          <MainRight accountInfo={feedInfo} />
+          <MainRight accountInfo={recommendData} time={recommendData.time} />
         </main>
       </>
     );

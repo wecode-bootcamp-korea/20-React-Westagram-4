@@ -4,6 +4,19 @@ import Footer from './Footer';
 class MainRight extends React.Component {
   render() {
     const { accountInfo } = this.props;
+    const reverseInfo = [...accountInfo].reverse();
+    const getTime = t => {
+      let result = '';
+      if (t / 60 / 60 / 1000 < 1) {
+        result = t / 60 / 1000 + '분 전';
+      } else if (t > 86400000) {
+        result = '1일 전';
+      } else {
+        result = t / 60 / 60 / 1000 + '시간 전';
+      }
+      return result;
+    };
+    const { time } = this.props;
     return (
       <>
         <aside className="main-right">
@@ -26,7 +39,7 @@ class MainRight extends React.Component {
             <div>
               <ul>
                 {accountInfo.slice(0, 4).map(el => (
-                  <li className="main-right-section__item-row">
+                  <li className="main-right-section__item-row" key={el.id}>
                     <div className="main-right-section__user-img-box">
                       <div
                         className={
@@ -45,7 +58,7 @@ class MainRight extends React.Component {
                       <span className="main-right-section__account-id">
                         {el.author}
                       </span>
-                      <span>{el.time}</span>
+                      <span>{getTime(el.time)}</span>
                     </div>
                   </li>
                 ))}
@@ -59,31 +72,26 @@ class MainRight extends React.Component {
             </div>
             <div>
               <ul>
-                {accountInfo
-                  .reverse()
-                  .slice(0, 4)
-                  .map(el => (
-                    <li className="main-right-section__item-row">
-                      <div className="main-right-section__user-img-box">
-                        <img
-                          src={el.profileImg}
-                          alt="`${el.author}님의 이미지`"
-                          className="circle-profile circle-profile--main-right-user"
-                        />
-                      </div>
-                      <div className="main-right-section__texts">
-                        <span className="main-right-section__account-id">
-                          {el.author}
-                        </span>
-                        <span>
-                          {el.newAccount ? 'Instagram 신규 가입' : ''}
-                        </span>
-                      </div>
-                      <button className="main-right-section__recommend-follow">
-                        팔로우
-                      </button>
-                    </li>
-                  ))}
+                {reverseInfo.slice(0, 4).map(el => (
+                  <li className="main-right-section__item-row" key={el.id}>
+                    <div className="main-right-section__user-img-box">
+                      <img
+                        src={el.profileImg}
+                        alt="`${el.author}님의 이미지`"
+                        className="circle-profile circle-profile--main-right-user"
+                      />
+                    </div>
+                    <div className="main-right-section__texts">
+                      <span className="main-right-section__account-id">
+                        {el.author}
+                      </span>
+                      <span>{el.newAccount ? 'Instagram 신규 가입' : ''}</span>
+                    </div>
+                    <button className="main-right-section__recommend-follow">
+                      팔로우
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
           </section>
