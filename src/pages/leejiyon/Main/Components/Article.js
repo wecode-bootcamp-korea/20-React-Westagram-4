@@ -123,24 +123,17 @@ class Article extends Component {
   };
 
   render() {
+    const { header, articleImg, myComment } = this.props;
     return (
       <article className="Article">
         <div className="articleHeader">
-          <img
-            alt="일본 애니메이션 샤먼킹 하오 이미지"
-            className="profileImg"
-            src="/images/leejiyon/hao.jpg"
-          />
-          <div className="profileName">jiyon</div>
+          <img alt={header.alt} className="profileImg" src={header.src} />
+          <div className="profileName">{header.headerId}</div>
           <button className="viewMore">
             <i className="fas fa-ellipsis-h"></i>
           </button>
         </div>
-        <img
-          alt="구름이 뒤덮인 푸르른 산 정상"
-          className="articleImg"
-          src="/images/leejiyon/nature.jpg"
-        />
+        <img alt={articleImg.alt} className="articleImg" src={articleImg.src} />
         <div className="articleLnb">
           <button
             className="lnbImg heartImg"
@@ -163,9 +156,7 @@ class Article extends Component {
           </div>
           <div className="commentWrap">
             <span className="commenter">jiyon</span>
-            <span className="myComment">
-              백두산 정상에 올라서 사진을 찍었다
-            </span>
+            <span className="myComment">{myComment}</span>
           </div>
 
           {this.state.userComments.map(userComment => {

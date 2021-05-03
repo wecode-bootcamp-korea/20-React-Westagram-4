@@ -106,7 +106,7 @@
     .myComment {
       display: inline-block;
       width: 190px;
-      height: 13px;
+      padding-bottom: 1px;
       font-size: $comment-fontsize;
       text-overflow: ellipsis;
       white-space: nowrap;
