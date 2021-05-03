@@ -82,21 +82,17 @@
 }
 
 /* footer-section*/
-.footerContainer {
-  margin-bottom: 20px;
+
+.footerSection {
   color: var(--color-gray);
+  .footerContainer {
+    margin-bottom: 20px;
 
-  a {
-    color: var(--color-gray);
+    a {
+      color: var(--color-gray);
+    }
   }
 }
-
-.footerContainer {
-  .copyrightOfInstagram {
-    color: var(--color-gray);
-  }
-}
-
 /* hide aside bar */
 
 @media screen and (max-width: 1024px) {

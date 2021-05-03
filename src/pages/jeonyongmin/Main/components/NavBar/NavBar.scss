@@ -62,14 +62,14 @@
     top: 30%;
     color: var(--color-border);
   }
-}
 
-.headerNavCenter .headerNavInput {
-  padding: 8px;
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  font-size: 15px;
-  text-align: center;
+  .headerNavInput {
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
 }
 
 .headerNavRightSide {
