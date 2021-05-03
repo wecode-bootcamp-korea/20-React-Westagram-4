@@ -29,7 +29,6 @@ class Feeds extends React.Component {
 
   handleSubmitBtn = e => {
     e.preventDefault();
-    //비어있을 때 X
 
     if (this.state.commentValue) {
       const createComment = () => ({
@@ -38,7 +37,6 @@ class Feeds extends React.Component {
       });
 
       this.setState({
-        //inputValue들을 버튼 누를 때마다 배열에 저장
         commentTexts: [...this.state.commentTexts, createComment()],
         commentValue: '',
       });
@@ -52,6 +50,13 @@ class Feeds extends React.Component {
     });
   };
 
+  handleDelete = id => {
+    const filteredComments = this.state.commentTexts.filter(
+      comment => comment.id !== id
+    );
+    this.setState({ commentTexts: filteredComments });
+  };
+
   render() {
     const { commentTexts, isFeedLikePressed, commentValue } = this.state;
     const {
@@ -62,12 +67,20 @@ class Feeds extends React.Component {
       text,
       time,
       like,
+      story,
     } = this.props;
     return (
       <>
         <article className="feed">
           <section className="feed__author-box">
             <div className="feed__author-profile">
+              <div
+                className={
+                  story
+                    ? 'circle-profile__story-border circle-profile__story-border--feed'
+                    : ''
+                }
+              ></div>
               <img
                 src={profileImg}
                 alt="`${author}님의 프로필사진`"
@@ -132,8 +145,12 @@ class Feeds extends React.Component {
             <div className="feed__texts-column js-feed-comments">
               {/* 댓글 들어갈 자리 */}
               {commentTexts.map(el => (
-                //time을 기준으로 key를 생성하는 방법 찾아볼 것
-                <CommentColumn commentTexts={el.text} key={el.id} />
+                <CommentColumn
+                  commentTexts={el.text}
+                  key={el.id}
+                  id={el.id}
+                  handleDelete={this.handleDelete}
+                />
               ))}
             </div>
             <div className="feed__time feed__texts-column">

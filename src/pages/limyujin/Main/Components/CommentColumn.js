@@ -17,7 +17,11 @@ class CommentColumn extends React.Component {
 
   render() {
     const { isFeedLikePressed } = this.state;
-    const { commentTexts } = this.props;
+    const { commentTexts, handleDelete } = this.props;
+    const clickDelete = () => {
+      handleDelete(this.props.id);
+    };
+
     return (
       <>
         <div className="js-feed-comment">
@@ -34,7 +38,7 @@ class CommentColumn extends React.Component {
                 }`}
               ></i>
             </button>
-            <button className="js-comment-btn delete-btn">
+            <button className="js-comment-btn delete-btn" onClick={clickDelete}>
               <i className="fas fa-times"></i>
             </button>
           </div>

@@ -36,12 +36,8 @@
     }
   }
 
-  &__search {
-    position: absolute;
-    top: 25px;
-    left: 47%;
-    font-size: 10px;
-    color: $sub-text-gray;
+  &__input-box {
+    position: relative;
   }
 
   &__input {
@@ -50,6 +46,31 @@
     border: $border-gray-style;
     border-radius: 3px;
     text-align: center;
+  }
+
+  &__input-text {
+    position: absolute;
+    left: 45%;
+    top: 30%;
+    font-size: 14px;
+    font-weight: 300;
+    color: $sub-text-gray;
+
+    &--focused {
+      left: 30px;
+    }
+  }
+
+  &__search {
+    position: absolute;
+    top: 12px;
+    left: 80px;
+    font-size: 10px;
+    color: $sub-text-gray;
+
+    &--focused {
+      left: 10px;
+    }
   }
 
   &__menus {
@@ -120,4 +141,8 @@
       margin-left: 15px;
     }
   }
+}
+
+.display-none {
+  display: none;
 }

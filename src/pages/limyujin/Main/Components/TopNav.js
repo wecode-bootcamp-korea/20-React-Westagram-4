@@ -18,13 +18,34 @@ class TopNav extends React.Component {
 
     this.state = {
       isModalVisible: false,
+      isInputFocused: false,
+      isInputChanged: false,
+      searchText: '',
     };
   }
 
-  toggleModal = e => {
+  toggleModal = () => {
     this.setState(prevState => ({
       isModalVisible: !prevState.isModalVisible,
     }));
+  };
+
+  focusInput = () => {
+    this.setState({ isInputFocused: true });
+  };
+
+  blurInput = () => {
+    this.setState({
+      isInputFocused: false,
+      isInputChanged: false,
+    });
+  };
+
+  handleInput = e => {
+    this.setState({
+      searchText: e.target.value,
+      isInputChanged: true,
+    });
   };
 
   render() {
@@ -42,7 +63,15 @@ class TopNav extends React.Component {
         onClick: this.toggleModal,
       },
     ];
-    const { isModalVisible } = this.state;
+    const {
+      isModalVisible,
+      isInputFocused,
+      searchText,
+      isInputChanged,
+    } = this.state;
+
+    const yesInputNoDisplay =
+      isInputChanged || searchText ? 'display-none' : '';
 
     return (
       <>
@@ -58,8 +87,28 @@ class TopNav extends React.Component {
             </span>
           </div>
           <div className="top-nav__column">
-            <input className="top-nav__input" type="text" placeholder="검색" />
-            <FontAwesomeIcon icon={faSearch} className="top-nav__search" />
+            <div className="top-nav__input-box">
+              <input
+                className="top-nav__input"
+                type="text"
+                value={searchText}
+                onFocus={this.focusInput}
+                onBlur={this.blurInput}
+                onChange={this.handleInput}
+              />
+              <span
+                className={`top-nav__input-text ${
+                  isInputFocused ? 'top-nav__input-text--focused' : ''
+                } ${yesInputNoDisplay}`}
+              >
+                검색
+              </span>
+              <FontAwesomeIcon
+                icon={faSearch}
+                className={`top-nav__search
+                  ${isInputFocused ? 'top-nav__search--focused' : ''}`}
+              />
+            </div>
           </div>
           <div className="top-nav__column">
             <ul className="top-nav__menus">
