@@ -32,8 +32,8 @@ class Main extends React.Component {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        let sliceData = data.slice(preItems, items);
+      .then(feedData => {
+        let sliceData = feedData.slice(preItems, items);
         this.setState({ feedInfo: [...feedInfo, ...sliceData] });
       });
   };
@@ -46,8 +46,8 @@ class Main extends React.Component {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        this.setState({ recommendData: data });
+      .then(recommendData => {
+        this.setState({ recommendData: recommendData });
       });
   };
 

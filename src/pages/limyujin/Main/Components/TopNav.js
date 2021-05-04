@@ -34,9 +34,9 @@ class TopNav extends React.Component {
     const feedDataUrl = 'http://localhost:3000/Data/limyujin/feedData.json';
     fetch(feedDataUrl)
       .then(res => res.json())
-      .then(data => {
+      .then(feedData => {
         this.setState({
-          userData: [...data],
+          userData: [...feedData],
         });
       });
   };
