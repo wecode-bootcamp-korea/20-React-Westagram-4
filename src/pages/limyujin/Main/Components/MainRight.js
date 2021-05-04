@@ -49,7 +49,7 @@ class MainRight extends React.Component {
                       ></div>
                       <img
                         src={el.profileImg}
-                        alt="`${el.author}님의 이미지`"
+                        alt={`${el.author}님의 이미지`}
                         className="circle-profile circle-profile--main-right-user"
                       />
                     </div>
@@ -76,7 +76,7 @@ class MainRight extends React.Component {
                     <div className="main-right-section__user-img-box">
                       <img
                         src={el.profileImg}
-                        alt="`${el.author}님의 이미지`"
+                        alt={`${el.author}님의 사진`}
                         className="circle-profile circle-profile--main-right-user"
                       />
                     </div>

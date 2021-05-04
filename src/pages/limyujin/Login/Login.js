@@ -53,11 +53,10 @@ class Login extends React.Component {
                 onChange={handleLoginInput}
               />
               <button
-                className={
-                  isEveryInputValueExists
-                    ? 'login-form__button'
-                    : 'login-form__button login-form__button--opacity'
-                }
+                className={`login-form__button
+                  ${
+                    isEveryInputValueExists ? '' : 'login-form__button--opacity'
+                  }`}
                 onClick={goToMain}
                 disabled={isEveryInputValueExists ? false : true}
               >

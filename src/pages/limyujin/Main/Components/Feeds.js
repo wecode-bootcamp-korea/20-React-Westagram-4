@@ -96,7 +96,7 @@ class Feeds extends React.Component {
               ></div>
               <img
                 src={profileImg}
-                alt="`${author}님의 프로필사진`"
+                alt={`${author}님의 프로필사진`}
                 className="circle-profile circle-profile--feed-author"
               />
               <div className="feed__author-info">
@@ -110,7 +110,7 @@ class Feeds extends React.Component {
               </span>
             </div>
           </section>
-          <img src={mainImg} alt="`${author}님의 사진`" />
+          <img src={mainImg} alt={`${author}님의 사진`} />
           <section className="feed__feature">
             <ul className="feed__feature-btn-box">
               <li className="feed__feature-btn-list">
@@ -158,7 +158,6 @@ class Feeds extends React.Component {
               <button className="feed__summary-btn">더 보기</button>
             </div>
             <div className="feed__texts-column js-feed-comments">
-              {/* 댓글 들어갈 자리 */}
               {commentTexts.map(el => (
                 <CommentColumn
                   commentTexts={el.text}
