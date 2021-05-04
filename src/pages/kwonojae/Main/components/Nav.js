@@ -1,15 +1,15 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import {
-  faPaperPlane,
-  faCompass,
-  faHeart,
-} from '@fortawesome/free-regular-svg-icons';
+import React, { Component } from 'react';
 import './Nav.scss';
 
-class Nav extends React.Component {
+export default class Nav extends Component {
   render() {
+    const iconList = [
+      { id: 1, className: 'fas fa-home' },
+      { id: 2, className: 'far fa-paper-plane' },
+      { id: 3, className: 'far fa-compass' },
+      { id: 4, className: 'fas fa-heart' },
+    ];
+
     return (
       <nav className="navOJ">
         <div className="navTitle">
@@ -19,15 +19,12 @@ class Nav extends React.Component {
           <input type="text" placeholder="검색" />
         </div>
         <div className="navIcons">
-          <FontAwesomeIcon icon={faHome} className="fas fa-home" />
-          <FontAwesomeIcon icon={faPaperPlane} className="far fa-paper-plane" />
-          <FontAwesomeIcon icon={faCompass} className="far fa-compass" />
-          <FontAwesomeIcon icon={faHeart} className="fas fa-heart" />
+          {iconList.map(iconInfo => {
+            return <i key={iconInfo.id} className={iconInfo.className} />;
+          })}
           <img src="/images/kwonojae/profileImage.jpeg" alt="my menu" />
         </div>
       </nav>
     );
   }
 }
-
-export default Nav;

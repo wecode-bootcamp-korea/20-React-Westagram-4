@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Aside.scss';
 import RecommendProfiles from './Recommendprofile';
 
-class Aside extends React.Component {
+export default class Aside extends Component {
   render() {
     return (
       <aside className="asideOJ">
@@ -27,5 +27,3 @@ class Aside extends React.Component {
     );
   }
 }
-
-export default Aside;

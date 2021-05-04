@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from './components/Nav';
 import Feed from './components/Feed';
 import Aside from './components/Aside';
 import './Main.scss';
 
-class MainOJ extends React.Component {
+export default class MainOJ extends Component {
   render() {
     return (
       <>
@@ -21,5 +21,3 @@ class MainOJ extends React.Component {
     );
   }
 }
-
-export default MainOJ;

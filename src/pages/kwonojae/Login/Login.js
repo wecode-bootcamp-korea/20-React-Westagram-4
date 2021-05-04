@@ -1,9 +1,8 @@
-import React from 'react';
-import './Login.scss';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import './Login.scss';
 
-class LoginOJ extends React.Component {
+export default class LoginOJ extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,10 +19,8 @@ class LoginOJ extends React.Component {
 
   validation = () => {
     const { id, pw } = this.state;
-    const isValidId = id.includes('@');
-    const isValidPw = pw.length > 4;
 
-    return isValidId && isValidPw;
+    return id.includes('@') && pw.length > 4;
   };
 
   render() {
@@ -62,5 +59,3 @@ class LoginOJ extends React.Component {
     );
   }
 }
-
-export default LoginOJ;

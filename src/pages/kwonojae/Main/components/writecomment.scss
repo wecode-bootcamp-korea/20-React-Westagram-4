@@ -5,10 +5,12 @@
     margin: 12px 0px 0px 0px;
     padding: 0px 16px;
     background-color: $white;
+
     a {
       color: blue;
     }
   }
+
   .writeComment {
     @extend .flexRS;
     height: 56px;
@@ -16,20 +18,24 @@
     padding: 0px 16px;
     background-color: $white;
     border-top: $border1;
+
     button {
       @extend .unset;
+
       .fa-smile {
         width: 24px;
         margin-right: 10px;
         font-size: 24px;
       }
     }
+
     input {
       width: 490px;
       height: 100%;
       background-color: $white;
       border: none;
     }
+
     .postComment {
       padding-left: 16px;
     }

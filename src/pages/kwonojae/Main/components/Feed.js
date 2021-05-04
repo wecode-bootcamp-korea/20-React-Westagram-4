@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -10,7 +10,7 @@ import {
 import Writecomment from './Writecomment';
 import './Feed.scss';
 
-class Feed extends React.Component {
+export default class Feed extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +19,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/kwonojae/feeddata.json', {
+    fetch('http://localhost:3000/data/kwonojae/Feeddata.json', {
       method: 'GET',
     })
       .then(response => response.json())
@@ -33,9 +33,9 @@ class Feed extends React.Component {
 
     return (
       <section className="feedOJ">
-        {feedList.map(feedList => {
+        {feedList.map(feed => {
           return (
-            <article key={feedList.id}>
+            <article key={feed.id}>
               <div className="feedHeader">
                 <div className="writer">
                   <img
@@ -54,7 +54,7 @@ class Feed extends React.Component {
                 </button>
               </div>
               <div className="feedImage">
-                <img alt="feed image" src={feedList.feedImage} />
+                <img alt="feed image" src={feed.feedImage} />
               </div>
               <div className="feedBottomBox">
                 <div className="feedButtons">
@@ -86,7 +86,7 @@ class Feed extends React.Component {
                   </button>
                 </div>
                 <div className="feedLike">
-                  <button>좋아요 1,119,102개</button>
+                  <button>{`좋아요 ${feed.likeCount.toLocaleString()} 개`}</button>
                 </div>
                 <Writecomment />
               </div>
@@ -97,5 +97,3 @@ class Feed extends React.Component {
     );
   }
 }
-
-export default Feed;

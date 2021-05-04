@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './recommendProfileOJ.scss';
 
-class RecommendProfiles extends React.Component {
+export default class RecommendProfiles extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,7 +20,10 @@ class RecommendProfiles extends React.Component {
         {this.state.recommendProfileList.map(profile => {
           return (
             <div className="recommendProfileOJ" key={profile.id}>
-              <img src={`/images/kwonojae/${profile.src}`} />
+              <img
+                alt={`${profile.name}'s profile image`}
+                src={`/images/kwonojae/${profile.src}`}
+              />
               <dl>
                 <dt>{profile.name}</dt>
                 <dd>인기</dd>
@@ -33,5 +36,3 @@ class RecommendProfiles extends React.Component {
     );
   }
 }
-
-export default RecommendProfiles;

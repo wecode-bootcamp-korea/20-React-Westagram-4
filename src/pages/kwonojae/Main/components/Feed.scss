@@ -3,26 +3,32 @@
 .feedOJ {
   @extend .flexCS;
   align-items: flex-end;
+
   article {
     margin-right: 20px;
     border: $border1;
+
     .feedHeader {
       @extend .flexRB;
       align-items: center;
       height: 60px;
       padding: 16px;
       background-color: $white;
+
       .writer {
         @extend .flexR;
         align-items: center;
+
         img {
           width: 32px;
           border-radius: 50%;
         }
+
         h5 {
           margin: 0px 0px 0px 10px;
         }
       }
+
       button {
         background-color: $white;
         border: none;
@@ -34,29 +40,35 @@
         height: 600px;
       }
     }
+
     .feedBottomBox {
       background-color: $white;
+
       .feedButtons {
         @extend .flexRB;
         align-items: center;
         padding: 0px 12px;
         height: 40px;
         background-color: $white;
+
         div {
           button {
             @extend .button;
           }
         }
+
         button {
           @extend .button;
         }
       }
+
       .feedLike {
         height: 18px;
         margin: 6px 0px 10px 0px;
         padding: 0px 0px 0px 16px;
         background-color: $white;
         font-weight: 600;
+
         button {
           @extend .unset;
         }

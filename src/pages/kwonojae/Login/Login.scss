@@ -8,12 +8,14 @@
   margin: 150px auto 0px auto;
   border: $border1;
   border-radius: 1px;
+
   h1 {
     margin: 32px 0px 0px 0px;
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 41px;
   }
+
   input {
     width: 268px;
     height: 38px;
@@ -21,16 +23,20 @@
     background-color: $inputBgCol1;
     border: $border1;
     border-radius: 3px;
+
     &::placeholder {
       color: #8c8c8c;
     }
   }
+
   .inputID {
     margin: 36px 0px 0px 0px;
   }
+
   .inputPW {
     margin: 6px 0px 0px 0px;
   }
+
   a {
     cursor: default;
     .loginBtn {
@@ -43,15 +49,18 @@
       font-size: 14px;
       font-weight: 600;
     }
+
     .btnActiveColor {
       background-color: $activeBtnCol;
       cursor: pointer;
     }
+
     .btnPassiveColor {
       background-color: $passiveBtnCol;
       cursor: default;
     }
   }
+
   span {
     margin: 99px 0px 0px 0px;
     color: $fotgetPW;

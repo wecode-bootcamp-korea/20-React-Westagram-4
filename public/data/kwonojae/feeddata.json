@@ -1,5 +1,17 @@
 [
-  { "id": 1, "feedImage": "/images/kwonojae/feedImage.jpeg" },
-  { "id": 2, "feedImage": "/images/kwonojae/feedImage2.jpeg" },
-  { "id": 3, "feedImage": "/images/kwonojae/feedImage3.jpeg" }
+  {
+    "id": 1,
+    "feedImage": "/images/kwonojae/feedImage.jpeg",
+    "likeCount": 1234567
+  },
+  {
+    "id": 2,
+    "feedImage": "/images/kwonojae/feedImage2.jpeg",
+    "likeCount": 2345678
+  },
+  {
+    "id": 3,
+    "feedImage": "/images/kwonojae/feedImage3.jpeg",
+    "likeCount": 3456789
+  }
 ]

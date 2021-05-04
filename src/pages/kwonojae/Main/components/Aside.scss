@@ -6,43 +6,52 @@
   height: 100%;
   margin: 55px 0px 0px 0px;
   background-color: $white;
+
   .profileWithRecommend {
     margin: 50px 0px 0px 20px;
+
     .myProfile {
       @extend .flexRS;
       align-items: center;
       width: 300px;
       height: 56px;
       background-color: $white;
+
       img {
         width: 56px;
         height: 56px;
         border-radius: 50%;
       }
+
       dl {
         width: 196px;
         margin: 0px 0px 0px 20px;
         font-size: 14px;
       }
+
       button {
         @extend .unset;
         font-size: 12px;
       }
     }
+
     .recommendForYou {
       @extend .flexRS;
       width: 300px;
       margin: 20px 0px 0px 0px;
       background-color: $white;
+
       span {
         width: 250px;
         font-size: 14px;
       }
+
       button {
         @extend .unset;
         font-size: 12px;
       }
     }
+
     .recommnedList {
       width: 300px;
       background-color: $white;

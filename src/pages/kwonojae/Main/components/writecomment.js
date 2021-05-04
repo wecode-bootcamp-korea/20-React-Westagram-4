@@ -9,7 +9,7 @@ export default class Writecomment extends Component {
     super();
     this.state = {
       commentList: [],
-      current: '',
+      currentCommentInputData: '',
     };
   }
 
@@ -24,26 +24,26 @@ export default class Writecomment extends Component {
   }
 
   currentCommentInput = e => {
-    this.setState({ current: e.target.value });
+    this.setState({ currentCommentInputData: e.target.value });
   };
 
   commentPost = e => {
-    const { commentList, current } = this.state;
+    const { commentList, currentCommentInputData } = this.state;
     e.preventDefault();
 
-    if (current) {
+    if (currentCommentInputData) {
       this.setState({
         commentList: [
           ...commentList,
-          { id: commentList.length + 1, value: current },
+          { id: commentList.length + 1, value: currentCommentInputData },
         ],
-        current: '',
+        currentCommentInputData: '',
       });
     }
   };
 
   render() {
-    const { commentList, current } = this.state;
+    const { commentList, currentCommentInputData } = this.state;
     return (
       <div className="feedTimeOJ">
         {commentList.map(commentList => {
@@ -61,7 +61,7 @@ export default class Writecomment extends Component {
               type="text"
               placeholder="댓글 달기..."
               onChange={this.currentCommentInput}
-              value={current}
+              value={currentCommentInputData}
             />
             <button className="postComment">게시</button>
           </form>

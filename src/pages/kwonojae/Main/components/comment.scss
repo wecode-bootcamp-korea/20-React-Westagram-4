@@ -5,15 +5,19 @@
   margin-top: 6px;
   padding: 0px 16px;
   background-color: $white;
+
   .commentContent {
     width: 530px;
+
     a {
       font-weight: 600;
     }
   }
+
   button {
     @extend .unset;
   }
+
   i {
     padding-left: 4px;
   }
