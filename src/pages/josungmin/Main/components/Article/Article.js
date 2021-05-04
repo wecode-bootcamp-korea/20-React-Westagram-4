@@ -2,6 +2,34 @@ import React from 'react';
 import './Article.scss';
 
 class Article extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+      commentList: [],
+    };
+  }
+
+  pushComment = e => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
+  addComment = () => {
+    const { commentList, value } = this.state;
+    this.setState({
+      commentList: commentList.concat([value]),
+      value: '',
+    });
+  };
+
+  addCommentEnter = e => {
+    if (e.key === 'Enter') {
+      this.addComment();
+    }
+  };
+
   render() {
     return (
       <>
@@ -68,11 +96,14 @@ class Article extends React.Component {
             </div>
             <div class="comment_section">
               <ul class="comments">
-                <li>
-                  <span>
-                    <span class="point_span userID">yeeee</span>귀엽다
-                  </span>
-                </li>
+                {this.state.commentList.map((comm, idx) => {
+                  return (
+                    <li id={idx} className="comment">
+                      {'whtjdal '}
+                      {comm}
+                    </li>
+                  );
+                })}
               </ul>
               <div class="time_log">
                 <span>32분 전</span>
@@ -86,8 +117,12 @@ class Article extends React.Component {
               class="input_comment"
               type="text"
               placeholder="댓글 달기..."
+              onfocus="this.placeholder=''"
+              onChange={this.pushComment}
+              onKeyPress={this.addCommentEnter}
+              value={this.state.value}
             />
-            <button type="submit" class="submit_comment" disabled>
+            <button type="submit" className="submitComment" disabled>
               게시
             </button>
           </div>

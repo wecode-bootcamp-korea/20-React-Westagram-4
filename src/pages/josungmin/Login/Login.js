@@ -31,7 +31,7 @@ class Login extends React.Component {
 
   render() {
     const { id, password, buttonColor } = this.state;
-    const condtionOfButtonActivated = id.includes('@') && password.length >= 5;
+    const condtionOfButton = id.includes('@') && password.length >= 5;
     return (
       <>
         <div class="container">
@@ -55,12 +55,10 @@ class Login extends React.Component {
             onChange={this.handleIdPwInput}
           />
           <button
-            className={
-              buttonColor ? 'loginButtonActive' : 'loginButtonDeactive'
-            }
+            className={buttonColor ? 'ButtonActive' : 'ButtonDeactive'}
             type="submit"
             onClick={this.goToMain}
-            disabled={condtionOfButtonActivated ? false : true}
+            disabled={condtionOfButton ? false : true}
           >
             로그인
           </button>

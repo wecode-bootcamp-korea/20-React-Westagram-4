@@ -13,8 +13,8 @@ class Right extends React.Component {
               alt="thisisyourhyung님의 프로필 사진"
             />
             <div>
-              <span class="userID point_span">thisisyourhyung</span>
-              <span class="sub_span">JIHYUNG LEE</span>
+              <span class="userID point_span">whtjdals</span>
+              <span class="sub_span">SUNGMIN JO</span>
             </div>
           </div>
           <div class="section_story">
