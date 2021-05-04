@@ -27,6 +27,11 @@
     &:not(:last-child) {
       border-bottom: $border-gray-style;
     }
+
+    &:hover {
+      background-color: $lightgray;
+      cursor: pointer;
+    }
   }
 
   &__icon {

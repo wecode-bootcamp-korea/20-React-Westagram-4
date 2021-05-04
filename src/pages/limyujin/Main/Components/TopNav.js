@@ -31,7 +31,8 @@ class TopNav extends React.Component {
   }
 
   getUserData = () => {
-    fetch('http://localhost:3000/Data/limyujin/feedData.json')
+    const feedDataUrl = 'http://localhost:3000/Data/limyujin/feedData.json';
+    fetch(feedDataUrl)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -69,17 +70,10 @@ class TopNav extends React.Component {
       {
         id: '1',
         icon: faCompass,
-        onClick: () => {},
       },
       {
         id: '2',
         icon: faHeart,
-        onClick: () => {},
-      },
-      {
-        id: '3',
-        icon: faUser,
-        onClick: this.toggleModal,
       },
     ];
     const {
@@ -94,7 +88,6 @@ class TopNav extends React.Component {
       isInputChanged || searchText ? 'display-none' : '';
     return (
       <>
-        <Modal isModalVisible={isModalVisible} />
         <nav className="top-nav">
           <div className="top-nav__column">
             <Link to="/">
@@ -139,11 +132,20 @@ class TopNav extends React.Component {
             <ul className="top-nav__menus">
               {navLeftItem.map(el => (
                 <li className="top-nav__menu" key={el.id}>
-                  <button onClick={el.onClick} className="top-nav__menu-btn">
+                  <button className="top-nav__menu-btn">
                     <FontAwesomeIcon icon={el.icon} className="user" />
                   </button>
                 </li>
               ))}
+              <li className="top-nav__menu">
+                <button
+                  onClick={this.toggleModal}
+                  className="top-nav__menu-btn"
+                >
+                  <FontAwesomeIcon icon={faUser} className="user" />
+                </button>
+                <Modal isModalVisible={isModalVisible} />
+              </li>
             </ul>
           </div>
         </nav>
