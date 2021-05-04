@@ -58,7 +58,7 @@ class Login extends React.Component {
                     isEveryInputValueExists ? '' : 'login-form__button--opacity'
                   }`}
                 onClick={goToMain}
-                disabled={isEveryInputValueExists ? false : true}
+                disabled={!isEveryInputValueExists}
               >
                 로그인
               </button>

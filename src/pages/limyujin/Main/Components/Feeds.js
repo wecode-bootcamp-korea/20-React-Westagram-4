@@ -184,7 +184,7 @@ class Feeds extends React.Component {
               className={`feed__submit-btn ${
                 commentValue.length > 0 ? '' : 'feed__submit-btn--opacity'
               }`}
-              disabled={commentValue ? false : true}
+              disabled={!commentValue}
               onClick={handleSubmitBtn}
             >
               게시
