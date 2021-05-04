@@ -92,12 +92,12 @@ class TopNav extends React.Component {
       <>
         <nav className="top-navYJ">
           <div className="top-navYJ__column">
-            <Link to="/">
+            <Link to="/loginyj">
               <FontAwesomeIcon icon={faInstagram} className="instagram" />
             </Link>
             <span className="top-navYJ__left-text">|</span>
             <span className="top-navYJ__left-text">
-              <a href="main.html">Westagram</a>
+              <span>Westagram</span>
             </span>
           </div>
           <div className="top-navYJ__column">

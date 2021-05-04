@@ -19,7 +19,7 @@ class Main extends React.Component {
   componentDidMount() {
     this.getFeedData();
     this.getRecommendData();
-    window.addEventListener('scroll', _.throttle(this.infinityScroll, 1000));
+    window.addEventListener('scroll', _.throttle(this.infinityScroll, 500));
   }
 
   componentWillUnmount() {

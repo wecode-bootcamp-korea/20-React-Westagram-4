@@ -43,16 +43,15 @@
 
   &__input {
     width: 215px;
-    padding: 5px 0px;
+    padding: 5px 30px;
     border: $border-gray-style;
     border-radius: 3px;
-    text-align: center;
   }
 
   &__input-text {
     position: absolute;
     left: 45%;
-    top: 20%;
+    top: 30%;
     font-size: 14px;
     font-weight: 300;
     color: $sub-text-gray;
@@ -64,7 +63,7 @@
 
   &__search {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 80px;
     font-size: 10px;
     color: $sub-text-gray;

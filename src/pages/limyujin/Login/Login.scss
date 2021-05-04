@@ -1,12 +1,12 @@
 @import '../../../styles/Variables.scss';
 
-.login-page {
+.login-pageYJ {
   @extend %flex-column-center;
   font-size: 14px;
   margin-top: 100px;
 }
 
-.login-box {
+.login-boxYJ {
   @extend %flex-column-center;
   width: 350px;
   height: 380px;
@@ -25,7 +25,7 @@
   }
 }
 
-.login-form {
+.login-formYJ {
   @extend %flex-column-center;
   padding: 10px 0px;
 
@@ -69,13 +69,13 @@
   }
 }
 
-.line {
+.lineYJ {
   width: 104px;
   height: 1px;
   background-color: $border-gray;
 }
 
-.other-text {
+.other-textYJ {
   margin: 0px 18px;
   font: {
     size: 13px;
@@ -84,16 +84,16 @@
   color: $sub-text-gray;
 }
 
-.login-form .facebook {
+.login-formYJ .facebookYJ {
   margin-right: 5px;
 }
 
-.login-box .find-password__text {
+.login-boxYJ .find-password__textYJ {
   font-size: 12px;
   color: $facebook-blue;
 }
 
-.join-box {
+.join-boxYJ {
   @extend %flex-center;
   width: 350px;
   height: 63px;
@@ -110,7 +110,7 @@
   }
 }
 
-.app-download-box {
+.app-download-boxYJ {
   @extend %flex-column-center;
   width: 350px;
   height: 102px;
