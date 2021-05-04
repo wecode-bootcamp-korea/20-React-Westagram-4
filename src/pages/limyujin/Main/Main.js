@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import Feeds from '../Main/Components/Feeds';
 import TopNav from '../Main/Components/TopNav';
 import MainRight from '../Main/Components/MainRight';
@@ -17,7 +18,7 @@ class Main extends React.Component {
   componentDidMount() {
     this.getFeedData();
     this.getRecommendData();
-    window.addEventListener('scroll', this.infinityScroll);
+    window.addEventListener('scroll', _.throttle(this.infinityScroll, 1000));
   }
 
   componentWillUnmount() {
