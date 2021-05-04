@@ -1,3 +1,13 @@
+$main-padding: 14px;
+$comment-fontsize: 13px;
+$aside-fontsize: 12px;
+$border-color: #e6e6e6;
+$blue: #0095f6;
+$sub-text-gray: #8e8e8e;
+$lightgray: #fafafa;
+$facebook-blue: #385185;
+$border-gray-style: 1px solid #dbdbdb;
+$border-gray: #dbdbdb;
 $boderCol1: #dbdbdb;
 $inputBgCol1: #fafafa;
 $white: white;
@@ -6,9 +16,42 @@ $passiveBtnCol: #c4e1fb;
 $fotgetPW: #00376b;
 $border1: 1px solid #dbdbdb;
 
-* {
-  box-sizing: border-box;
-  margin: 0px;
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.grey {
+  color: grey;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.red {
+  color: red;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .unset {

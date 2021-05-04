@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import {
-  faPaperPlane,
-  faHeart,
-  faSmile,
-  faComment,
-  faBookmark,
-} from '@fortawesome/free-regular-svg-icons';
-import './writecomment.scss';
-import Comment from './comment';
+import { faSmile } from '@fortawesome/free-regular-svg-icons';
+import Comment from './Comment';
+import './Writecomment.scss';
 
 export default class Writecomment extends Component {
   constructor() {
@@ -21,12 +14,12 @@ export default class Writecomment extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/data/kwonojae/commentData.json', {
+    fetch('http://localhost:3000/data/kwonojae/commentData.json', {
       method: 'GET',
     })
-      .then(Response => Response.json())
-      .then(data => {
-        this.setState({ commentList: data });
+      .then(response => response.json())
+      .then(commentData => {
+        this.setState({ commentList: commentData });
       });
   }
 
@@ -42,7 +35,7 @@ export default class Writecomment extends Component {
       this.setState({
         commentList: [
           ...commentList,
-          { id: commentList.length + 1, value: this.state.current },
+          { id: commentList.length + 1, value: current },
         ],
         current: '',
       });
@@ -50,10 +43,10 @@ export default class Writecomment extends Component {
   };
 
   render() {
-    const { commentList } = this.state;
+    const { commentList, current } = this.state;
     return (
-      <div>
-        {commentList.map((commentList, id) => {
+      <div className="feedTimeOJ">
+        {commentList.map(commentList => {
           return <Comment value={commentList.value} key={commentList.id} />;
         })}
         <div className="feedTime">
@@ -68,7 +61,7 @@ export default class Writecomment extends Component {
               type="text"
               placeholder="댓글 달기..."
               onChange={this.currentCommentInput}
-              value={this.state.current}
+              value={current}
             />
             <button className="postComment">게시</button>
           </form>

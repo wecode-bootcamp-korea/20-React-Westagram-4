@@ -1,12 +1,12 @@
 import React from 'react';
 import './Aside.scss';
-import RecommendProfiles from './recommendprofile';
+import RecommendProfiles from './Recommendprofile';
 
 class Aside extends React.Component {
   render() {
     return (
-      <aside className="aside">
-        <div className="profilewithrecommend">
+      <aside className="asideOJ">
+        <div className="profileWithRecommend">
           <div className="myProfile">
             <img src="/images/kwonojae/myprofile.jpeg" />
             <dl>

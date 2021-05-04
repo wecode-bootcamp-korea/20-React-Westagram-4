@@ -1,12 +1,12 @@
-@import '../../../../styles/kwonojae/common.scss';
+@import '../../../../styles/Variable.scss';
 
-aside {
+.asideOJ {
   @extend .fixedTR;
   width: 40%;
   height: 100%;
   margin: 55px 0px 0px 0px;
   background-color: $white;
-  .profilewithrecommend {
+  .profileWithRecommend {
     margin: 50px 0px 0px 20px;
     .myProfile {
       @extend .flexRS;
@@ -20,8 +20,8 @@ aside {
         border-radius: 50%;
       }
       dl {
-        margin: 0px 0px 0px 20px;
         width: 196px;
+        margin: 0px 0px 0px 20px;
         font-size: 14px;
       }
       button {
@@ -46,27 +46,6 @@ aside {
     .recommnedList {
       width: 300px;
       background-color: $white;
-      .recommendProfile {
-        @extend .flexRS;
-        align-items: center;
-        width: 300px;
-        margin: 16px 0px 0px 0px;
-        background-color: $white;
-        img {
-          width: 32px;
-          border-radius: 50%;
-        }
-        dl {
-          margin: 0px 0px 0px 20px;
-          width: 210px;
-          font-size: 14px;
-        }
-        button {
-          @extend .unset;
-          font-size: 12px;
-          color: $activeBtnCol;
-        }
-      }
     }
   }
 }

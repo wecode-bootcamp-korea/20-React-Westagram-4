@@ -1,21 +1,19 @@
-@import '../../../styles/kwonojae/common.scss';
+@import '../../../styles/Variable.scss';
 
-.loginoj {
+.loginOJ {
   @extend .flexCS;
   align-items: center;
   width: 350px;
   height: 380px;
-  margin: 50px auto 0px auto;
+  margin: 150px auto 0px auto;
   border: $border1;
   border-radius: 1px;
-
   h1 {
     margin: 32px 0px 0px 0px;
+    text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 41px;
-    text-align: center;
   }
-
   input {
     width: 268px;
     height: 38px;
@@ -54,7 +52,6 @@
       cursor: default;
     }
   }
-
   span {
     margin: 99px 0px 0px 0px;
     color: $fotgetPW;

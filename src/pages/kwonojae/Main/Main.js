@@ -11,10 +11,12 @@ class MainOJ extends React.Component {
         <header className="mainHeader">
           <Nav />
         </header>
-        <main className="mainPage">
-          <Feed />
-        </main>
-        <Aside />
+        <div>
+          <main className="mainPage">
+            <Feed />
+          </main>
+          <Aside />
+        </div>
       </>
     );
   }

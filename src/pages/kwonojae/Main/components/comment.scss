@@ -1,14 +1,15 @@
-@import '../../../../styles/kwonojae/common.scss';
+@import '../../../../styles/Variable.scss';
 
-.comment {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.commentOJ {
+  @extend .flexRB;
+  margin-top: 6px;
   padding: 0px 16px;
   background-color: $white;
   .commentContent {
-    display: inline;
     width: 530px;
+    a {
+      font-weight: 600;
+    }
   }
   button {
     @extend .unset;

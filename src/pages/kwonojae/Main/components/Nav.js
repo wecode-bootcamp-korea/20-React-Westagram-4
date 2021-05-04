@@ -11,7 +11,7 @@ import './Nav.scss';
 class Nav extends React.Component {
   render() {
     return (
-      <nav className="nav">
+      <nav className="navOJ">
         <div className="navTitle">
           <span className="main">westargram</span>
         </div>

@@ -1,16 +1,14 @@
-@import '../../../../styles/kwonojae/common.scss';
+@import '../../../../styles/Variable.scss';
 
-.feeds {
+.feedOJ {
   @extend .flexCS;
   align-items: flex-end;
   article {
-    width: 600px;
     margin-right: 20px;
     border: $border1;
     .feedHeader {
       @extend .flexRB;
       align-items: center;
-      width: 600px;
       height: 60px;
       padding: 16px;
       background-color: $white;
@@ -32,21 +30,16 @@
     }
     .feedImage {
       img {
-        padding: 0px;
         width: 600px;
         height: 600px;
       }
     }
-
     .feedBottomBox {
-      width: 600px;
       background-color: $white;
       .feedButtons {
         @extend .flexRB;
         align-items: center;
-        margin: 0px;
         padding: 0px 12px;
-        width: 600px;
         height: 40px;
         background-color: $white;
         div {
@@ -59,21 +52,14 @@
         }
       }
       .feedLike {
-        width: 600px;
         height: 18px;
         margin: 6px 0px 10px 0px;
         padding: 0px 0px 0px 16px;
         background-color: $white;
+        font-weight: 600;
         button {
           @extend .unset;
         }
-      }
-
-      .feedTime {
-        width: 600px;
-        margin: 12px 0px 0px 0px;
-        padding: 0px 16px;
-        background-color: $white;
       }
     }
   }

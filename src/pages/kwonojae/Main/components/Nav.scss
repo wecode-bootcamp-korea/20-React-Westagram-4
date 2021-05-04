@@ -1,6 +1,6 @@
-@import '../../../../styles/kwonojae/common.scss';
+@import '../../../../styles/Variable.scss';
 
-nav {
+.navOJ {
   @extend .fixedTR;
   @extend .flexR;
   justify-content: space-around;

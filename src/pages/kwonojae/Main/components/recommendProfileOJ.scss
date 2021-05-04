@@ -1,0 +1,23 @@
+@import '../../../../styles/Variable.scss';
+
+.recommendProfileOJ {
+  @extend .flexRS;
+  align-items: center;
+  width: 300px;
+  margin: 16px 0px 0px 0px;
+  background-color: $white;
+  img {
+    width: 32px;
+    border-radius: 50%;
+  }
+  dl {
+    width: 210px;
+    margin: 0px 0px 0px 20px;
+    font-size: 14px;
+  }
+  button {
+    @extend .unset;
+    color: $activeBtnCol;
+    font-size: 12px;
+  }
+}

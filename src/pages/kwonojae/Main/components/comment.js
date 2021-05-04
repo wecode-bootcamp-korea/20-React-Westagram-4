@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './comment.scss';
+import './Comment.scss';
 
 export default class Comment extends Component {
   render() {
     return (
-      <p className="comment">
+      <p className="commentOJ">
         <span className="commentContent">
           <a href="">글쓴이ID</a> {this.props.value}
         </span>

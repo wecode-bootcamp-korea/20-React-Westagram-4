@@ -13,21 +13,23 @@ class LoginOJ extends React.Component {
   }
 
   handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    this.setState({ [name]: value });
   };
 
   validation = () => {
     const { id, pw } = this.state;
     const isValidId = id.includes('@');
     const isValidPw = pw.length > 4;
+
     return isValidId && isValidPw;
   };
 
   render() {
     const { id, pw } = this.state;
-
     return (
-      <div className="loginoj">
+      <div className="loginOJ">
         <h1>westargram</h1>
         <input
           className="inputID"
@@ -50,7 +52,7 @@ class LoginOJ extends React.Component {
             className={`loginBtn ${
               this.validation() ? 'btnActiveColor' : 'btnPassiveColor'
             }`}
-            disabled={!this.validation() ? 'disabled' : ''}
+            disabled={!this.validation()}
           >
             로그인
           </button>

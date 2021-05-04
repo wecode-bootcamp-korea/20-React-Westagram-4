@@ -4,39 +4,38 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import {
   faPaperPlane,
   faHeart,
-  faSmile,
   faComment,
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
+import Writecomment from './Writecomment';
 import './Feed.scss';
-import Writecomment from './writecomment';
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      feedlist: [],
+      feedList: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/data/kwonojae/feeddata.json', {
+    fetch('http://localhost:3000/data/kwonojae/feeddata.json', {
       method: 'GET',
     })
-      .then(Response => Response.json())
-      .then(data => {
-        this.setState({ feedlist: data });
+      .then(response => response.json())
+      .then(feedData => {
+        this.setState({ feedList: feedData });
       });
   }
 
   render() {
-    const { feedlist } = this.state;
+    const { feedList } = this.state;
 
     return (
-      <section className="feeds">
-        {feedlist.map((feedlist, id) => {
+      <section className="feedOJ">
+        {feedList.map(feedList => {
           return (
-            <article key={feedlist.id}>
+            <article key={feedList.id}>
               <div className="feedHeader">
                 <div className="writer">
                   <img
@@ -55,7 +54,7 @@ class Feed extends React.Component {
                 </button>
               </div>
               <div className="feedImage">
-                <img alt="feed image" src={feedlist.feedimage} />
+                <img alt="feed image" src={feedList.feedImage} />
               </div>
               <div className="feedBottomBox">
                 <div className="feedButtons">
