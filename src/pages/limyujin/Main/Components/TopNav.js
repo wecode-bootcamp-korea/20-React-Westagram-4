@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Modal from './Modal';
+import SearchModal from './SearchModal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -21,8 +22,23 @@ class TopNav extends React.Component {
       isInputFocused: false,
       isInputChanged: false,
       searchText: '',
+      userData: [],
     };
   }
+
+  componentDidMount() {
+    this.getUserData();
+  }
+
+  getUserData = () => {
+    fetch('http://localhost:3000/Data/limyujin/feedData.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          userData: [...data],
+        });
+      });
+  };
 
   toggleModal = () => {
     this.setState({
@@ -71,11 +87,11 @@ class TopNav extends React.Component {
       isInputFocused,
       searchText,
       isInputChanged,
+      userData,
     } = this.state;
     const { focusInput, blurInput, handleInput } = this;
     const yesInputNoDisplay =
       isInputChanged || searchText ? 'display-none' : '';
-
     return (
       <>
         <Modal isModalVisible={isModalVisible} />
@@ -110,6 +126,12 @@ class TopNav extends React.Component {
                 icon={faSearch}
                 className={`top-nav__search
                   ${isInputFocused ? 'top-nav__search--focused' : ''}`}
+              />
+              <SearchModal
+                userData={userData}
+                key={userData.id}
+                isInputFocused={isInputFocused}
+                searchText={searchText}
               />
             </div>
           </div>
