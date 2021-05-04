@@ -59,7 +59,7 @@ class Login extends React.Component {
                 }
                 type="submit"
                 onClick={this.goToMain}
-                disabled={condtionOfButtonActivated ? false : true}
+                disabled={!condtionOfButtonActivated}
               >
                 로그인
               </button>

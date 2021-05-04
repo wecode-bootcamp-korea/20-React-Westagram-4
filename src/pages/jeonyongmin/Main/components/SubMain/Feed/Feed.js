@@ -18,9 +18,9 @@ class Feed extends React.Component {
       method: 'GET',
     })
       .then(result => result.json())
-      .then(data => {
+      .then(commentData => {
         this.setState({
-          commentList: data[this.props.number - 1],
+          commentList: commentData[this.props.number - 1],
         });
       });
   }
@@ -65,6 +65,7 @@ class Feed extends React.Component {
 
   render() {
     const { inputValue, buttonColor, commentList } = this.state;
+    const { profileImg, name, feedImg, like, comment } = this.props;
     const conditionOfButtonActivated = inputValue.length > 0;
     return (
       <>
@@ -72,23 +73,19 @@ class Feed extends React.Component {
           <div className="sectionArticleUser">
             <div>
               <img
-                src={this.props.profileImg}
+                src={profileImg}
                 alt="drake profile"
                 className="sectionArticleUserImg"
               />
               <a href="" className="sectionArticleUsername">
-                {this.props.name}
+                {name}
               </a>
             </div>
             <button className="sectionArticleModal">
               <i className="fas fa-ellipsis-h"></i>
             </button>
           </div>
-          <img
-            src={this.props.feedImg}
-            alt="feed image"
-            className="sectionArticleImg"
-          />
+          <img src={feedImg} alt="feed image" className="sectionArticleImg" />
           <div className="sectionArticleContainer">
             <div className="sectionArticleIconbar">
               <div className="sectionArticleIconbarLeftSide">
@@ -106,16 +103,14 @@ class Feed extends React.Component {
                 <i className="far fa-bookmark"></i>
               </button>
             </div>
-            <button className="sectionArticleLikeNumber">
-              {this.props.like}
-            </button>
+            <button className="sectionArticleLikeNumber">{like}</button>
             <div>
               <div className="sectionArticleCommentList">
                 <p>
                   <a href="#" className="sectionArticleUserlink">
-                    {this.props.name}
+                    {name}
                   </a>
-                  {this.props.comment}
+                  {comment}
                   <button className="sectionArticleShowFullComment">
                     더 보기
                   </button>

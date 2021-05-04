@@ -5,7 +5,7 @@ class Comment extends React.Component {
   render() {
     return (
       <li
-        classname="sectionArticleCommentContentsContainer"
+        className="sectionArticleCommentContentsContainer"
         key={this.props.id}
       >
         <div className="sectionArticleCommentContents">
