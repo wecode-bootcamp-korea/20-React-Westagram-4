@@ -16,7 +16,6 @@ class MainRight extends React.Component {
       }
       return result;
     };
-    const { time } = this.props;
     return (
       <>
         <aside className="main-right">

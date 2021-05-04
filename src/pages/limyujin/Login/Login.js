@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
@@ -87,34 +87,28 @@ class Login extends React.Component {
           <section className="join-box">
             <span>
               계정이 없으신가요?
-              <a className="join-box__link">가입하기</a>
+              <Link to="/">
+                <span className="join-box__link">가입하기</span>
+              </Link>
             </span>
           </section>
           <section className="app-download-box">
             <h6 className="app-download-box__title">앱을 다운로드하세요.</h6>
             <div className="app-download-box__banners">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://apps.apple.com/app/instagram/id389801252?vt=lo"
-              >
+              <Link to="/https://apps.apple.com/app/instagram/id389801252?vt=lo">
                 <img
                   alt="앱스토어에서 인스타그램 어플 다운로드하기"
                   className="app-download-box__banner"
                   src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_korean-ko.png/4a5c9d62d51b.png"
                 />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=E426F5DC-0466-4CEF-9B63-131B0512F345&utm_content=lo&utm_medium=badge"
-              >
+              </Link>
+              <Link to="/https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=E426F5DC-0466-4CEF-9B63-131B0512F345&utm_content=lo&utm_medium=badge">
                 <img
                   alt="구글 플레이스토어에서 인스타그램 어플 다운로드하기"
                   className="app-download-box__banner"
                   src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_korean-ko.png/f155b664a93b.png"
                 />
-              </a>
+              </Link>
             </div>
           </section>
         </main>

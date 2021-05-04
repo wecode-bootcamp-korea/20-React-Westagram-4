@@ -45,6 +45,7 @@ class Main extends React.Component {
         this.setState({ recommendData: data });
       });
   };
+
   infinityScroll = () => {
     const scrollHeight = Math.max(
       document.documentElement.scrollHeight,
@@ -86,7 +87,7 @@ class Main extends React.Component {
               />
             ))}
           </div>
-          <MainRight accountInfo={recommendData} time={recommendData.time} />
+          <MainRight accountInfo={recommendData} />
         </main>
       </>
     );
