@@ -20,7 +20,7 @@ class Login extends React.Component {
   render() {
     const validation = this.state.id.includes('@') && this.state.pw.length > 4;
     return (
-      <div className="Login">
+      <div className="LoginJY">
         <main className="LoginBox">
           <h1 className="title">Westagram</h1>
           <div className="login">

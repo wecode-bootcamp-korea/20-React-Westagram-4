@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../../../styles/leejiyon/common.scss';
 import { withRouter } from 'react-router-dom';
+import './Nav.scss';
 
 class Nav extends Component {
   goToMain = () => {
@@ -10,7 +10,7 @@ class Nav extends Component {
   render() {
     return (
       <>
-        <nav className="Nav">
+        <nav className="NavJY">
           <a className="navLogo" href="main.html">
             <img src="/images/leejiyon/instagram.png" alt="위스타그램 로고" />
             <div className="navLogoTitle">Westagram</div>

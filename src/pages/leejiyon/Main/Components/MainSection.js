@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Feeds from './Feeds';
 import Aside from './Aside';
-import '../../../../styles/leejiyon/common.scss';
+import './MainSection.scss';
 
 class MainSection extends Component {
   render() {
     return (
       <>
-        <main className="MainSection">
+        <main className="MainSectionJY">
           <Feeds />
           <Aside />
         </main>

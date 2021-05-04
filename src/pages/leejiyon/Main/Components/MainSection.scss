@@ -1,18 +1,20 @@
-.MainSection {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    border-top: 1px solid #e6e6e6;
-    background-color: #fafafa;
+@import '/src/styles/Variables.scss';
 
-    @media screen and (max-width: 1000px) {
-        .MainSection aside {
-            display: none;
-        }
-    }
+.MainSectionJY {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  border-top: 1px solid #e6e6e6;
+  background-color: #fafafa;
 
-    .feeds {
-        width: 614px;
-        margin-top: 50px;
+  @media screen and (max-width: 1000px) {
+    .MainSection aside {
+      display: none;
     }
+  }
+
+  .feeds {
+    width: 614px;
+    margin-top: 50px;
+  }
 }

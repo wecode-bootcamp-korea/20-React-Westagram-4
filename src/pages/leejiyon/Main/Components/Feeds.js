@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Article from './Article';
-import '../../../../styles/leejiyon/common.scss';
 
 class Feeds extends Component {
   state = {

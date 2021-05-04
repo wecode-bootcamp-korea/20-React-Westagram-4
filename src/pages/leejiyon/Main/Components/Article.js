@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Comments from './Comments';
-import '../../../../styles/leejiyon/common.scss';
+import './Article.scss';
 
 const emptyHeartStyle = {
   backgroundPosition: `-156px -478px`,
@@ -125,7 +125,7 @@ class Article extends Component {
   render() {
     const { header, articleImg, myComment } = this.props;
     return (
-      <article className="Article">
+      <article className="ArticleJY">
         <div className="articleHeader">
           <img alt={header.alt} className="profileImg" src={header.src} />
           <div className="profileName">{header.headerId}</div>

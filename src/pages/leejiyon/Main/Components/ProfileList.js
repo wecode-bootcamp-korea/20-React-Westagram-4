@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../../styles/leejiyon/common.scss';
 
 class ProfileList extends Component {
   render() {

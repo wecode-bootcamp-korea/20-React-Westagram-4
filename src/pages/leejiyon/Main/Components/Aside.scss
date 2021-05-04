@@ -1,11 +1,6 @@
-@import '/src/styles/leejiyon/_variables.scss';
+@import '/src/styles/Variables.scss';
 
-%flex-center {
-  display: flex;
-  align-items: center;
-}
-
-.Aside {
+.AsideJY {
   position: sticky;
   top: 83px;
   width: 293px;
@@ -14,9 +9,8 @@
   margin-left: 20px;
 
   .asideProfile {
-    @extend %flex-center;
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
   }
 

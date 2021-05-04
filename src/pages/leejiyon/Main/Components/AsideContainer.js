@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ProfileList from './ProfileList';
-import '../../../../styles/leejiyon/common.scss';
+import './AsideContainer.scss';
 
 class AsideContainer extends Component {
   render() {
     return (
-      <div className="story AsideContainer">
+      <div className="story AsideContainerJY">
         <div className="storyHeader asideHeader">
           <div className="title">{this.props.title}</div>
           <div className="viewMore">{this.props.content}</div>

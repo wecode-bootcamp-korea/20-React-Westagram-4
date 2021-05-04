@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import AsideContainer from './AsideContainer';
-import '../../../../styles/leejiyon/common.scss';
+import './Aside.scss';
 
 class Aside extends Component {
   render() {
     return (
       <>
-        <aside className="Aside">
+        <aside className="AsideJY">
           <div className="asideProfile">
             <img
               alt="하늘을 바라보고 누워있는 하오의 얼굴"
