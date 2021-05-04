@@ -28,6 +28,7 @@ class SubMain extends React.Component {
           return (
             <Feed
               key={element.id}
+              number={element.id}
               name={element.name}
               feedImg={element.feedImg}
               profileImg={element.profileImg}

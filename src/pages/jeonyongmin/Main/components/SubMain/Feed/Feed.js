@@ -19,7 +19,9 @@ class Feed extends React.Component {
     })
       .then(result => result.json())
       .then(data => {
-        this.setState({ commentList: data });
+        this.setState({
+          commentList: data[this.props.number - 1],
+        });
       });
   }
 
@@ -47,7 +49,6 @@ class Feed extends React.Component {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
         this.inputLocation.current.focus();
-        console.log(this.state);
       }
     );
   };
@@ -65,7 +66,7 @@ class Feed extends React.Component {
   render() {
     const { inputValue, buttonColor, commentList } = this.state;
     const conditionOfButtonActivated = inputValue.length > 0;
-
+    console.log(commentList);
     return (
       <>
         <article className="sectionArticle">
@@ -122,12 +123,12 @@ class Feed extends React.Component {
                 </p>
                 <div className="sectionArticleCommentlistScroll">
                   <ul className="sectionArticleComment">
-                    {commentList.map((element, index) => {
+                    {commentList.map(element => {
                       return (
                         <Comment
-                          key={element.id}
                           name={element.name}
                           comment={element.comment}
+                          key={element.id}
                         />
                       );
                     })}
