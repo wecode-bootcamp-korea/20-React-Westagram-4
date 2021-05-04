@@ -1,4 +1,6 @@
-.top-nav {
+@import '../../../../styles/Variables.scss';
+
+.top-navYJ {
   position: fixed;
   top: 0;
   @extend %flex-center;
@@ -92,12 +94,12 @@
 
 /* 웹 */
 @media only screen and (max-width: 1350px) {
-  .top-nav {
+  .top-navYJ {
     padding: 30px 20px;
   }
 }
 @media only screen and (max-width: 710px) {
-  .top-nav {
+  .top-navYJ {
     padding: 30px 20px;
 
     &__left-text {
@@ -128,7 +130,7 @@
 
 /* 모바일 */
 @media only screen and (max-width: 414px) {
-  .top-nav {
+  .top-navYJ {
     height: 48px;
     padding: 0px 20px;
     font-size: 20px;
@@ -159,6 +161,6 @@
   }
 }
 
-.display-none {
+.display-noneYJ {
   display: none;
 }

@@ -13,6 +13,8 @@ import {
   faUser,
 } from '@fortawesome/free-regular-svg-icons';
 
+import './TopNav.scss';
+
 class TopNav extends React.Component {
   constructor() {
     super();
@@ -85,23 +87,23 @@ class TopNav extends React.Component {
     } = this.state;
     const { focusInput, blurInput, handleInput } = this;
     const yesInputNoDisplay =
-      isInputChanged || searchText ? 'display-none' : '';
+      isInputChanged || searchText ? 'display-noneYJ' : '';
     return (
       <>
-        <nav className="top-nav">
-          <div className="top-nav__column">
+        <nav className="top-navYJ">
+          <div className="top-navYJ__column">
             <Link to="/">
               <FontAwesomeIcon icon={faInstagram} className="instagram" />
             </Link>
-            <span className="top-nav__left-text">|</span>
-            <span className="top-nav__left-text">
+            <span className="top-navYJ__left-text">|</span>
+            <span className="top-navYJ__left-text">
               <a href="main.html">Westagram</a>
             </span>
           </div>
-          <div className="top-nav__column">
-            <div className="top-nav__input-box">
+          <div className="top-navYJ__column">
+            <div className="top-navYJ__input-box">
               <input
-                className="top-nav__input"
+                className="top-navYJ__input"
                 type="text"
                 value={searchText}
                 onFocus={focusInput}
@@ -109,16 +111,16 @@ class TopNav extends React.Component {
                 onChange={handleInput}
               />
               <span
-                className={`top-nav__input-text ${
-                  isInputFocused ? 'top-nav__input-text--focused' : ''
+                className={`top-navYJ__input-text ${
+                  isInputFocused ? 'top-navYJ__input-text--focused' : ''
                 } ${yesInputNoDisplay}`}
               >
                 검색
               </span>
               <FontAwesomeIcon
                 icon={faSearch}
-                className={`top-nav__search
-                  ${isInputFocused ? 'top-nav__search--focused' : ''}`}
+                className={`top-navYJ__search
+                  ${isInputFocused ? 'top-navYJ__search--focused' : ''}`}
               />
               <SearchModal
                 userData={userData}
@@ -128,19 +130,19 @@ class TopNav extends React.Component {
               />
             </div>
           </div>
-          <div className="top-nav__column">
-            <ul className="top-nav__menus">
+          <div className="top-navYJ__column">
+            <ul className="top-navYJ__menus">
               {navLeftItem.map(el => (
-                <li className="top-nav__menu" key={el.id}>
-                  <button className="top-nav__menu-btn">
+                <li className="top-navYJ__menu" key={el.id}>
+                  <button className="top-navYJ__menu-btn">
                     <FontAwesomeIcon icon={el.icon} className="user" />
                   </button>
                 </li>
               ))}
-              <li className="top-nav__menu">
+              <li className="top-navYJ__menu">
                 <button
                   onClick={this.toggleModal}
-                  className="top-nav__menu-btn"
+                  className="top-navYJ__menu-btn"
                 >
                   <FontAwesomeIcon icon={faUser} className="user" />
                 </button>

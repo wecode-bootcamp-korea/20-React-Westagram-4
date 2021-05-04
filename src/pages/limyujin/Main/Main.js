@@ -3,6 +3,7 @@ import _ from 'lodash';
 import Feeds from '../Main/Components/Feeds';
 import TopNav from '../Main/Components/TopNav';
 import MainRight from '../Main/Components/MainRight';
+import './Main.scss';
 
 class Main extends React.Component {
   constructor(props) {
@@ -76,8 +77,8 @@ class Main extends React.Component {
     return (
       <>
         <TopNav />
-        <main className="main-page">
-          <div className="feed-box">
+        <main className="main-pageYJ">
+          <div className="feedYJ-box">
             {feedInfo.map(el => (
               <Feeds
                 author={el.author}

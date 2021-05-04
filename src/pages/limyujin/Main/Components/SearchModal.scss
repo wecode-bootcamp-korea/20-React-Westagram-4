@@ -1,4 +1,6 @@
-.search-modal-container {
+@import '../../../../styles/Variables.scss';
+
+.search-modal-containerYJ {
   position: absolute;
   top: 40px;
   right: -5px;
@@ -6,7 +8,7 @@
   font-size: 14px;
 }
 
-.search-modal {
+.search-modalYJ {
   width: 230px;
   height: 200px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
@@ -52,20 +54,20 @@
   }
 }
 
-.search-modal-open {
+.search-modal-openYJ {
   display: block;
 }
 
 /* 모바일 */
 @media only screen and (max-width: 414px) {
-  .search-modal {
+  .search-modalYJ {
     top: 47px;
     right: 10px;
     width: 230px;
     height: 157px;
   }
 
-  .search-modal__line {
+  .search-modalYJ__line {
     top: 160px;
   }
 }

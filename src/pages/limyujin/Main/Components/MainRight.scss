@@ -1,4 +1,6 @@
-.main-right {
+@import '../../../../styles/Variables.scss';
+
+.main-rightYJ {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
@@ -31,7 +33,7 @@
   }
 }
 
-.main-right-section {
+.main-right-sectionYJ {
   @extend %flex-column;
   margin-bottom: 10px;
   padding: 20px;
@@ -98,14 +100,14 @@
 
 /* 웹 */
 @media only screen and (max-width: 1090px) {
-  .main-right {
+  .main-rightYJ {
     display: none;
   }
 }
 
 /* 모바일 */
 @media only screen and (max-width: 414px) {
-  .main-right {
+  .main-rightYJ {
     display: none;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchModal.scss';
 
 class SearchModal extends React.Component {
   render() {
@@ -11,20 +12,20 @@ class SearchModal extends React.Component {
 
     return (
       <div
-        className={`search-modal-container ${
-          isInputFocused ? 'search-modal-open' : ''
+        className={`search-modal-containerYJ ${
+          isInputFocused ? 'search-modal-openYJ' : ''
         }`}
       >
-        <div className="search-modal">
-          <ul className="search-modal__ul">
+        <div className="search-modalYJ">
+          <ul className="search-modalYJ__ul">
             {filteredData.map(el => (
-              <li key={el.id} id={el.id} className="search-modal__list">
+              <li key={el.id} id={el.id} className="search-modalYJ__list">
                 <img
                   src={el.profileImg}
                   alt={`${el.author}님의 프로필사진`}
-                  className="circle-profile circle-profile--search-filter"
+                  className="circle-profileYJ circle-profileYJ--search-filter"
                 />
-                <span className="search-modal__menu">{el.author}</span>
+                <span className="search-modalYJ__menu">{el.author}</span>
               </li>
             ))}
           </ul>

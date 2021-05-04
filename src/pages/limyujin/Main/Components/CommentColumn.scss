@@ -1,23 +1,25 @@
-.js-feed-comment {
+@import '../../../../styles/Variables.scss';
+
+.js-feed-commentYJ {
   display: flex;
   align-items: center;
   margin-bottom: 3px;
 }
 
-.js-feed-comment span:first-of-type {
+.js-feed-commentYJ span:first-of-type {
   margin-right: 5px;
   font-weight: 600;
 }
 
-.js-feed-comment span:nth-of-type(2) {
+.js-feed-commentYJ span:nth-of-type(2) {
   width: 80%;
 }
 
-.js-comment-btns {
+.js-comment-btnsYJ {
   @extend %flex-center;
 }
 
-.js-comment-btn {
+.js-comment-btnYJ {
   all: unset;
   margin-left: 10px;
 }

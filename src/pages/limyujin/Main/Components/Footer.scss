@@ -1,4 +1,6 @@
-.main-footer {
+@import '../../../../styles/Variables.scss';
+
+.main-footerYJ {
   @extend %flex-column;
   margin-top: 15px;
   padding: 0px 5px;

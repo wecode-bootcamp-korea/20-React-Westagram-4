@@ -1,4 +1,5 @@
 import React from 'react';
+import './Footer.scss';
 
 class Footer extends React.Component {
   render() {
@@ -50,11 +51,11 @@ class Footer extends React.Component {
     ];
     return (
       <>
-        <footer className="main-footer">
-          <nav className="main-footer__nav">
+        <footer className="main-footerYJ">
+          <nav className="main-footerYJ__nav">
             <ul>
               {footerItem.map(el => (
-                <li className="main-footer__list" key={el.id}>
+                <li className="main-footerYJ__list" key={el.id}>
                   {el.item}
                 </li>
               ))}

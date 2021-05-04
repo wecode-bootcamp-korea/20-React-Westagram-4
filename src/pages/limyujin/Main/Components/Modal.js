@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
+import './Modal.scss';
+
 class Modal extends React.Component {
   render() {
     const { isModalVisible } = this.props;
@@ -28,24 +30,26 @@ class Modal extends React.Component {
     return (
       <>
         <div
-          className={`modal-container ${isModalVisible ? 'modal-open' : ''}`}
+          className={`modal-containerYJ ${
+            isModalVisible ? 'modal-openYJ' : ''
+          }`}
         >
-          <div className="modal">
+          <div className="modalYJ">
             <ul>
               {modalItem.map((el, index) => (
-                <li key={index} className="modal__list">
+                <li key={index} className="modalYJ__list">
                   <FontAwesomeIcon
                     icon={el.icon}
                     key={index}
-                    className="modal__icon"
+                    className="modalYJ__icon"
                   />
-                  <span className="modal__menu">{el.text}</span>
+                  <span className="modalYJ__menu">{el.text}</span>
                 </li>
               ))}
             </ul>
-            <div className="modal__line"></div>
+            <div className="modalYJ__line"></div>
           </div>
-          <div className="modal__arrow"></div>
+          <div className="modalYJ__arrow"></div>
         </div>
       </>
     );

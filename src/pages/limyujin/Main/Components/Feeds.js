@@ -10,6 +10,9 @@ import {
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 
+import './Feeds.scss';
+import './CircleProfile.scss';
+
 class Feeds extends React.Component {
   constructor(props) {
     super(props);
@@ -84,24 +87,24 @@ class Feeds extends React.Component {
 
     return (
       <>
-        <article className="feed">
-          <section className="feed__author-box">
-            <div className="feed__author-profile">
+        <article className="feedYJ">
+          <section className="feedYJ__author-box">
+            <div className="feedYJ__author-profile">
               <div
                 className={
                   story
-                    ? 'circle-profile__story-border circle-profile__story-border--feed'
+                    ? 'circle-profileYJ__story-border circle-profileYJ__story-border--feed'
                     : ''
                 }
               ></div>
               <img
                 src={profileImg}
                 alt={`${author}님의 프로필사진`}
-                className="circle-profile circle-profile--feed-author"
+                className="circle-profileYJ circle-profileYJ--feed-author"
               />
-              <div className="feed__author-info">
-                <span className="feed__author-info-text">{author}</span>
-                <span className="feed__author-info-text">{location}</span>
+              <div className="feedYJ__author-info">
+                <span className="feedYJ__author-info-text">{author}</span>
+                <span className="feedYJ__author-info-text">{location}</span>
               </div>
             </div>
             <div>
@@ -111,10 +114,10 @@ class Feeds extends React.Component {
             </div>
           </section>
           <img src={mainImg} alt={`${author}님의 사진`} />
-          <section className="feed__feature">
-            <ul className="feed__feature-btn-box">
-              <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn" onClick={handleLike}>
+          <section className="feedYJ__feature">
+            <ul className="feedYJ__feature-btn-box">
+              <li className="feedYJ__feature-btn-list">
+                <button className="feedYJ__feature-btn" onClick={handleLike}>
                   <i
                     className={`${
                       isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
@@ -122,27 +125,27 @@ class Feeds extends React.Component {
                   ></i>
                 </button>
               </li>
-              <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn">
+              <li className="feedYJ__feature-btn-list">
+                <button className="feedYJ__feature-btn">
                   <FontAwesomeIcon icon={faComment} className="comment" />
                 </button>
               </li>
-              <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn">
+              <li className="feedYJ__feature-btn-list">
+                <button className="feedYJ__feature-btn">
                   <FontAwesomeIcon icon={faPaperPlane} className="comment" />
                 </button>
               </li>
             </ul>
-            <ul className="feed__feature-btn-box">
-              <li className="feed__feature-btn-list">
-                <button className="feed__feature-btn">
+            <ul className="feedYJ__feature-btn-box">
+              <li className="feedYJ__feature-btn-list">
+                <button className="feedYJ__feature-btn">
                   <FontAwesomeIcon icon={faBookmark} className="bookmark" />
                 </button>
               </li>
             </ul>
           </section>
-          <section className="feed__texts">
-            <div className="feed__texts-column feed__likes">
+          <section className="feedYJ__texts">
+            <div className="feedYJ__texts-column feedYJ__likes">
               <span>좋아요 </span>
               <span className="js-likes-count">
                 {isFeedLikePressed
@@ -151,13 +154,13 @@ class Feeds extends React.Component {
               </span>
               <span>개</span>
             </div>
-            <div className="feed__texts-column feed__summary">
-              <span className="feed__summary-id">{author}</span>
+            <div className="feedYJ__texts-column feedYJ__summary">
+              <span className="feedYJ__summary-id">{author}</span>
               <span>{text}</span>
               <span>...</span>
-              <button className="feed__summary-btn">더 보기</button>
+              <button className="feedYJ__summary-btn">더 보기</button>
             </div>
-            <div className="feed__texts-column js-feed-comments">
+            <div className="feedYJ__texts-column js-feed-comments">
               {commentTexts.map(el => (
                 <CommentColumn
                   commentTexts={el.text}
@@ -167,22 +170,22 @@ class Feeds extends React.Component {
                 />
               ))}
             </div>
-            <div className="feed__time feed__texts-column">
+            <div className="feedYJ__time feedYJ__texts-column">
               <span>{getTime(time)}</span>
             </div>
           </section>
-          <form name="comment-form" className="feed__form">
+          <form name="comment-form" className="feedYJ__form">
             <FontAwesomeIcon icon={faSmile} className="smile" />
             <input
               type="text"
               placeholder="댓글달기..."
               value={commentValue}
-              className="feed__input"
+              className="feedYJ__input"
               onChange={handleInput}
             />
             <button
-              className={`feed__submit-btn ${
-                commentValue.length > 0 ? '' : 'feed__submit-btn--opacity'
+              className={`feedYJ__submit-btn ${
+                commentValue.length > 0 ? '' : 'feedYJ__submit-btn--opacity'
               }`}
               disabled={!commentValue}
               onClick={handleSubmitBtn}

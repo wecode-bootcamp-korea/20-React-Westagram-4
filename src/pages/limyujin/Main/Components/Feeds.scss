@@ -1,9 +1,11 @@
-.feed-box {
+@import '../../../../styles/Variables.scss';
+
+.feedYJ-box {
   @extend %flex-column;
   width: 616px;
 }
 
-.feed {
+.feedYJ {
   @extend %flex-column;
   margin-bottom: 60px;
   border: $border-gray-style;
@@ -126,31 +128,31 @@
   }
 }
 
-.feed__form > .fa-smile {
+.feedYJ__form > .fa-smile {
   font-size: 25px;
 }
 
 /* 웹 */
 @media only screen and (max-width: 710px) {
-  .feed-box {
+  .feedYJ-box {
     width: 95vw;
   }
 }
 /* 모바일 */
 @media only screen and (max-width: 414px) {
-  .feed-box {
+  .feedYJ-box {
     width: 95vw;
   }
 
-  .feed__input {
+  .feedYJ__input {
     width: 65vw;
   }
 
-  .feed__feature {
+  .feedYJ__feature {
     padding: 10px;
   }
 
-  .feed__texts {
+  .feedYJ__texts {
     padding: 0px 10px;
   }
 }

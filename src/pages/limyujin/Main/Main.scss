@@ -1,7 +1,18 @@
-.main-page {
+@import '../../../styles/Variables.scss';
+
+.main-pageYJ {
+  display: flex;
   justify-content: center;
+  margin-top: 100px;
+  line-height: 18px;
 }
 
 .fas.fa-heart {
   color: tomato;
+}
+
+@media screen and (max-width: 414px) {
+  .main-pageYJ {
+    margin-top: 70px;
+  }
 }
