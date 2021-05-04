@@ -28,7 +28,7 @@ class CommentColumn extends React.Component {
       <>
         <div className="js-feed-commentYJ">
           <span>wecode_bootcamp</span>
-          <span>{commentTexts.slice(0, 40)}</span>
+          <span className="js-feed-commentYJ__text">{commentTexts}</span>
           <div className="js-comment-btnsYJ">
             <button className="js-comment-btnYJ like-btn" onClick={handleLike}>
               <i
