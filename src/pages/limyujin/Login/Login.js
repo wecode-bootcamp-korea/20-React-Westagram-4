@@ -14,10 +14,6 @@ class Login extends React.Component {
     };
   }
 
-  goToMain = () => {
-    this.props.history.push('/mainyj');
-  };
-
   handleLoginInput = e => {
     const { name, value } = e.target;
     this.setState({
@@ -27,7 +23,7 @@ class Login extends React.Component {
 
   render() {
     const { id, pw } = this.state;
-    const { handleLoginInput, goToMain } = this;
+    const { handleLoginInput } = this;
     const isEveryInputValueExists = id.includes('@') && pw.length >= 5;
     return (
       <>
@@ -61,7 +57,8 @@ class Login extends React.Component {
                       ? ''
                       : 'login-formYJ__button--opacity'
                   }`}
-                onClick={goToMain}
+                type="submit"
+                formaction="/mainyj"
                 disabled={!isEveryInputValueExists}
               >
                 로그인

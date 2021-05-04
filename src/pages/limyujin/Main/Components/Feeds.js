@@ -161,11 +161,11 @@ class Feeds extends React.Component {
               <button className="feedYJ__summary-btn">더 보기</button>
             </div>
             <div className="feedYJ__texts-column js-feed-comments">
-              {commentTexts.map(el => (
+              {commentTexts.map(comment => (
                 <CommentColumn
-                  commentTexts={el.text}
-                  key={el.id}
-                  id={el.id}
+                  commentTexts={comment.text}
+                  key={comment.id}
+                  id={comment.id}
                   handleDelete={handleDelete}
                 />
               ))}

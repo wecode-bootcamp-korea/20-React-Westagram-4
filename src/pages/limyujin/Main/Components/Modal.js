@@ -11,18 +11,22 @@ class Modal extends React.Component {
     const { isModalVisible } = this.props;
     const modalItem = [
       {
+        id: 1,
         icon: faUserCircle,
         text: '프로필',
       },
       {
+        id: 2,
         icon: faBookmark,
         text: '저장됨',
       },
       {
+        id: 3,
         icon: faCog,
         text: '설정',
       },
       {
+        id: 4,
         icon: '',
         text: '로그아웃',
       },
@@ -36,14 +40,14 @@ class Modal extends React.Component {
         >
           <div className="modalYJ">
             <ul>
-              {modalItem.map((el, index) => (
+              {modalItem.map((modalMenu, index) => (
                 <li key={index} className="modalYJ__list">
                   <FontAwesomeIcon
-                    icon={el.icon}
-                    key={index}
+                    icon={modalMenu.icon}
+                    key={modalMenu.id}
                     className="modalYJ__icon"
                   />
-                  <span className="modalYJ__menu">{el.text}</span>
+                  <span className="modalYJ__menu">{modalMenu.text}</span>
                 </li>
               ))}
             </ul>

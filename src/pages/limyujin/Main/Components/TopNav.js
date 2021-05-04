@@ -132,10 +132,10 @@ class TopNav extends React.Component {
           </div>
           <div className="top-navYJ__column">
             <ul className="top-navYJ__menus">
-              {navLeftItem.map(el => (
-                <li className="top-navYJ__menu" key={el.id}>
+              {navLeftItem.map(menu => (
+                <li className="top-navYJ__menu" key={menu.id}>
                   <button className="top-navYJ__menu-btn">
-                    <FontAwesomeIcon icon={el.icon} className="user" />
+                    <FontAwesomeIcon icon={menu.icon} className="user" />
                   </button>
                 </li>
               ))}

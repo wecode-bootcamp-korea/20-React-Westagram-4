@@ -41,27 +41,30 @@ class MainRight extends React.Component {
             </div>
             <div>
               <ul>
-                {accountInfo.slice(0, 4).map(el => (
-                  <li className="main-right-sectionYJ__item-row" key={el.id}>
+                {accountInfo.slice(0, 4).map(newStoryAccount => (
+                  <li
+                    className="main-right-sectionYJ__item-row"
+                    key={newStoryAccount.id}
+                  >
                     <div className="main-right-sectionYJ__user-img-box">
                       <div
                         className={
-                          el.story
+                          newStoryAccount.story
                             ? 'circle-profileYJ__story-border circle-profileYJ__story-border--main-right-user'
                             : ''
                         }
                       ></div>
                       <img
-                        src={el.profileImg}
-                        alt={`${el.author}님의 이미지`}
+                        src={newStoryAccount.profileImg}
+                        alt={`${newStoryAccount.author}님의 이미지`}
                         className="circle-profileYJ circle-profileYJ--main-right-user"
                       />
                     </div>
                     <div className="main-right-sectionYJ__texts">
                       <span className="main-right-sectionYJ__account-id">
-                        {el.author}
+                        {newStoryAccount.author}
                       </span>
-                      <span>{getTime(el.time)}</span>
+                      <span>{getTime(newStoryAccount.time)}</span>
                     </div>
                   </li>
                 ))}
@@ -77,20 +80,27 @@ class MainRight extends React.Component {
             </div>
             <div>
               <ul>
-                {reverseInfo.slice(0, 4).map(el => (
-                  <li className="main-right-sectionYJ__item-row" key={el.id}>
+                {reverseInfo.slice(0, 4).map(recommendAccount => (
+                  <li
+                    className="main-right-sectionYJ__item-row"
+                    key={recommendAccount.id}
+                  >
                     <div className="main-right-sectionYJ__user-img-box">
                       <img
-                        src={el.profileImg}
-                        alt={`${el.author}님의 사진`}
+                        src={recommendAccount.profileImg}
+                        alt={`${recommendAccount.author}님의 사진`}
                         className="circle-profileYJ circle-profileYJ--main-right-user"
                       />
                     </div>
                     <div className="main-right-sectionYJ__texts">
                       <span className="main-right-sectionYJ__account-id">
-                        {el.author}
+                        {recommendAccount.author}
                       </span>
-                      <span>{el.newAccount ? 'Instagram 신규 가입' : ''}</span>
+                      <span>
+                        {recommendAccount.newAccount
+                          ? 'Instagram 신규 가입'
+                          : ''}
+                      </span>
                     </div>
                     <button className="main-right-sectionYJ__recommend-follow">
                       팔로우

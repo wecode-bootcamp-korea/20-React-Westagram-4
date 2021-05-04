@@ -1,9 +1,9 @@
 @import '../../../../styles/Variables.scss';
 
 .modal-containerYJ {
-  position: fixed;
-  top: 60px;
-  right: 10px;
+  position: absolute;
+  top: 43px;
+  right: -10px;
   display: none;
   font-size: 14px;
 }

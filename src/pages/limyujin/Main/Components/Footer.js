@@ -54,9 +54,9 @@ class Footer extends React.Component {
         <footer className="main-footerYJ">
           <nav className="main-footerYJ__nav">
             <ul>
-              {footerItem.map(el => (
-                <li className="main-footerYJ__list" key={el.id}>
-                  {el.item}
+              {footerItem.map(footerMenu => (
+                <li className="main-footerYJ__list" key={footerMenu.id}>
+                  {footerMenu.item}
                 </li>
               ))}
             </ul>
