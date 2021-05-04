@@ -1,21 +1,26 @@
-.asideCenterContentContainer {
+.asideCenterContentContainerYM {
   display: flex;
-}
+  margin-bottom: 15px;
 
-.asideCenterContentImg {
-  width: 40px;
-  margin-right: 10px;
-  border-radius: 50%;
-}
+  .asideCenterContentImg {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
 
-.asideCenterContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 5px;
+  .asideCenterContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5px;
 
-  span {
-    color: var(--color-gray);
-    font-weight: bold;
+    span {
+      color: var(--color-gray);
+      font-weight: bold;
+    }
+
+    a {
+      margin-bottom: 5px;
+    }
   }
 }

@@ -34,7 +34,7 @@ class Login extends React.Component {
     const { id, password, buttonColor } = this.state;
     const condtionOfButtonActivated = id.includes('@') && password.length >= 5;
     return (
-      <main className="login">
+      <main className="loginYM">
         <div className="loginPage">
           <h1 className="loginTitle">Westagram</h1>
           <div className="loginContents">

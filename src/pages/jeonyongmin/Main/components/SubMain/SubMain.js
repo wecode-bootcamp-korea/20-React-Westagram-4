@@ -23,7 +23,7 @@ class SubMain extends React.Component {
   render() {
     const { feedList } = this.state;
     return (
-      <div className="feedContainer">
+      <div className="feedContainerYM">
         {feedList.map(element => {
           return (
             <Feed

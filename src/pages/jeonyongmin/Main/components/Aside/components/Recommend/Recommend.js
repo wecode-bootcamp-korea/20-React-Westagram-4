@@ -7,7 +7,7 @@ class Recommend extends React.Component {
     const recommendData = this.props.data;
     for (let i = 0; i < recommendData.length; i++) {
       lists.push(
-        <div className="recommendOfUser" key={recommendData[i].id}>
+        <div className="recommendOfUserYM" key={recommendData[i].id}>
           <div className="recommendOfUserContent">
             <a href="#">
               <img

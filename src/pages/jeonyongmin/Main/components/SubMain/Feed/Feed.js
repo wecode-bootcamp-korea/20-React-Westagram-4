@@ -66,10 +66,9 @@ class Feed extends React.Component {
   render() {
     const { inputValue, buttonColor, commentList } = this.state;
     const conditionOfButtonActivated = inputValue.length > 0;
-    console.log(commentList);
     return (
       <>
-        <article className="sectionArticle">
+        <article className="sectionArticleYM">
           <div className="sectionArticleUser">
             <div>
               <img

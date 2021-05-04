@@ -9,7 +9,7 @@ class Main extends React.Component {
     return (
       <>
         <NavBar />
-        <main className="mainPage">
+        <main className="mainPageYM">
           <SubMain />
           <Aside />
         </main>

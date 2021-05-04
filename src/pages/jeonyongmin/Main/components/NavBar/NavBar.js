@@ -6,7 +6,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <header className="header">
+        <header className="headerYM">
           <nav className="headerNav">
             <div className="headerNavLeftSide">
               <Link to="/loginym">

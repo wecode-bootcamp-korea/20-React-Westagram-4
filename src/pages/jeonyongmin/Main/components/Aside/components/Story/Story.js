@@ -9,7 +9,7 @@ class Story extends React.Component {
       lists.push(
         <div
           key={storyContentsData[i].id}
-          className="asideCenterContentContainer"
+          className="asideCenterContentContainerYM"
         >
           <a href="#">
             <img
