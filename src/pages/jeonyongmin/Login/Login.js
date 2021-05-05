@@ -16,11 +16,8 @@ class Login extends React.Component {
   };
 
   handleIdPwInput = e => {
-    if (e.target.type === 'text') {
-      this.setState({ id: e.target.value });
-    } else if (e.target.type === 'password') {
-      this.setState({ password: e.target.value });
-    }
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -35,6 +32,7 @@ class Login extends React.Component {
               <input
                 className="loginInputId input"
                 type="text"
+                name="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 required
                 onChange={this.handleIdPwInput}
@@ -42,6 +40,7 @@ class Login extends React.Component {
               <input
                 className="loginInputPassword input"
                 type="password"
+                name="password"
                 placeholder="비밀번호"
                 required
                 onChange={this.handleIdPwInput}
