@@ -11,8 +11,8 @@ class NavBar extends React.Component {
             <div className="headerNavLeftSide">
               <Link to="/loginym">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Instagram_font_awesome.svg/512px-Instagram_font_awesome.svg.png"
                   alt="instagram_imoticon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Instagram_font_awesome.svg/512px-Instagram_font_awesome.svg.png"
                   className="headerNavLeftSideImg"
                 />
               </Link>
@@ -33,22 +33,22 @@ class NavBar extends React.Component {
             <div className="headerNavRightSide">
               <a href="#">
                 <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
                   alt="explore right menu"
+                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
                   className="headerNavRightSideImg1"
                 />
               </a>
               <button>
                 <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                   alt="heart"
+                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                   className="headerNavRightSideImg2"
                 />
               </button>
               <button>
                 <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
                   alt="mypage"
+                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
                   className="headerNavRightSideImg3"
                 />
               </button>

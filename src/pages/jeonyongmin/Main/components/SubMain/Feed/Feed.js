@@ -73,8 +73,8 @@ class Feed extends React.Component {
           <div className="sectionArticleUser">
             <div>
               <img
+                alt={`${name}'s profile img`}
                 src={profileImg}
-                alt="drake profile"
                 className="sectionArticleUserImg"
               />
               <a href="" className="sectionArticleUsername">
@@ -85,7 +85,11 @@ class Feed extends React.Component {
               <i className="fas fa-ellipsis-h"></i>
             </button>
           </div>
-          <img src={feedImg} alt="feed image" className="sectionArticleImg" />
+          <img
+            alt={`${name}'s feed img`}
+            src={feedImg}
+            className="sectionArticleImg"
+          />
           <div className="sectionArticleContainer">
             <div className="sectionArticleIconbar">
               <div className="sectionArticleIconbarLeftSide">

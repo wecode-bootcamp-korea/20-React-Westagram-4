@@ -37,7 +37,6 @@ class Aside extends React.Component {
       ],
     };
   }
-  // 구조분해 문법으로 바꿔보기
   render() {
     const { storyContents, recommendContents } = this.state;
     return (

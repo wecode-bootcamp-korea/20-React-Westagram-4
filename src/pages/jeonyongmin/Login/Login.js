@@ -8,7 +8,6 @@ class Login extends React.Component {
     this.state = {
       id: '',
       password: '',
-      buttonColor: false,
     };
   }
 
@@ -18,20 +17,14 @@ class Login extends React.Component {
 
   handleIdPwInput = e => {
     if (e.target.type === 'text') {
-      this.setState({ id: e.target.value }, this.validation);
+      this.setState({ id: e.target.value });
     } else if (e.target.type === 'password') {
-      this.setState({ password: e.target.value }, this.validation);
+      this.setState({ password: e.target.value });
     }
   };
 
-  validation = () => {
-    const { id, password } = this.state;
-    const condition = id.includes('@') && password.length >= 5;
-    this.setState({ buttonColor: condition });
-  };
-
   render() {
-    const { id, password, buttonColor } = this.state;
+    const { id, password } = this.state;
     const condtionOfButtonActivated = id.includes('@') && password.length >= 5;
     return (
       <main className="loginYM">
@@ -55,7 +48,9 @@ class Login extends React.Component {
               />
               <button
                 className={
-                  buttonColor ? 'loginButtonActive' : 'loginButtonDeactive'
+                  condtionOfButtonActivated
+                    ? 'loginButtonActive'
+                    : 'loginButtonDeactive'
                 }
                 type="submit"
                 onClick={this.goToMain}
@@ -65,12 +60,12 @@ class Login extends React.Component {
               </button>
             </form>
           </div>
-          <a
-            href="https://www.instagram.com/accounts/password/reset/"
+          <Link
+            to="https://www.instagram.com/accounts/password/reset/"
             className="loginFindPassword"
           >
             비밀번호를 잊으셨나요?
-          </a>
+          </Link>
         </div>
       </main>
     );
