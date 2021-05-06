@@ -28,10 +28,8 @@ class Main extends React.Component {
 
   getFeedData = () => {
     const { preItems, items, feedInfo } = this.state;
-    const feedDataUrl = 'Data/limyujin/feedData.json';
-    fetch(feedDataUrl, {
-      method: 'GET',
-    })
+    const FEED_DATA = 'Data/limyujin/feedData.json';
+    fetch(FEED_DATA)
       .then(res => res.json())
       .then(feedData => {
         let sliceData = feedData.slice(preItems, items);
@@ -40,11 +38,8 @@ class Main extends React.Component {
   };
 
   getRecommendData = () => {
-    const recommendDataUrl = 'Data/limyujin/recommendData.json';
-
-    fetch(recommendDataUrl, {
-      method: 'GET',
-    })
+    const RECOMMEND_DATA = 'Data/limyujin/recommendData.json';
+    fetch(RECOMMEND_DATA)
       .then(res => res.json())
       .then(recommendData => {
         this.setState({ recommendData: recommendData });
