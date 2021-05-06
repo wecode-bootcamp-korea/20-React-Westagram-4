@@ -14,9 +14,7 @@ export default class Writecomment extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/kwonojae/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/kwonojae/commentData.json')
       .then(response => response.json())
       .then(commentData => {
         this.setState({ commentList: commentData });
@@ -46,8 +44,8 @@ export default class Writecomment extends Component {
     const { commentList, currentCommentInputData } = this.state;
     return (
       <div className="feedTimeOJ">
-        {commentList.map(commentList => {
-          return <Comment value={commentList.value} key={commentList.id} />;
+        {commentList.map(comment => {
+          return <Comment value={comment.value} key={comment.id} />;
         })}
         <div className="feedTime">
           <a href="#">42분 전</a>

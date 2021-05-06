@@ -11,6 +11,37 @@ export default class LoginOJ extends Component {
     };
   }
 
+  loginClick = e => {
+    fetch('http://10.58.1.54:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
+
+  loginToken = e => {
+    fetch('http://localhost:3000/loginoj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('wtw-token', response.token);
+        }
+      });
+  };
+
   handleInput = e => {
     const { name, value } = e.target;
 
