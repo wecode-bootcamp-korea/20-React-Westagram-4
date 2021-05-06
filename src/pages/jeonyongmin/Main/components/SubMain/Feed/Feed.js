@@ -35,7 +35,6 @@ class Feed extends React.Component {
     const { commentList, inputValue } = this.state;
     this.setState(
       {
-        inputValue: '',
         commentList: [
           ...commentList,
           {
