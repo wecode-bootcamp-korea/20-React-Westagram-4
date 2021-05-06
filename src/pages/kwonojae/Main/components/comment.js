@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Comment.scss';
+import './comment.scss';
 
 export default class Comment extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Aside.scss';
-import RecommendProfiles from './Recommendprofile';
+import RecommendProfiles from './recommendprofile';
 
 export default class Aside extends Component {
   render() {

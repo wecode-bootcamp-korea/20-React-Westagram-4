@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSmile } from '@fortawesome/free-regular-svg-icons';
-import Comment from './Comment';
-import './Writecomment.scss';
+import Comment from './comment';
+import './writecomment.scss';
 
 export default class Writecomment extends Component {
   constructor() {

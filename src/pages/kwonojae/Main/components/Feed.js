@@ -7,7 +7,7 @@ import {
   faComment,
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
-import Writecomment from './Writecomment';
+import Writecomment from './writecomment';
 import './Feed.scss';
 
 export default class Feed extends Component {
