@@ -14,11 +14,43 @@ class Login extends React.Component {
     };
   }
 
+  requestLogin = () => {
+    const API = process.env.REACT_APP_LOGIN_API_KEY;
+    // const API = process.env.REACT_APP_SIGN_API_KEY;
+    fetch(API, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        }
+      })
+      .then(res => {
+        if (res) {
+          // save localstroage
+          localStorage.setItem('TOKEN', res['ACCESS TOKEN']);
+          // push to main
+          this.props.history.push('/mainyj');
+        } else {
+          alert('로그인하세요');
+        }
+      });
+  };
+
   handleLoginInput = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
     });
+  };
+
+  goToMain = e => {
+    e.preventDefault();
+    this.requestLogin();
   };
 
   render() {
@@ -58,7 +90,7 @@ class Login extends React.Component {
                       : 'login-formYJ__button--opacity'
                   }`}
                 type="submit"
-                formaction="/mainyj"
+                onClick={this.goToMain}
                 disabled={!isEveryInputValueExists}
               >
                 로그인

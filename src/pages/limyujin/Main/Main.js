@@ -28,7 +28,7 @@ class Main extends React.Component {
 
   getFeedData = () => {
     const { preItems, items, feedInfo } = this.state;
-    const feedDataUrl = 'http://localhost:3000/Data/limyujin/feedData.json';
+    const feedDataUrl = 'Data/limyujin/feedData.json';
     fetch(feedDataUrl, {
       method: 'GET',
     })
@@ -40,8 +40,7 @@ class Main extends React.Component {
   };
 
   getRecommendData = () => {
-    const recommendDataUrl =
-      'http://localhost:3000/Data/limyujin/recommendData.json';
+    const recommendDataUrl = 'Data/limyujin/recommendData.json';
 
     fetch(recommendDataUrl, {
       method: 'GET',
