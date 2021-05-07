@@ -7,7 +7,7 @@ import {
   faComment,
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
-import Writecomment from './writecomment';
+import Writecomment from './Writecomment';
 import './Feed.scss';
 
 export default class Feed extends Component {
@@ -19,9 +19,7 @@ export default class Feed extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/kwonojae/Feeddata.json', {
-      method: 'GET',
-    })
+    fetch('/data/kwonojae/Feeddata.json')
       .then(response => response.json())
       .then(feedData => {
         this.setState({ feedList: feedData });
@@ -39,8 +37,8 @@ export default class Feed extends Component {
               <div className="feedHeader">
                 <div className="writer">
                   <img
-                    src="/images/kwonojae/profileImage.jpeg"
                     alt="writer profile image"
+                    src="/images/kwonojae/profileImage.jpeg"
                   />
                   <h5>
                     <a href="#">vindiesel</a>

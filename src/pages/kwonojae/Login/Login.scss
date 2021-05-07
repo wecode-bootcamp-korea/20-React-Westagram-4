@@ -1,16 +1,15 @@
-@import '../../../styles/Variable.scss';
+@import '../../../styles/variable.scss';
 
 .loginOJ {
-  @extend .flexCS;
-  align-items: center;
+  @include flexSet(column, start);
   width: 350px;
   height: 380px;
-  margin: 150px auto 0px auto;
+  margin: 150px auto 0;
   border: $border1;
   border-radius: 1px;
 
   h1 {
-    margin: 32px 0px 0px 0px;
+    margin: 32px 0 0;
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 41px;
@@ -19,7 +18,7 @@
   input {
     width: 268px;
     height: 38px;
-    padding: 9px 0px 7px 8px;
+    padding: 9px 0 7px 8px;
     background-color: $inputBgCol1;
     border: $border1;
     border-radius: 3px;
@@ -30,15 +29,16 @@
   }
 
   .inputID {
-    margin: 36px 0px 0px 0px;
+    margin: 36px 0 0;
   }
 
   .inputPW {
-    margin: 6px 0px 0px 0px;
+    margin: 6px 0 0;
   }
 
   a {
     cursor: default;
+
     .loginBtn {
       margin-top: 14px;
       width: 268px;
@@ -47,7 +47,7 @@
       border: none;
       border-radius: 4px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .btnActiveColor {
@@ -62,7 +62,7 @@
   }
 
   span {
-    margin: 99px 0px 0px 0px;
+    margin: 99px 0 0;
     color: $fotgetPW;
     font-size: 12px;
   }

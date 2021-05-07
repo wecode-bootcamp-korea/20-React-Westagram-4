@@ -62,29 +62,6 @@ $border1: 1px solid #dbdbdb;
   border: 1px solid #dbdbdb;
 }
 
-.flexR {
-  display: flex;
-  flex-direction: row;
-}
-
-.flexCS {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
-.flexRS {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
-
-.flexRB {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .fixedTR {
   position: fixed;
   right: 0;
@@ -95,4 +72,11 @@ $border1: 1px solid #dbdbdb;
   background-color: $white;
   border: none;
   font-size: 24px;
+}
+
+@mixin flexSet($direction: row, $just: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
 }

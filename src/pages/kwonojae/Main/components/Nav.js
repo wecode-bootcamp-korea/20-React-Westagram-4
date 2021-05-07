@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './Nav.scss';
 
+const NAVICONLIST = [
+  { id: 1, className: 'fas fa-home' },
+  { id: 2, className: 'far fa-paper-plane' },
+  { id: 3, className: 'far fa-compass' },
+  { id: 4, className: 'fas fa-heart' },
+];
+
 export default class Nav extends Component {
   render() {
-    const iconList = [
-      { id: 1, className: 'fas fa-home' },
-      { id: 2, className: 'far fa-paper-plane' },
-      { id: 3, className: 'far fa-compass' },
-      { id: 4, className: 'fas fa-heart' },
-    ];
-
     return (
       <nav className="navOJ">
         <div className="navTitle">
@@ -19,10 +19,11 @@ export default class Nav extends Component {
           <input type="text" placeholder="검색" />
         </div>
         <div className="navIcons">
-          {iconList.map(iconInfo => {
-            return <i key={iconInfo.id} className={iconInfo.className} />;
+          {NAVICONLIST.map(iconInfo => {
+            const { id, className } = iconInfo;
+            return <i key={id} className={className} />;
           })}
-          <img src="/images/kwonojae/profileImage.jpeg" alt="my menu" />
+          <img alt="my menu" src="/images/kwonojae/profileImage.jpeg" />
         </div>
       </nav>
     );

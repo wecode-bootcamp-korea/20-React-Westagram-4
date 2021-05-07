@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import RecommendProfiles from './Recommendprofile';
 import './Aside.scss';
-import RecommendProfiles from './recommendprofile';
 
 export default class Aside extends Component {
   render() {
@@ -8,7 +8,10 @@ export default class Aside extends Component {
       <aside className="asideOJ">
         <div className="profileWithRecommend">
           <div className="myProfile">
-            <img src="/images/kwonojae/myprofile.jpeg" />
+            <img
+              alt="recommendProfilesImage"
+              src="/images/kwonojae/myprofile.jpeg"
+            />
             <dl>
               <dt>geborenik</dt>
               <dd>권오재</dd>
