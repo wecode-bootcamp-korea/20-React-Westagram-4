@@ -28,19 +28,19 @@
       line-height: 20px;
       font-size: 20px;
       font-family: 'Lobster', cursive;
-    }
-  }
 
-  .navLogo .navLogoTitle::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    width: 1px;
-    height: 20px;
-    background-color: black;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 1px;
+        height: 20px;
+        background-color: black;
+      }
+    }
   }
 
   .navSearchWrap {
@@ -62,46 +62,22 @@
     }
   }
 
-  .searchPopup {
-    position: absolute;
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 375px;
-    background-color: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    overflow: auto;
-    z-index: 100;
-  }
-
-  .searchPopup li {
-    display: block;
-    display: flex;
-    margin: 10px;
-  }
-
-  .searchPopup li img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
-
   .navLink {
     min-width: 130px;
 
     li {
+      display: inline-block;
       cursor: pointer;
+
+      img {
+        width: 22px;
+        margin-left: 10px;
+      }
     }
   }
 
   .navLink img {
     width: 22px;
     margin-left: 10px;
-  }
-
-  li {
-    display: inline-block;
   }
 }

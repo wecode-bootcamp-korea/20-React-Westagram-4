@@ -12,7 +12,7 @@ class Nav extends Component {
       <>
         <nav className="NavJY">
           <a className="navLogo" href="main.html">
-            <img src="/images/leejiyon/instagram.png" alt="위스타그램 로고" />
+            <img alt="위스타그램 로고" src="/images/leejiyon/instagram.png" />
             <div className="navLogoTitle">Westagram</div>
           </a>
           <div className="navSearchWrap">

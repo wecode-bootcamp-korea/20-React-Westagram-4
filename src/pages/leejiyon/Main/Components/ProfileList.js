@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ProfileList.scss';
 
 class ProfileList extends Component {
   render() {

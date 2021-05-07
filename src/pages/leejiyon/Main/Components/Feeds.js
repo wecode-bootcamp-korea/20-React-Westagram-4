@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Article from './Article';
+import './Feeds.scss';
 
 class Feeds extends Component {
   state = {
@@ -11,9 +12,9 @@ class Feeds extends Component {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
+      .then(articleData => {
         this.setState({
-          articleList: data,
+          articleList: articleData,
         });
       });
   }

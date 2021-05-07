@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './login.scss';
 
 class Login extends React.Component {
@@ -12,9 +13,28 @@ class Login extends React.Component {
   }
 
   onChangeInput = e => {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+  };
+
+  onClickBtn = e => {
+    fetch('http://10.58.7.181:8000/user/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        if (result.message === 'SUCCESS') {
+          this.props.history.push('/mainjy');
+          localStorage.setItem('access-token', result.ACCESS_TOKEN);
+        }
+      });
   };
 
   render() {
@@ -42,13 +62,12 @@ class Login extends React.Component {
             />
           </div>
 
-          <Link to="/mainjy">
-            {validation ? (
-              <button className="loginBtn blueBackgroundColor">로그인</button>
-            ) : (
-              <button className="loginBtn ">로그인</button>
-            )}
-          </Link>
+          <button
+            className={`loginBtn ${validation ? 'blueBackgroundColor' : null}`}
+            onClick={this.onClickBtn}
+          >
+            로그인
+          </button>
           <a
             className="findPw"
             href="https://www.instagram.com/accounts/password/reset/"
@@ -61,4 +80,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import Comments from './Comments';
 import './Article.scss';
 
-const emptyHeartStyle = {
-  backgroundPosition: `-156px -478px`,
-};
-const likedHeartStyle = {
-  backgroundPosition: `-130px -478px`,
-};
-
 class Article extends Component {
   inputRef = React.createRef();
   state = {
@@ -48,15 +41,9 @@ class Article extends Component {
     this.setState({
       isArticleLiked: !this.state.isArticleLiked,
     });
-    if (this.state.commentLikeNum === 10) {
-      this.setState({
-        commentLikeNum: 9,
-      });
-    } else {
-      this.setState({
-        commentLikeNum: 10,
-      });
-    }
+    this.setState({
+      commentLikeNum: this.state.isArticleLiked ? 9 : 10,
+    });
   };
 
   onClickPostCommentInput = e => {
@@ -86,12 +73,15 @@ class Article extends Component {
       return;
     }
     this.setState({
-      userComments: this.state.userComments.concat({
-        id: this.state.id,
-        userId: this.state.currentUser,
-        comment: this.state.commentInputValue,
-        showTrashBtn: true,
-      }),
+      userComments: [
+        ...this.state.userComments,
+        {
+          id: this.state.id,
+          userId: this.state.currentUser,
+          comment: this.state.commentInputValue,
+          showTrashBtn: true,
+        },
+      ],
       commentInputValue: '',
       id: this.state.id + 1,
       lastPostedCommentTIme: '방금',
@@ -136,11 +126,10 @@ class Article extends Component {
         <img alt={articleImg.alt} className="articleImg" src={articleImg.src} />
         <div className="articleLnb">
           <button
-            className="lnbImg heartImg"
-            onClick={e => this.onClickArticleHeartBtn(e.target)}
-            style={
-              this.state.isArticleLiked ? likedHeartStyle : emptyHeartStyle
-            }
+            className={`lnbImg ${
+              this.state.isArticleLiked ? 'heartImg' : 'emptyImg'
+            }`}
+            onClick={this.onClickArticleHeartBtn}
           ></button>
           <button className="lnbImg msgImg"></button>
           <button className="lnbImg shareImg"></button>
@@ -181,22 +170,15 @@ class Article extends Component {
             type="text"
             placeholder="댓글 달기..."
             value={this.state.commentInputValue}
-            onChange={e => {
-              this.onChangeCommentInput(e);
-            }}
-            onKeyUp={e => this.onClickPostCommentInput(e)}
+            onChange={this.onChangeCommentInput}
+            onKeyUp={this.onClickPostCommentInput}
             ref={this.inputRef}
           />
           <button
-            className="postCommentBtn"
-            onClick={e => {
-              this.onClickPostBtn(e);
-            }}
-            style={
-              this.state.isCommentInputEntered
-                ? { color: 'blue' }
-                : { color: '#72c2fa' }
-            }
+            className={`postCommentBtn ${
+              this.state.isCommentInputEntered ? 'activeBtn' : 'nonActiveBtn'
+            }`}
+            onClick={this.onClickPostBtn}
           >
             게시
           </button>

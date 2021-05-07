@@ -1,10 +1,8 @@
 .LoginJY {
-  & {
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    background-color: #fafafa;
-  }
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #fafafa;
 
   .LoginBox {
     position: relative;

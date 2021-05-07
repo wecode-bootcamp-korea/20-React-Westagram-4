@@ -61,6 +61,10 @@
       background-position: -130px -478px;
     }
 
+    .emptyImg {
+      background-position: -156px -478px;
+    }
+
     .msgImg {
       background-position: -307px -401px;
     }
@@ -84,11 +88,11 @@
     .articleLikes {
       font-size: $comment-fontsize;
       margin-bottom: 15px;
-    }
 
-    .articleLikes span {
-      font-weight: bold;
-      font-size: $comment-fontsize;
+      span {
+        font-weight: bold;
+        font-size: $comment-fontsize;
+      }
     }
 
     .commentWrap {
@@ -188,6 +192,12 @@
       outline: none;
       border: none;
       cursor: pointer;
+    }
+    .activeBtn {
+      color: blue;
+    }
+    .nonActibeBtn {
+      color: #72c2fa;
     }
   }
 }
