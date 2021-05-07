@@ -11,7 +11,7 @@ class SearchModal extends React.Component {
     return (
       <div
         className={`search-modal-containerYJ ${
-          isInputFocused ? 'search-modal-openYJ' : ''
+          isInputFocused && 'search-modal-openYJ'
         }`}
       >
         <div className="search-modalYJ">

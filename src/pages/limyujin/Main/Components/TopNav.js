@@ -36,7 +36,7 @@ class TopNav extends React.Component {
       .then(res => res.json())
       .then(feedData => {
         this.setState({
-          userData: [...feedData],
+          userData: feedData,
         });
       });
   };
@@ -66,16 +66,6 @@ class TopNav extends React.Component {
   };
 
   render() {
-    const navLeftItem = [
-      {
-        id: '1',
-        icon: faCompass,
-      },
-      {
-        id: '2',
-        icon: faHeart,
-      },
-    ];
     const {
       isModalVisible,
       isInputFocused,
@@ -84,8 +74,6 @@ class TopNav extends React.Component {
       userData,
     } = this.state;
     const { focusInput, blurInput, handleInput } = this;
-    const yesInputNoDisplay =
-      isInputChanged || searchText ? 'display-noneYJ' : '';
     return (
       <nav className="top-navYJ">
         <div className="top-navYJ__column">
@@ -109,15 +97,15 @@ class TopNav extends React.Component {
             />
             <span
               className={`top-navYJ__input-text ${
-                isInputFocused ? 'top-navYJ__input-text--focused' : ''
-              } ${yesInputNoDisplay}`}
+                isInputFocused && 'top-navYJ__input-text--focused'
+              } ${(isInputChanged || searchText) && 'display-noneYJ'}`}
             >
               검색
             </span>
             <FontAwesomeIcon
               icon={faSearch}
               className={`top-navYJ__search
-                  ${isInputFocused ? 'top-navYJ__search--focused' : ''}`}
+                  ${isInputFocused && 'top-navYJ__search--focused'}`}
             />
             <SearchModal
               userData={userData}
@@ -153,3 +141,13 @@ class TopNav extends React.Component {
 }
 
 export default TopNav;
+const navLeftItem = [
+  {
+    id: '1',
+    icon: faCompass,
+  },
+  {
+    id: '2',
+    icon: faHeart,
+  },
+];

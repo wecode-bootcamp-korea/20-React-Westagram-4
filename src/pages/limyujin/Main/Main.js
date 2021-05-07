@@ -14,12 +14,13 @@ class Main extends React.Component {
       preItems: 0,
       items: 2,
     };
+    this.infinityScroll = _.throttle(this.infinityScroll, 500);
   }
 
   componentDidMount() {
     this.getFeedData();
     this.getRecommendData();
-    window.addEventListener('scroll', _.throttle(this.infinityScroll, 500));
+    window.addEventListener('scroll', this.infinityScroll);
   }
 
   componentWillUnmount() {
@@ -32,7 +33,7 @@ class Main extends React.Component {
     fetch(FEED_DATA)
       .then(res => res.json())
       .then(feedData => {
-        let sliceData = feedData.slice(preItems, items);
+        const sliceData = feedData.slice(preItems, items);
         this.setState({ feedInfo: [...feedInfo, ...sliceData] });
       });
   };
@@ -42,7 +43,7 @@ class Main extends React.Component {
     fetch(RECOMMEND_DATA)
       .then(res => res.json())
       .then(recommendData => {
-        this.setState({ recommendData: recommendData });
+        this.setState({ recommendData });
       });
   };
 
@@ -56,7 +57,6 @@ class Main extends React.Component {
       document.body.scrollTop
     );
     const clientHeight = document.documentElement.clientHeight;
-
     if (scrollTop + clientHeight >= scrollHeight) {
       this.setState({
         preItems: this.state.items,

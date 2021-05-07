@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import { getTime } from '../../../../utils/limyujin/getTime';
 import './MainRight.scss';
 import './CircleProfile.scss';
 
@@ -7,17 +8,6 @@ class MainRight extends React.Component {
   render() {
     const { accountInfo } = this.props;
     const reverseInfo = [...accountInfo].reverse();
-    const getTime = t => {
-      let result = '';
-      if (t / 60 / 60 / 1000 < 1) {
-        result = t / 60 / 1000 + '분 전';
-      } else if (t > 86400000) {
-        result = '1일 전';
-      } else {
-        result = t / 60 / 60 / 1000 + '시간 전';
-      }
-      return result;
-    };
     return (
       <aside className="main-rightYJ">
         <section className="main-rightYJ__my-account">

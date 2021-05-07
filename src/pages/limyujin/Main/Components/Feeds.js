@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentColumn from './CommentColumn';
+import { getTime } from '../../../../utils/limyujin/getTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
@@ -60,18 +61,6 @@ class Feeds extends React.Component {
     this.setState({ commentTexts: filteredComments });
   };
 
-  getTime = t => {
-    let result = '';
-    if (t / 60 / 60 / 1000 < 1) {
-      result = t / 60 / 1000 + '분 전';
-    } else if (t > 86400000) {
-      result = '1일 전';
-    } else {
-      result = t / 60 / 60 / 1000 + '시간 전';
-    }
-    return result;
-  };
-
   render() {
     const { commentTexts, isFeedLikePressed, commentValue } = this.state;
     const {
@@ -84,13 +73,7 @@ class Feeds extends React.Component {
       like,
       story,
     } = this.props;
-    const {
-      handleDelete,
-      handleInput,
-      handleLike,
-      handleSubmitBtn,
-      getTime,
-    } = this;
+    const { handleDelete, handleInput, handleLike, handleSubmitBtn } = this;
     return (
       <article className="feedYJ">
         <section className="feedYJ__author-box">

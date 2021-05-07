@@ -16,7 +16,7 @@ class Login extends React.Component {
 
   requestLogin = e => {
     e.preventDefault();
-    fetch(config.LOGIN_API, {
+    fetch(config.LOGIN_API_URL, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -50,14 +50,14 @@ class Login extends React.Component {
   render() {
     const { id, pw } = this.state;
     const { handleLoginInput } = this;
-    const isIdPwValid = id.includes('@') && pw.length >= 5;
+    const isIdPwBothValid = id.includes('@') && pw.length >= 5;
     return (
       <main className="login-pageYJ">
         <section className="login-boxYJ">
           <header className="login-boxYJ__title">
             <h1>Westagram</h1>
           </header>
-          <form className="login-formYJ" action="main.html">
+          <form className="login-formYJ">
             <input
               className="login-formYJ__input"
               type="email"
@@ -77,10 +77,10 @@ class Login extends React.Component {
             />
             <button
               className={`login-formYJ__button
-                  ${isIdPwValid ? '' : 'login-formYJ__button--opacity'}`}
-              type="submit"
+                  ${isIdPwBothValid ? '' : 'login-formYJ__button--opacity'}`}
+              // type="submit"
               onClick={this.requestLogin}
-              disabled={!isIdPwValid}
+              disabled={!isIdPwBothValid}
             >
               로그인
             </button>
