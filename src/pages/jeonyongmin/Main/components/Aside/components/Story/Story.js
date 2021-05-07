@@ -3,26 +3,24 @@ import './Story.scss';
 
 class Story extends React.Component {
   render() {
-    const storyContentsData = this.props.data;
+    const storyContentsData = this.props.storyData;
 
     return (
       <>
         {storyContentsData.map(storyContent => {
+          const { id, img, name, timeAfterFeedUpload } = storyContent;
           return (
-            <div
-              key={storyContent.id}
-              className="asideCenterContentContainerYM"
-            >
+            <div key={id} className="asideCenterContentContainerYM">
               <a href="#">
                 <img
-                  src={storyContent.img}
+                  src={img}
                   alt="profile-image"
                   className="asideCenterContentImg"
                 />
               </a>
               <div className="asideCenterContent">
-                <a href="#">{storyContent.name}</a>
-                <span>{storyContent.timeAfterFeedUpload}</span>
+                <a href="#">{name}</a>
+                <span>{timeAfterFeedUpload}</span>
               </div>
             </div>
           );

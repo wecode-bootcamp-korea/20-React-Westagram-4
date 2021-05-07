@@ -4,10 +4,7 @@ import './Comment.scss';
 class Comment extends React.Component {
   render() {
     return (
-      <li
-        className="sectionArticleCommentContentsContainer"
-        key={this.props.id}
-      >
+      <li className="sectionArticleCommentContentsContainer">
         <div className="sectionArticleCommentContents">
           <p>
             <a href="#" className="sectionArticleFanslink">

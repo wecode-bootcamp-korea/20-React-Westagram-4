@@ -11,12 +11,10 @@ class SubMain extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/jeonyongmin/feedData.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/data/jeonyongmin/feedData.json')
       .then(result => result.json())
-      .then(data => {
-        this.setState({ feedList: data });
+      .then(feedData => {
+        this.setState({ feedList: feedData });
       });
   }
 
@@ -24,19 +22,17 @@ class SubMain extends React.Component {
     const { feedList } = this.state;
     return (
       <div className="feedContainerYM">
-        {feedList.map(element => {
-          return (
-            <Feed
-              key={element.id}
-              number={element.id}
-              name={element.name}
-              feedImg={element.feedImg}
-              profileImg={element.profileImg}
-              comment={element.comment}
-              like={element.like}
-            />
-          );
-        })}
+        {feedList.map(element => (
+          <Feed
+            key={element.id}
+            number={element.id}
+            name={element.name}
+            feedImg={element.feedImg}
+            profileImg={element.profileImg}
+            comment={element.comment}
+            like={element.like}
+          />
+        ))}
       </div>
     );
   }

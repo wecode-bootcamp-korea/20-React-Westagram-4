@@ -38,7 +38,7 @@ class Feed extends React.Component {
         commentList: [
           ...commentList,
           {
-            id: commentList.length + 1,
+            id: commentList[commentList.length - 1].id + 1,
             name: 'yongmin',
             comment: inputValue,
           },
@@ -48,6 +48,7 @@ class Feed extends React.Component {
         this.setState({ buttonColor: false });
         this.inputLocation.current.value = '';
         this.inputLocation.current.focus();
+        console.log(this.state);
       }
     );
   };

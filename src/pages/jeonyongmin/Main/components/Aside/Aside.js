@@ -4,41 +4,49 @@ import Recommend from './components/Recommend/Recommend';
 import './Aside.scss';
 
 class Aside extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      storyContents: [
-        {
-          id: 1,
-          name: 'bruno Mars',
-          img: '/images/jeonyongmin/brunomars.jpg',
-          timeAfterFeedUpload: '5분전',
-        },
-        {
-          id: 2,
-          name: 'The Weeknd',
-          img: '/images/jeonyongmin/weeknd.jpg',
-          timeAfterFeedUpload: '16분전',
-        },
-      ],
-      recommendContents: [
-        {
-          id: 1,
-          name: 'justin bieber',
-          img: '/images/jeonyongmin/justin.jpg',
-          recommendInformation: '_legend_a님 외 2명이...',
-        },
-        {
-          id: 2,
-          name: 'ariana grande',
-          img: '/images/jeonyongmin/ariana.jpg',
-          recommendInformation: '_ske6634님 외 9명이...',
-        },
-      ],
-    };
-  }
   render() {
-    const { storyContents, recommendContents } = this.state;
+    const storyContents = [
+      {
+        id: 1,
+        name: 'bruno Mars',
+        img: '/images/jeonyongmin/brunomars.jpg',
+        timeAfterFeedUpload: '5분전',
+      },
+      {
+        id: 2,
+        name: 'The Weeknd',
+        img: '/images/jeonyongmin/weeknd.jpg',
+        timeAfterFeedUpload: '16분전',
+      },
+    ];
+    const recommendContents = [
+      {
+        id: 1,
+        name: 'justin bieber',
+        img: '/images/jeonyongmin/justin.jpg',
+        recommendInformation: '_legend_a님 외 2명이...',
+      },
+      {
+        id: 2,
+        name: 'ariana grande',
+        img: '/images/jeonyongmin/ariana.jpg',
+        recommendInformation: '_ske6634님 외 9명이...',
+      },
+    ];
+    const footerContents = [
+      '소개',
+      '도움말',
+      '홍보센터',
+      'API',
+      '채용정보',
+      '개인정보 처리방침',
+      '약관',
+      '디렉터리',
+      '프로필',
+      '해시태그',
+      '언어',
+    ];
+
     return (
       <aside className="asideSectionYM">
         <header className="asideTop">
@@ -63,7 +71,7 @@ class Aside extends React.Component {
             <button>모두 보기</button>
           </div>
           <div className="asideCenterContents">
-            <Story data={storyContents} />
+            <Story storyData={storyContents} />
           </div>
         </div>
         <div className="asideBottomContainer">
@@ -71,18 +79,13 @@ class Aside extends React.Component {
             <span>회원을 위한 추천</span>
             <a href="">모두 보기</a>
           </div>
-          <Recommend data={recommendContents} />
+          <Recommend recommendData={recommendContents} />
         </div>
         <footer className="footerSection">
           <p className="footerContainer">
-            <a href="">소개</a> · <a href="">도움말</a> &middot;{' '}
-            <a href="">홍보센터</a> &middot; <a href="">API</a>
-            &middot; <a href="">채용정보</a> &middot; <br />{' '}
-            <a href="">개인정보처리방침</a> &middot; <a href="">약관</a>{' '}
-            &middot; <a href="">디렉터리</a> &middot; <a href="">프로필</a>{' '}
-            &middot; <br />
-            <a href="">해시태그</a>
-            &middot; <a href="">언어</a>
+            {footerContents.map(footerContent => {
+              return <a href="">{`${footerContent} · `} </a>;
+            })}
           </p>
           <p className="copyrightOfInstagram">&copy; 2021 INSTAGRAM</p>
         </footer>
