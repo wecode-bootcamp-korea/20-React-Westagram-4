@@ -21,8 +21,7 @@
     overflow: scroll;
   }
   &__list {
-    display: flex;
-    align-items: center;
+    @include flexSet(none);
     text-align: center;
     padding: 12px 16px;
 

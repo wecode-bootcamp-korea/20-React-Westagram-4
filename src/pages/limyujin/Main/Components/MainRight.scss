@@ -10,15 +10,13 @@
   font-size: 14px;
 
   &__my-account {
-    display: flex;
-    align-items: center;
+    @include flexSet(none);
     height: 100px;
     padding: 20px 10px;
   }
 
   &__my-infos {
-    @extend %flex-column;
-    justify-content: center;
+    @include flexColumnSet(center, none);
     font-size: 12px;
     color: $sub-text-gray;
   }
@@ -34,7 +32,7 @@
 }
 
 .main-right-sectionYJ {
-  @extend %flex-column;
+  @include flexColumnSet(none, none);
   margin-bottom: 10px;
   padding: 20px;
   border: $border-gray-style;
@@ -42,8 +40,7 @@
   background-color: white;
 
   &__title {
-    display: flex;
-    justify-content: space-between;
+    @include flexSet(space-between, none);
     margin-bottom: 25px;
     font-weight: 600;
     color: $sub-text-gray;
@@ -56,8 +53,7 @@
   }
 
   &__item-row {
-    display: flex;
-    align-items: center;
+    @include flexSet(none);
     height: 40px;
 
     &:not(:last-child) {
@@ -67,11 +63,11 @@
 
   &__user-img-box {
     position: relative;
-    @extend %flex-center;
+    @include flexSet;
   }
 
   &__texts {
-    @extend %flex-column;
+    @include flexColumnSet(none, none);
     width: 70%;
     margin-left: 15px;
     font-size: 12px;

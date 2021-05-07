@@ -17,8 +17,7 @@
   z-index: 100;
 
   &__list {
-    display: flex;
-    align-items: center;
+    @include flexSet(none);
     text-align: center;
     height: 37px;
     padding: 12px 16px;

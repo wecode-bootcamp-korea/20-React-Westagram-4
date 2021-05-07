@@ -3,7 +3,7 @@
 .top-navYJ {
   position: fixed;
   top: 0;
-  @extend %flex-center;
+  @include flexSet;
   width: 100%;
   height: 38px;
   padding: 30px 100px;
@@ -16,14 +16,11 @@
     width: 33%;
 
     &:nth-child(2) {
-      display: flex;
-      justify-content: center;
+      @include flexSet(center, none);
     }
 
     &:nth-child(3) {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      @include flexSet(flex-end);
     }
   }
 
@@ -74,7 +71,7 @@
   }
 
   &__menus {
-    @extend %flex-center;
+    @include flexSet;
     margin: 0px 10px;
   }
 

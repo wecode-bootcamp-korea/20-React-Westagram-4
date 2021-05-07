@@ -1,8 +1,7 @@
 @import '../../../../styles/variables.scss';
 
 .js-feed-commentYJ {
-  display: flex;
-  align-items: center;
+  @include flexSet(none);
   margin-bottom: 3px;
 
   &__text {

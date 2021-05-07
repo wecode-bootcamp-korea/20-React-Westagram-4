@@ -1,7 +1,7 @@
 @import '../../../../styles/variables.scss';
 
 .main-footerYJ {
-  @extend %flex-column;
+  @include flexColumnSet(none, none);
   margin-top: 15px;
   padding: 0px 5px;
   font-size: 11px;

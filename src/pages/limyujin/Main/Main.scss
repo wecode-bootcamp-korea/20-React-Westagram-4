@@ -1,8 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .main-pageYJ {
-  display: flex;
-  justify-content: center;
+  @include flexSet(center, none);
   margin-top: 100px;
   line-height: 18px;
 }
