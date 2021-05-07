@@ -51,7 +51,10 @@ class Aside extends React.Component {
           </a>
           <div className="asideTopContents">
             <a href="#">wecode_bootcamp</a>
-            <span>WeCode | 위코드</span>
+            <div>
+              <span>WeCode</span>
+              <span>위코드</span>
+            </div>
           </div>
         </header>
         <div className="asideCenterContainer">

@@ -1,5 +1,3 @@
-/* aside */
-
 .asideSectionYM {
   position: sticky;
   top: 120px;
@@ -26,6 +24,26 @@
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
+    }
+
+    div {
+      display: flex;
+
+      span:first-child {
+        margin-right: 10px;
+        position: relative;
+
+        &:after {
+          display: block;
+          position: absolute;
+          width: 10px;
+          height: 20px;
+          top: 0;
+          right: -5px;
+          border-right: 1px solid black;
+          content: ' ';
+        }
+      }
     }
   }
 
