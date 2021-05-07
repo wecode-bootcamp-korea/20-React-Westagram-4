@@ -9,43 +9,39 @@ class CommentColumn extends React.Component {
     };
   }
 
-  handleLike = e => {
-    e.preventDefault();
+  handleLike = () => {
     this.setState({
       isFeedLikePressed: !this.state.isFeedLikePressed,
     });
   };
 
+  clickDelete = () => {
+    this.props.handleDelete(this.props.id);
+  };
+
   render() {
     const { isFeedLikePressed } = this.state;
-    const { commentTexts, handleDelete } = this.props;
+    const { commentTexts } = this.props;
     const { handleLike } = this;
-    const clickDelete = () => {
-      handleDelete(this.props.id);
-    };
 
     return (
-      <>
-        <div className="js-feed-commentYJ">
-          <span>wecode_bootcamp</span>
-          <span className="js-feed-commentYJ__text">{commentTexts}</span>
-          <div className="js-comment-btnsYJ">
-            <button className="js-comment-btnYJ like-btn" onClick={handleLike}>
-              <i
-                className={`${
-                  isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
-                }`}
-              ></i>
-            </button>
-            <button
-              className="js-comment-btnYJ delete-btn"
-              onClick={clickDelete}
-            >
-              <i className="fas fa-times"></i>
-            </button>
-          </div>
+      <div className="js-feed-commentYJ">
+        <span>wecode_bootcamp</span>
+        <span className="js-feed-commentYJ__text">{commentTexts}</span>
+        <div className="js-comment-btnsYJ">
+          <button className="js-comment-btnYJ like-btn" onClick={handleLike}>
+            <i
+              className={isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'}
+            />
+          </button>
+          <button
+            className="js-comment-btnYJ delete-btn"
+            onClick={this.clickDelete}
+          >
+            <i className="fas fa-times" />
+          </button>
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -60,6 +60,18 @@ class Feeds extends React.Component {
     this.setState({ commentTexts: filteredComments });
   };
 
+  getTime = t => {
+    let result = '';
+    if (t / 60 / 60 / 1000 < 1) {
+      result = t / 60 / 1000 + '분 전';
+    } else if (t > 86400000) {
+      result = '1일 전';
+    } else {
+      result = t / 60 / 60 / 1000 + '시간 전';
+    }
+    return result;
+  };
+
   render() {
     const { commentTexts, isFeedLikePressed, commentValue } = this.state;
     const {
@@ -72,129 +84,121 @@ class Feeds extends React.Component {
       like,
       story,
     } = this.props;
-    const { handleDelete, handleInput, handleLike, handleSubmitBtn } = this;
-    const getTime = t => {
-      let result = '';
-      if (t / 60 / 60 / 1000 < 1) {
-        result = t / 60 / 1000 + '분 전';
-      } else if (t > 86400000) {
-        result = '1일 전';
-      } else {
-        result = t / 60 / 60 / 1000 + '시간 전';
-      }
-      return result;
-    };
-
+    const {
+      handleDelete,
+      handleInput,
+      handleLike,
+      handleSubmitBtn,
+      getTime,
+    } = this;
     return (
-      <>
-        <article className="feedYJ">
-          <section className="feedYJ__author-box">
-            <div className="feedYJ__author-profile">
-              <div
-                className={
-                  story
-                    ? 'circle-profileYJ__story-border circle-profileYJ__story-border--feed'
-                    : ''
-                }
-              ></div>
-              <img
-                src={profileImg}
-                alt={`${author}님의 프로필사진`}
-                className="circle-profileYJ circle-profileYJ--feed-author"
-              />
-              <div className="feedYJ__author-info">
-                <span className="feedYJ__author-info-text">{author}</span>
-                <span className="feedYJ__author-info-text">{location}</span>
-              </div>
-            </div>
-            <div>
-              <span>
-                <FontAwesomeIcon icon={faEllipsisH} className="ellipsis-h" />
-              </span>
-            </div>
-          </section>
-          <img src={mainImg} alt={`${author}님의 사진`} />
-          <section className="feedYJ__feature">
-            <ul className="feedYJ__feature-btn-box">
-              <li className="feedYJ__feature-btn-list">
-                <button className="feedYJ__feature-btn" onClick={handleLike}>
-                  <i
-                    className={`${
-                      isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
-                    }`}
-                  ></i>
-                </button>
-              </li>
-              <li className="feedYJ__feature-btn-list">
-                <button className="feedYJ__feature-btn">
-                  <FontAwesomeIcon icon={faComment} className="comment" />
-                </button>
-              </li>
-              <li className="feedYJ__feature-btn-list">
-                <button className="feedYJ__feature-btn">
-                  <FontAwesomeIcon icon={faPaperPlane} className="comment" />
-                </button>
-              </li>
-            </ul>
-            <ul className="feedYJ__feature-btn-box">
-              <li className="feedYJ__feature-btn-list">
-                <button className="feedYJ__feature-btn">
-                  <FontAwesomeIcon icon={faBookmark} className="bookmark" />
-                </button>
-              </li>
-            </ul>
-          </section>
-          <section className="feedYJ__texts">
-            <div className="feedYJ__texts-column feedYJ__likes">
-              <span>좋아요 </span>
-              <span className="js-likes-count">
-                {isFeedLikePressed
-                  ? (like + 1).toLocaleString()
-                  : like.toLocaleString()}
-              </span>
-              <span>개</span>
-            </div>
-            <div className="feedYJ__texts-column feedYJ__summary">
-              <span className="feedYJ__summary-id">{author}</span>
-              <span>{text}</span>
-              <span>...</span>
-              <button className="feedYJ__summary-btn">더 보기</button>
-            </div>
-            <div className="feedYJ__texts-column js-feed-comments">
-              {commentTexts.map(comment => (
-                <CommentColumn
-                  commentTexts={comment.text}
-                  key={comment.id}
-                  id={comment.id}
-                  handleDelete={handleDelete}
-                />
-              ))}
-            </div>
-            <div className="feedYJ__time feedYJ__texts-column">
-              <span>{getTime(time)}</span>
-            </div>
-          </section>
-          <form name="comment-form" className="feedYJ__form">
-            <FontAwesomeIcon icon={faSmile} className="smile" />
-            <input
-              type="text"
-              placeholder="댓글달기..."
-              value={commentValue}
-              className="feedYJ__input"
-              onChange={handleInput}
+      <article className="feedYJ">
+        <section className="feedYJ__author-box">
+          <div className="feedYJ__author-profile">
+            <div
+              className={
+                story
+                  ? 'circle-profileYJ__story-border circle-profileYJ__story-border--feed'
+                  : ''
+              }
             />
-            <button
-              className={`feedYJ__submit-btn ${
-                commentValue.length > 0 ? '' : 'feedYJ__submit-btn--opacity'
-              }`}
-              disabled={!commentValue}
-              onClick={handleSubmitBtn}
-            >
-              게시
-            </button>
-          </form>
-        </article>
-      </>
+            <img
+              alt={`${author}님의 프로필사진`}
+              src={profileImg}
+              className="circle-profileYJ circle-profileYJ--feed-author"
+            />
+            <div className="feedYJ__author-info">
+              <span className="feedYJ__author-info-text">{author}</span>
+              <span className="feedYJ__author-info-text">{location}</span>
+            </div>
+          </div>
+          <div>
+            <span>
+              <FontAwesomeIcon icon={faEllipsisH} className="ellipsis-h" />
+            </span>
+          </div>
+        </section>
+        <img alt={`${author}님의 사진`} src={mainImg} />
+        <section className="feedYJ__feature">
+          <ul className="feedYJ__feature-btn-box">
+            <li className="feedYJ__feature-btn-list">
+              <button className="feedYJ__feature-btn" onClick={handleLike}>
+                <i
+                  className={`${
+                    isFeedLikePressed ? 'fas fa-heart' : 'far fa-heart'
+                  }`}
+                />
+              </button>
+            </li>
+            <li className="feedYJ__feature-btn-list">
+              <button className="feedYJ__feature-btn">
+                <FontAwesomeIcon icon={faComment} className="comment" />
+              </button>
+            </li>
+            <li className="feedYJ__feature-btn-list">
+              <button className="feedYJ__feature-btn">
+                <FontAwesomeIcon icon={faPaperPlane} className="comment" />
+              </button>
+            </li>
+          </ul>
+          <ul className="feedYJ__feature-btn-box">
+            <li className="feedYJ__feature-btn-list">
+              <button className="feedYJ__feature-btn">
+                <FontAwesomeIcon icon={faBookmark} className="bookmark" />
+              </button>
+            </li>
+          </ul>
+        </section>
+        <section className="feedYJ__texts">
+          <div className="feedYJ__texts-column feedYJ__likes">
+            <span>좋아요 </span>
+            <span className="js-likes-count">
+              {isFeedLikePressed
+                ? (like + 1).toLocaleString()
+                : like.toLocaleString()}
+            </span>
+            <span>개</span>
+          </div>
+          <div className="feedYJ__texts-column feedYJ__summary">
+            <span className="feedYJ__summary-id">{author}</span>
+            <span>{text}</span>
+            <span>...</span>
+            <button className="feedYJ__summary-btn">더 보기</button>
+          </div>
+          <div className="feedYJ__texts-column js-feed-comments">
+            {commentTexts.map(comment => (
+              <CommentColumn
+                commentTexts={comment.text}
+                key={comment.id}
+                id={comment.id}
+                handleDelete={handleDelete}
+              />
+            ))}
+          </div>
+          <div className="feedYJ__time feedYJ__texts-column">
+            <span>{getTime(time)}</span>
+          </div>
+        </section>
+        <form name="comment-form" className="feedYJ__form">
+          <FontAwesomeIcon icon={faSmile} className="smile" />
+          <input
+            type="text"
+            placeholder="댓글달기..."
+            value={commentValue}
+            className="feedYJ__input"
+            onChange={handleInput}
+          />
+          <button
+            className={`feedYJ__submit-btn ${
+              !commentValue.length > 0 && 'feedYJ__submit-btn--opacity'
+            }`}
+            disabled={!commentValue}
+            onClick={handleSubmitBtn}
+          >
+            게시
+          </button>
+        </form>
+      </article>
     );
   }
 }

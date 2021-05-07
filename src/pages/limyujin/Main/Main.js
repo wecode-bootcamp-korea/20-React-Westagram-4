@@ -28,7 +28,7 @@ class Main extends React.Component {
 
   getFeedData = () => {
     const { preItems, items, feedInfo } = this.state;
-    const FEED_DATA = 'Data/limyujin/feedData.json';
+    const FEED_DATA = '/data/limyujin/feedData.json';
     fetch(FEED_DATA)
       .then(res => res.json())
       .then(feedData => {
@@ -38,7 +38,7 @@ class Main extends React.Component {
   };
 
   getRecommendData = () => {
-    const RECOMMEND_DATA = 'Data/limyujin/recommendData.json';
+    const RECOMMEND_DATA = '/data/limyujin/recommendData.json';
     fetch(RECOMMEND_DATA)
       .then(res => res.json())
       .then(recommendData => {

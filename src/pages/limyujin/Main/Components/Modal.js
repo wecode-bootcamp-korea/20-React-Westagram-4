@@ -32,30 +32,26 @@ class Modal extends React.Component {
       },
     ];
     return (
-      <>
-        <div
-          className={`modal-containerYJ ${
-            isModalVisible ? 'modal-openYJ' : ''
-          }`}
-        >
-          <div className="modalYJ">
-            <ul>
-              {modalItem.map(modalMenu => (
-                <li key={modalMenu.id} className="modalYJ__list">
-                  <FontAwesomeIcon
-                    icon={modalMenu.icon}
-                    key={modalMenu.id}
-                    className="modalYJ__icon"
-                  />
-                  <span className="modalYJ__menu">{modalMenu.text}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="modalYJ__line"></div>
-          </div>
-          <div className="modalYJ__arrow"></div>
+      <div
+        className={`modal-containerYJ ${isModalVisible ? 'modal-openYJ' : ''}`}
+      >
+        <div className="modalYJ">
+          <ul>
+            {modalItem.map(modalMenu => (
+              <li key={modalMenu.id} className="modalYJ__list">
+                <FontAwesomeIcon
+                  icon={modalMenu.icon}
+                  key={modalMenu.id}
+                  className="modalYJ__icon"
+                />
+                <span className="modalYJ__menu">{modalMenu.text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="modalYJ__line" />
         </div>
-      </>
+        <div className="modalYJ__arrow" />
+      </div>
     );
   }
 }

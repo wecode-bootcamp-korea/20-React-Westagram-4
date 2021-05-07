@@ -26,7 +26,7 @@
   {
     "id": 4,
     "author": "nail_by.jjoo",
-    "profileImg": "../../images/limyujin/jjoo_profile.jpg",
+    "profileImg": "/images/limyujin/jjoo_profile.jpg",
     "time": 3180000,
     "newAccount": false,
     "story": true
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "author": "reu_nail",
-    "profileImg": "../../images/limyujin/reu_profile.jpg",
+    "profileImg": "/images/limyujin/reu_profile.jpg",
     "time": 86400001,
     "newAccount": true,
     "story": true
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "author": "taeyeon_ss",
-    "profileImg": "../../images/limyujin/tae_profile.jpg",
+    "profileImg": "/images/limyujin/tae_profile.jpg",
     "time": 86400001,
     "newAccount": false,
     "story": false
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "author": "skullhong12",
-    "profileImg": "../../images/limyujin/sku_profile.jpg",
+    "profileImg": "/images/limyujin/sku_profile.jpg",
     "time": 86400001,
     "newAccount": false,
     "story": true

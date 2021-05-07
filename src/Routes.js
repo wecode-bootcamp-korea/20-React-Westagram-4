@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// push할 때는 주석처리 해제
 // import LoginYM from './pages/jeonyongmin/Login/Login';
 // import MainYM from './pages/jeonyongmin/Main/Main';
 // import LoginJY from './pages/leejiyon/Login/Login';

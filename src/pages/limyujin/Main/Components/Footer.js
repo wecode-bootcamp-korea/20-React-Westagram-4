@@ -3,7 +3,7 @@ import './Footer.scss';
 
 class Footer extends React.Component {
   render() {
-    const footerItem = [
+    const FOOTER_LIST = [
       {
         id: 1,
         item: '소개',
@@ -50,20 +50,18 @@ class Footer extends React.Component {
       },
     ];
     return (
-      <>
-        <footer className="main-footerYJ">
-          <nav className="main-footerYJ__nav">
-            <ul>
-              {footerItem.map(footerMenu => (
-                <li className="main-footerYJ__list" key={footerMenu.id}>
-                  {footerMenu.item}
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <p>© 2021 INSTAGRAM FROM FACEBOOK</p>
-        </footer>
-      </>
+      <footer className="main-footerYJ">
+        <nav className="main-footerYJ__nav">
+          <ul>
+            {FOOTER_LIST.map(footerMenu => (
+              <li className="main-footerYJ__list" key={footerMenu.id}>
+                {footerMenu.item}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <p>© 2021 INSTAGRAM FROM FACEBOOK</p>
+      </footer>
     );
   }
 }

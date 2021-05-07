@@ -5,9 +5,7 @@ class SearchModal extends React.Component {
   render() {
     const { userData, isInputFocused, searchText } = this.props;
     const filteredData = userData.filter(el => {
-      if (el.author.toLowerCase().includes(searchText)) {
-        return true;
-      }
+      return el.author.toLowerCase().includes(searchText);
     });
 
     return (
@@ -21,8 +19,8 @@ class SearchModal extends React.Component {
             {filteredData.map(el => (
               <li key={el.id} id={el.id} className="search-modalYJ__list">
                 <img
-                  src={el.profileImg}
                   alt={`${el.author}님의 프로필사진`}
+                  src={el.profileImg}
                   className="circle-profileYJ circle-profileYJ--search-filter"
                 />
                 <span className="search-modalYJ__menu">{el.author}</span>
