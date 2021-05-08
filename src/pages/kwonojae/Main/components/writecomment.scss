@@ -1,0 +1,43 @@
+@import '../../../../styles/variable.scss';
+
+.feedTimeOJ {
+  .feedTime {
+    margin: 12px 0 0;
+    padding: 0 16px;
+    background-color: $white;
+
+    a {
+      color: blue;
+    }
+  }
+
+  .writeComment {
+    @include flexSet(row, start, none);
+    height: 56px;
+    margin: 12px 0 0;
+    padding: 0 16px;
+    background-color: $white;
+    border-top: $border1;
+
+    button {
+      @extend .unset;
+
+      .fa-smile {
+        width: 24px;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+    }
+
+    input {
+      width: 490px;
+      height: 100%;
+      background-color: $white;
+      border: none;
+    }
+
+    .postComment {
+      padding-left: 16px;
+    }
+  }
+}

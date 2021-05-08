@@ -1,0 +1,59 @@
+@import '../../../../styles/variable.scss';
+
+.asideOJ {
+  @extend .fixedTR;
+  width: 40%;
+  height: 100%;
+  margin: 55px 0 0;
+  background-color: $white;
+
+  .profileWithRecommend {
+    margin: 50px 0 0 20px;
+
+    .myProfile {
+      @include flexSet(row, start);
+      width: 300px;
+      height: 56px;
+      background-color: $white;
+
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+
+      dl {
+        width: 196px;
+        margin: 0 0 0 20px;
+        font-size: 14px;
+      }
+
+      button {
+        @extend .unset;
+        font-size: 12px;
+      }
+    }
+
+    .recommendForYou {
+      @include flexSet(row, start);
+      width: 300px;
+      margin: 20px 0 0;
+      background-color: $white;
+
+      span {
+        width: 250px;
+        font-size: 14px;
+      }
+
+      button {
+        @extend .unset;
+        font-size: 12px;
+      }
+    }
+
+    .recommnedList {
+      width: 300px;
+      background-color: $white;
+    }
+  }
+}

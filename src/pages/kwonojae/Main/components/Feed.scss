@@ -1,0 +1,74 @@
+@import '../../../../styles/variable.scss';
+
+.feedOJ {
+  @include flexSet(column, start, flex-end);
+
+  article {
+    margin-right: 20px;
+    border: $border1;
+
+    .feedHeader {
+      @include flexSet(row, space-between);
+      height: 60px;
+      padding: 16px;
+      background-color: $white;
+
+      .writer {
+        @include flexSet(row, none);
+
+        img {
+          width: 32px;
+          border-radius: 50%;
+        }
+
+        h5 {
+          margin: 0 0 0 10px;
+        }
+      }
+
+      button {
+        background-color: $white;
+        border: none;
+      }
+    }
+    .feedImage {
+      img {
+        width: 600px;
+        height: 600px;
+      }
+    }
+
+    .feedBottomBox {
+      background-color: $white;
+
+      .feedButtons {
+        @include flexSet(row, space-between);
+        padding: 0 12px;
+        height: 40px;
+        background-color: $white;
+
+        div {
+          button {
+            @extend .button;
+          }
+        }
+
+        button {
+          @extend .button;
+        }
+      }
+
+      .feedLike {
+        height: 18px;
+        margin: 6px 0 10px;
+        padding: 0 0 0 16px;
+        background-color: $white;
+        font-weight: 700;
+
+        button {
+          @extend .unset;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../../styles/variable.scss';
+
+.commentOJ {
+  @include flexSet(row, space-between, none);
+  margin-top: 6px;
+  padding: 0 16px;
+  background-color: $white;
+
+  .commentContent {
+    width: 530px;
+
+    a {
+      font-weight: 700;
+    }
+  }
+
+  button {
+    @extend .unset;
+  }
+
+  i {
+    padding-left: 4px;
+  }
+}
