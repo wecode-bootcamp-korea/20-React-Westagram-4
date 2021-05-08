@@ -1,8 +1,3 @@
-$main-padding: 14px;
-$comment-fontsize: 13px;
-$aside-fontsize: 12px;
-$border-color: #e6e6e6;
-
 $blue: #0095f6;
 $sub-text-gray: #8e8e8e;
 $lightgray: #fafafa;
@@ -17,18 +12,15 @@ $passiveBtnCol: #c4e1fb;
 $fotgetPW: #00376b;
 $border1: 1px solid #dbdbdb;
 
-%flex-column-center {
+@mixin flexSet($just: center, $align: center) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin flexColumnSet($just: center, $align: center) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-%flex-column {
-  display: flex;
-  flex-direction: column;
-}
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $just;
+  align-items: $align;
 }

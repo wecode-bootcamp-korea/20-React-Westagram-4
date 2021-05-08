@@ -20,20 +20,16 @@ class Feeds extends Component {
   }
   render() {
     return (
-      <>
-        <div className="feeds">
-          {this.state.articleList.map(article => {
-            return (
-              <Article
-                key={`${article.header.headerId}${article.header.alt}`}
-                header={article.header}
-                articleImg={article.articleImg}
-                myComment={article.myComment}
-              />
-            );
-          })}
-        </div>
-      </>
+      <div className="Feeds">
+        {this.state.articleList.map(article => (
+          <Article
+            key={`${article.header.headerId}${article.header.alt}`}
+            header={article.header}
+            articleImg={article.articleImg}
+            myComment={article.myComment}
+          />
+        ))}
+      </div>
     );
   }
 }

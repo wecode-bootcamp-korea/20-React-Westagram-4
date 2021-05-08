@@ -1,4 +1,4 @@
-@import '/src/styles/Common.scss';
+@import '/src/styles/variables.scss';
 
 .ArticleJY {
   margin-bottom: 10px;
@@ -101,9 +101,9 @@
     }
 
     .commenter {
+      margin-right: 10px;
       font-weight: bold;
       font-size: $comment-fontsize;
-      margin-right: 10px;
       vertical-align: top;
     }
 

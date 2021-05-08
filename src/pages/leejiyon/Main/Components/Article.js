@@ -40,9 +40,9 @@ class Article extends Component {
   onClickArticleHeartBtn = () => {
     this.setState({
       isArticleLiked: !this.state.isArticleLiked,
-    });
-    this.setState({
-      commentLikeNum: this.state.isArticleLiked ? 9 : 10,
+      commentLikeNum: this.state.isArticleLiked
+        ? Number(this.state.commentLikeNum) - 1
+        : Number(this.state.commentLikeNum) + 1,
     });
   };
 
@@ -56,16 +56,11 @@ class Article extends Component {
   onChangeCommentInput = e => {
     this.setState({
       commentInputValue: e.target.value,
+      isCommentInputEntered:
+        e.target.value.length > 0
+          ? !this.state.isCommentInputEntered
+          : !this.state.isCommentInputEntered,
     });
-    if (e.target.value.length > 0) {
-      this.setState({
-        isCommentInputEntered: true,
-      });
-    } else {
-      this.setState({
-        isCommentInputEntered: false,
-      });
-    }
   };
 
   onClickPostBtn = () => {
@@ -95,23 +90,18 @@ class Article extends Component {
     let user = {
       ...userComment,
     };
-    if (user.liked) {
-      user.liked = false;
-    } else {
-      user.liked = true;
-    }
+    user.liked = !user.liked;
     userComments[currentClickedCommentIdx] = user;
     this.setState({ userComments });
   };
 
-  onClickDeleteBtn = v => {
+  onClickDeleteBtn = clickedComment => {
     this.setState({
-      userComments: this.state.userComments.filter(user => {
-        return user.id !== v.id;
-      }),
+      userComments: this.state.userComments.filter(
+        user => user.id !== clickedComment.id
+      ),
     });
   };
-
   render() {
     const { header, articleImg, myComment } = this.props;
     return (
@@ -131,9 +121,9 @@ class Article extends Component {
             }`}
             onClick={this.onClickArticleHeartBtn}
           ></button>
-          <button className="lnbImg msgImg"></button>
-          <button className="lnbImg shareImg"></button>
-          <button className="lnbImg bookmarkImg"></button>
+          <button className="lnbImg msgImg" />
+          <button className="lnbImg shareImg" />
+          <button className="lnbImg bookmarkImg" />
         </div>
         <div className="articleComment">
           <div className="articleLikes">

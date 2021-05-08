@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import './login.scss';
 
@@ -19,8 +18,8 @@ class Login extends React.Component {
     });
   };
 
-  onClickBtn = e => {
-    fetch('http://10.58.7.181:8000/user/login', {
+  onClickLoginBtn = () => {
+    fetch('http:/10.58.7.181:8000/user/login', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -29,7 +28,6 @@ class Login extends React.Component {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result);
         if (result.message === 'SUCCESS') {
           this.props.history.push('/mainjy');
           localStorage.setItem('access-token', result.ACCESS_TOKEN);
@@ -61,10 +59,9 @@ class Login extends React.Component {
               placeholder="비밀번호"
             />
           </div>
-
           <button
             className={`loginBtn ${validation ? 'blueBackgroundColor' : null}`}
-            onClick={this.onClickBtn}
+            onClick={this.onClickLoginBtn}
           >
             로그인
           </button>

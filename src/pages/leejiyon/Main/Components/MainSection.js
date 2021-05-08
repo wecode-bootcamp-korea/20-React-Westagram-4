@@ -6,12 +6,10 @@ import './MainSection.scss';
 class MainSection extends Component {
   render() {
     return (
-      <>
-        <main className="MainSectionJY">
-          <Feeds />
-          <Aside />
-        </main>
-      </>
+      <main className="MainSectionJY">
+        <Feeds />
+        <Aside />
+      </main>
     );
   }
 }
