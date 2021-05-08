@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .loginYM {
   .loginPage {
     position: fixed;
@@ -17,10 +19,7 @@
   }
 
   .loginInformation {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    @include flexColumnSet();
     margin-bottom: 10px;
     width: 400px;
 
