@@ -7,10 +7,9 @@ class Feed extends React.Component {
     super(props);
     this.state = {
       inputValue: '',
-      buttonColor: false,
       commentList: [],
     };
-    this.inputLocation = React.createRef();
+    this.inputElement = React.createRef();
   }
 
   componentDidMount() {
@@ -26,47 +25,59 @@ class Feed extends React.Component {
   }
 
   pressEnter = e => {
-    if (e.charCode === 13) {
-      this.addComment();
-    }
+    const enterApplyingCondition =
+      this.inputElement.current.value.length !== 0 && e.charCode === 13;
+    enterApplyingCondition && this.addComment();
   };
 
   addComment = e => {
     const { commentList, inputValue } = this.state;
     this.setState(
       {
+        inputValue: '',
         commentList: [
           ...commentList,
           {
-            id: commentList[commentList.length - 1].id + 1,
+            id: commentList.length + 1,
             name: 'yongmin',
             comment: inputValue,
           },
         ],
       },
-      () => {
-        this.setState({ buttonColor: false });
-        this.inputLocation.current.value = '';
-        this.inputLocation.current.focus();
-        console.log(this.state);
-      }
+      this.eraseValueAndFocusText
     );
   };
 
-  handleCommentInput = e => {
-    this.setState({ inputValue: e.target.value }, this.validation);
+  eraseValueAndFocusText = () => {
+    this.inputElement.current.value = '';
+    this.inputElement.current.focus();
   };
 
-  validation = () => {
-    const { inputValue } = this.state;
-    const condition = inputValue.length > 0;
-    this.setState({ buttonColor: condition });
+  handleCommentInput = e => {
+    this.setState({ inputValue: e.target.value });
   };
 
   render() {
-    const { inputValue, buttonColor, commentList } = this.state;
+    const { inputValue, commentList } = this.state;
     const { profileImg, name, feedImg, like, comment } = this.props;
     const conditionOfButtonActivated = inputValue.length > 0;
+    const sectionArticleLeftSideButton = [
+      {
+        id: 1,
+        buttonTagClassName: 'sectionArticleLikeButton',
+        iTagClassName: 'far fa-heart',
+      },
+      {
+        id: 2,
+        buttonTagClassName: 'sectionArticleCommentButton',
+        iTagClassName: 'far fa-comment',
+      },
+      {
+        id: 3,
+        buttonTagClassName: 'sectionArticleUploadButton',
+        iTagClassName: 'far fa-paper-plane',
+      },
+    ];
     return (
       <>
         <article className="sectionArticleYM">
@@ -93,15 +104,14 @@ class Feed extends React.Component {
           <div className="sectionArticleContainer">
             <div className="sectionArticleIconbar">
               <div className="sectionArticleIconbarLeftSide">
-                <button className="sectionArticleLikeButton">
-                  <i className="far fa-heart"></i>
-                </button>
-                <button className="sectionArticleCommentButton">
-                  <i className="far fa-comment"></i>
-                </button>
-                <button className="sectionArticleUploadButton">
-                  <i className="far fa-paper-plane"></i>
-                </button>
+                {sectionArticleLeftSideButton.map(button => {
+                  const { id, buttonTagClassName, iTagClassName } = button;
+                  return (
+                    <button key={id} className={buttonTagClassName}>
+                      <i className={iTagClassName}></i>
+                    </button>
+                  );
+                })}
               </div>
               <button className="sectionArticleBookmarkButton">
                 <i className="far fa-bookmark"></i>
@@ -146,16 +156,16 @@ class Feed extends React.Component {
               maxLength="25"
               onChange={this.handleCommentInput}
               onKeyPress={this.pressEnter}
-              ref={this.inputLocation}
+              ref={this.inputElement}
             />
             <button
               type="button"
               className={
-                buttonColor
+                conditionOfButtonActivated
                   ? 'sectionArticleCommentUploadActive'
                   : 'sectionArticleCommentUpload'
               }
-              disabled={conditionOfButtonActivated ? false : true}
+              disabled={!conditionOfButtonActivated}
               onClick={this.addComment}
             >
               게시

@@ -34,17 +34,17 @@ class Aside extends React.Component {
       },
     ];
     const footerContents = [
-      '소개',
-      '도움말',
-      '홍보센터',
-      'API',
-      '채용정보',
-      '개인정보 처리방침',
-      '약관',
-      '디렉터리',
-      '프로필',
-      '해시태그',
-      '언어',
+      { id: 1, content: '소개' },
+      { id: 2, content: '도움말' },
+      { id: 3, content: '홍보센터' },
+      { id: 4, content: 'API' },
+      { id: 5, content: '채용정보' },
+      { id: 6, content: '개인정보 처리방침' },
+      { id: 7, content: '약관' },
+      { id: 8, content: '디렉터리' },
+      { id: 9, content: '프로필' },
+      { id: 10, content: '해시태그' },
+      { id: 11, content: '언어' },
     ];
 
     return (
@@ -84,7 +84,12 @@ class Aside extends React.Component {
         <footer className="footerSection">
           <p className="footerContainer">
             {footerContents.map(footerContent => {
-              return <a href="">{`${footerContent} · `} </a>;
+              const { id, content } = footerContent;
+              return (
+                <a href="" key={id}>
+                  {`${content} · `}
+                </a>
+              );
             })}
           </p>
           <p className="copyrightOfInstagram">&copy; 2021 INSTAGRAM</p>

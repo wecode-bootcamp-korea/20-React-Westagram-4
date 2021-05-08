@@ -52,8 +52,8 @@ class NavBar extends React.Component {
             {headerNavRightSideLastTwoButton.map(button => {
               const { id, imgSrc, alt, className } = button;
               return (
-                <button>
-                  <img alt={alt} src={imgSrc} className={className} key={id} />
+                <button key={id}>
+                  <img alt={alt} src={imgSrc} className={className} />
                 </button>
               );
             })}
