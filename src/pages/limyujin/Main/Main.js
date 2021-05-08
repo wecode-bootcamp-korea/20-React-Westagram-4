@@ -11,8 +11,8 @@ class Main extends React.Component {
     this.state = {
       feedInfo: [],
       recommendData: [],
-      preItems: 0,
-      items: 2,
+      initItems: 0,
+      addItems: 2,
     };
     this.infinityScroll = _.throttle(this.infinityScroll, 500);
   }
@@ -28,12 +28,12 @@ class Main extends React.Component {
   }
 
   getFeedData = () => {
-    const { preItems, items, feedInfo } = this.state;
+    const { initItems, addItems, feedInfo } = this.state;
     const FEED_DATA = '/data/limyujin/feedData.json';
     fetch(FEED_DATA)
       .then(res => res.json())
       .then(feedData => {
-        const sliceData = feedData.slice(preItems, items);
+        const sliceData = feedData.slice(initItems, addItems);
         this.setState({ feedInfo: [...feedInfo, ...sliceData] });
       });
   };
@@ -59,8 +59,8 @@ class Main extends React.Component {
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
       this.setState({
-        preItems: this.state.items,
-        items: this.state.items + 3,
+        initItems: this.state.addItems,
+        addItems: this.state.addItems + 2,
       });
       this.getFeedData();
     }
@@ -84,6 +84,7 @@ class Main extends React.Component {
                 like={el.like}
                 story={el.story}
                 key={el.id}
+                ref={this.loader}
               />
             ))}
           </div>

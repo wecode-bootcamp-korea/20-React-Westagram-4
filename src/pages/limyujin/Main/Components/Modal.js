@@ -13,7 +13,7 @@ class Modal extends React.Component {
       <div className={`modal-containerYJ ${isModalVisible && 'modal-openYJ'}`}>
         <div className="modalYJ">
           <ul>
-            {modalItem.map(modalMenu => (
+            {MODAL_LIST.map(modalMenu => (
               <li key={modalMenu.id} className="modalYJ__list">
                 <FontAwesomeIcon
                   icon={modalMenu.icon}
@@ -33,7 +33,7 @@ class Modal extends React.Component {
 }
 
 export default Modal;
-const modalItem = [
+const MODAL_LIST = [
   {
     id: 1,
     icon: faUserCircle,

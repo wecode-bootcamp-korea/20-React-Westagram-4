@@ -48,7 +48,6 @@ class Feeds extends React.Component {
   };
 
   handleLike = e => {
-    e.preventDefault();
     this.setState({
       isFeedLikePressed: !this.state.isFeedLikePressed,
     });

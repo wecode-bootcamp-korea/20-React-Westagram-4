@@ -117,7 +117,7 @@ class TopNav extends React.Component {
         </div>
         <div className="top-navYJ__column">
           <ul className="top-navYJ__menus">
-            {navLeftItem.map(menu => (
+            {NAV_LEFT_LIST.map(menu => (
               <li className="top-navYJ__menu" key={menu.id}>
                 <button className="top-navYJ__menu-btn">
                   <FontAwesomeIcon icon={menu.icon} className="user" />
@@ -141,7 +141,7 @@ class TopNav extends React.Component {
 }
 
 export default TopNav;
-const navLeftItem = [
+const NAV_LEFT_LIST = [
   {
     id: '1',
     icon: faCompass,
