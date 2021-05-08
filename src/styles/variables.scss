@@ -1,0 +1,26 @@
+$blue: #0095f6;
+$sub-text-gray: #8e8e8e;
+$lightgray: #fafafa;
+$facebook-blue: #385185;
+$border-gray-style: 1px solid #dbdbdb;
+$border-gray: #dbdbdb;
+$boderCol1: #dbdbdb;
+$inputBgCol1: #fafafa;
+$white: white;
+$activeBtnCol: #0095f6;
+$passiveBtnCol: #c4e1fb;
+$fotgetPW: #00376b;
+$border1: 1px solid #dbdbdb;
+
+@mixin flexSet($just: center, $align: center) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin flexColumnSet($just: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $just;
+  align-items: $align;
+}

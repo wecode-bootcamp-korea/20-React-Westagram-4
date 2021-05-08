@@ -1,0 +1,78 @@
+@import './variables.scss';
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  background-color: $lightgray;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.grey {
+  color: grey;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.red {
+  color: red;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.unset {
+  all: unset;
+}
+
+.border1 {
+  border: 1px solid #dbdbdb;
+}
+
+.flexR {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCS {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.flexRS {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.flexRB {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fixedTR {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.button {
+  background-color: $white;
+  border: none;
+  font-size: 24px;
+}
