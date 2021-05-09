@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LoginYM from './pages/jeonyongmin/Login/Login';
@@ -12,7 +12,7 @@ import MainYJ from './pages/limyujin/Main/Main';
 import LoginOJ from './pages/kwonojae/Login/Login';
 import MainOJ from './pages/kwonojae/Main/Main';
 
-class Routes extends React.Component {
+export default class Routes extends Component {
   render() {
     return (
       <Router>
@@ -32,4 +32,3 @@ class Routes extends React.Component {
     );
   }
 }
-export default Routes;

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "drakeofficial",
+    "feedImg": "/images/jeonyongmin/drake-img.jpg",
+    "profileImg": "/images/jeonyongmin/drake-profile.jpg",
+    "comment": "in LA 😍😍😍",
+    "like": "좋아요 21,596개"
+  },
+  {
+    "id": 2,
+    "name": "theweeknd",
+    "feedImg": "/images/jeonyongmin/weeknd-img.jpg",
+    "profileImg": "/images/jeonyongmin/weeknd.jpg",
+    "comment": "tomorrow night. 9PM",
+    "like": "좋아요 10,961개"
+  },
+  {
+    "id": 3,
+    "name": "justinbieber",
+    "feedImg": "/images/jeonyongmin/justin-img.jpg",
+    "profileImg": "images/jeonyongmin/justin.jpg",
+    "comment": "🌴🌴",
+    "like": "좋아요 41,320개"
+  }
+]

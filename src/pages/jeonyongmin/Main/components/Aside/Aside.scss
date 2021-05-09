@@ -1,0 +1,120 @@
+@import '../../../../../styles/variables.scss';
+
+.asideSectionYM {
+  position: sticky;
+  top: 120px;
+  width: 400px;
+  height: 1px;
+
+  .asideTop {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .asideTopImg {
+    width: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .asideTopContents {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    div {
+      display: flex;
+
+      span:first-child {
+        margin-right: 10px;
+        position: relative;
+
+        &:after {
+          display: block;
+          position: absolute;
+          width: 10px;
+          height: 20px;
+          top: 0;
+          right: -5px;
+          border-right: 1px solid black;
+          content: ' ';
+        }
+      }
+    }
+  }
+
+  .asideCenterContainer {
+    height: 170px;
+    padding: 0 10px 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    overflow: auto;
+  }
+
+  .asideCenterTopbar {
+    @include flexSet(space-between, center);
+    position: sticky;
+    height: 35px;
+    top: 0;
+    margin-bottom: 10px;
+    background-color: white;
+
+    button {
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  .asideBottomContainer {
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 0 10px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    overflow: auto;
+  }
+
+  .asideBottomTopBar {
+    @include flexSet(space-between, center);
+    position: sticky;
+    margin-bottom: 10px;
+    height: 40px;
+    background-color: white;
+    top: 0;
+
+    a {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  /* footer-section*/
+
+  .footerSection {
+    color: var(--color-gray);
+    .footerContainer {
+      margin-bottom: 20px;
+
+      a {
+        display: inline-block;
+        color: var(--color-gray);
+        margin-bottom: 20px;
+      }
+    }
+  }
+  /* hide aside bar */
+
+  @media screen and (max-width: 1024px) {
+    .asideSection {
+      display: none;
+    }
+  }
+}

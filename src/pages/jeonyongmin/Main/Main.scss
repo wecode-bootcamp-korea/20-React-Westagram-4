@@ -1,0 +1,16 @@
+:root {
+  --color-border: rgb(219, 219, 219);
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+  --color-gray: rgb(179, 179, 179);
+  --color-blue: #0066ff;
+}
+
+.mainPageYM {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-top: 120px;
+}

@@ -1,0 +1,33 @@
+.recommendOfUserYM {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  .recommendOfUserContent {
+    display: flex;
+  }
+
+  .recommendOfUserProfileInformation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    span:last-child {
+      color: var(--color-gray);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+  }
+
+  .recommendOfUserProfileImg {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  button {
+    color: var(--color-blue);
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

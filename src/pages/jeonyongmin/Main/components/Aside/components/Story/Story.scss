@@ -1,0 +1,26 @@
+@import '../../../../../../../styles/variables.scss';
+
+.asideCenterContentContainerYM {
+  display: flex;
+  margin-bottom: 15px;
+
+  .asideCenterContentImg {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .asideCenterContent {
+    @include flexSet(column, center);
+    margin-bottom: 5px;
+
+    span {
+      color: var(--color-gray);
+      font-weight: bold;
+    }
+
+    a {
+      margin-bottom: 5px;
+    }
+  }
+}

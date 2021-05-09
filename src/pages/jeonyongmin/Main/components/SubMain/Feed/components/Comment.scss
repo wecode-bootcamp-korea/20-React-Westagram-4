@@ -1,0 +1,15 @@
+.sectionArticleCommentContents {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.sectionArticleFanslink {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.sectionArticleCommentLinkButton {
+  opacity: 0.5;
+  cursor: pointer;
+}
