@@ -11,17 +11,9 @@ class AsideContainer extends Component {
           <div className="viewMore">{this.props.content}</div>
         </div>
         <ul className="asideMain">
-          {this.props.profileProps.map(profileProp => {
-            return (
-              <ProfileList
-                key={profileProp.id}
-                imgAlt={profileProp.imgAlt}
-                imgSrc={profileProp.imgSrc}
-                profileId={profileProp.profileId}
-                postTime={profileProp.postTime}
-              />
-            );
-          })}
+          {this.props.profileLists.map(profileList => (
+            <ProfileList key={profileList.id} {...profileList} />
+          ))}
         </ul>
       </div>
     );

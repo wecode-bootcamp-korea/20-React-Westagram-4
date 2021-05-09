@@ -20,7 +20,7 @@
     .profileName {
       color: black;
       font-weight: bold;
-      font-size: $aside-fontsize;
+      font-size: 12px;
     }
     .viewMore {
       position: absolute;
@@ -40,7 +40,7 @@
   .articleLnb {
     display: flex;
     position: relative;
-    padding: $main-padding;
+    padding: 14px;
     padding-bottom: 0;
 
     button {
@@ -82,16 +82,16 @@
 
   .articleComment {
     position: relative;
-    padding: $main-padding;
+    padding: 14px;
     margin-bottom: 10px;
 
     .articleLikes {
-      font-size: $comment-fontsize;
+      font-size: 13px;
       margin-bottom: 15px;
 
       span {
         font-weight: bold;
-        font-size: $comment-fontsize;
+        font-size: 13px;
       }
     }
 
@@ -103,7 +103,7 @@
     .commenter {
       margin-right: 10px;
       font-weight: bold;
-      font-size: $comment-fontsize;
+      font-size: 13px;
       vertical-align: top;
     }
 
@@ -111,14 +111,14 @@
       display: inline-block;
       width: 190px;
       padding-bottom: 1px;
-      font-size: $comment-fontsize;
+      font-size: 13px;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
 
     .comment {
-      font-size: $comment-fontsize;
+      font-size: 13px;
       vertical-align: top;
     }
 
@@ -148,7 +148,7 @@
     .commentTime {
       position: absolute;
       bottom: -5px;
-      font-size: $comment-fontsize;
+      font-size: 13px;
       color: #999999;
     }
   }

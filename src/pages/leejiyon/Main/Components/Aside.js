@@ -20,7 +20,7 @@ class Aside extends Component {
         <AsideContainer
           title="스토리"
           content="모두 보기"
-          profileProps={[
+          profileLists={[
             {
               id: 1,
               imgAlt: '가아라',
@@ -40,7 +40,7 @@ class Aside extends Component {
         <AsideContainer
           title="회원님을 위한 추천"
           content="모두 보기"
-          profileProps={[
+          profileLists={[
             {
               id: 11,
               imgAlt: '록리',

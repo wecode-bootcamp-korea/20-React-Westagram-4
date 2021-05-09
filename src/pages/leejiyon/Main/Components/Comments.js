@@ -13,9 +13,7 @@ export class Comments extends Component {
             this.props.onClickDeleteBtn(userComment);
           }}
         >
-          {userComment.showTrashBtn ? (
-            <i className="far fa-trash-alt"></i>
-          ) : null}
+          {userComment.showTrashBtn && <i className="far fa-trash-alt" />}
         </button>
         <button
           className="commentBtn commentLikesBtn"
@@ -24,9 +22,9 @@ export class Comments extends Component {
           }}
         >
           {userComment.liked ? (
-            <i className="redHeart fas fa-heart red"></i>
+            <i className="redHeart fas fa-heart red" />
           ) : (
-            <i className="emptyHeart far fa-heart"></i>
+            <i className="emptyHeart far fa-heart" />
           )}
         </button>
       </div>

@@ -4,6 +4,8 @@ import './Article.scss';
 
 class Article extends Component {
   inputRef = React.createRef();
+  idRef = React.createRef('');
+
   state = {
     isArticleLiked: false,
     isCommentInputEntered: false,
@@ -34,8 +36,17 @@ class Article extends Component {
         liked: false,
       },
     ],
-    id: 4,
   };
+
+  componentDidMount() {
+    this.idRef.current = 4;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.userComments.length !== this.state.userComments.length) {
+      this.idRef.current += 1;
+    }
+  }
 
   onClickArticleHeartBtn = () => {
     this.setState({
@@ -71,28 +82,29 @@ class Article extends Component {
       userComments: [
         ...this.state.userComments,
         {
-          id: this.state.id,
+          id: this.idRef.current,
           userId: this.state.currentUser,
           comment: this.state.commentInputValue,
           showTrashBtn: true,
         },
       ],
       commentInputValue: '',
-      id: this.state.id + 1,
       lastPostedCommentTIme: '방금',
     });
     this.inputRef.current.focus();
   };
 
   onClickCommentHeartBtn = userComment => {
-    let currentClickedCommentIdx = this.state.userComments.indexOf(userComment);
-    let userComments = [...this.state.userComments];
-    let user = {
-      ...userComment,
-    };
-    user.liked = !user.liked;
-    userComments[currentClickedCommentIdx] = user;
-    this.setState({ userComments });
+    this.state.userComments.filter((comment, i) => {
+      const userComments = [...this.state.userComments];
+      if (comment.id === userComment.id) {
+        comment.liked = !comment.liked;
+        userComments[i] = comment;
+        this.setState({
+          userComments: userComments,
+        });
+      }
+    });
   };
 
   onClickDeleteBtn = clickedComment => {
@@ -104,6 +116,7 @@ class Article extends Component {
   };
   render() {
     const { header, articleImg, myComment } = this.props;
+
     return (
       <article className="ArticleJY">
         <div className="articleHeader">
