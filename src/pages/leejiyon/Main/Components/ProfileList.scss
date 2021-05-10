@@ -1,0 +1,24 @@
+@import '/src/styles/variables.scss';
+
+.ProfileList {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+  img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    border: 1px solid red;
+  }
+}

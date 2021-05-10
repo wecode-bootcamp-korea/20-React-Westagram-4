@@ -1,0 +1,30 @@
+[
+  {
+    "header": {
+      "headerId": "jiyon",
+      "alt": "하오 이미지",
+      "className": "profileImg",
+      "src": "/images/leejiyon/hao.jpg"
+    },
+    "articleImg": {
+      "alt": "산 정상",
+      "className": "articleImg",
+      "src": "images/leejiyon/nature.jpg"
+    },
+    "myComment": "백두산 정상"
+  },
+  {
+    "header": {
+      "headerId": "dongseok",
+      "alt": "전동석 이미지",
+      "className": "profileImg",
+      "src": "/images/leejiyon/dongseok.jpg"
+    },
+    "articleImg": {
+      "alt": "아이유",
+      "className": "articleImg",
+      "src": "images/leejiyon/iu.jpg"
+    },
+    "myComment": "아이유 안녕"
+  }
+]

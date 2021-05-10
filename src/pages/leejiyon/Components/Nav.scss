@@ -1,0 +1,83 @@
+@import '/src/styles/variables.scss';
+
+.NavJY {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 54px;
+  width: 100%;
+  padding: 0 83px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 100;
+
+  .navLogo {
+    position: relative;
+    display: flex;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+    }
+
+    .navLogoTitle {
+      line-height: 20px;
+      font-size: 20px;
+      font-family: 'Lobster', cursive;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 1px;
+        height: 20px;
+        background-color: black;
+      }
+    }
+  }
+
+  .navSearchWrap {
+    position: relative;
+  }
+
+  .navSearch {
+    width: 215px;
+    height: 28px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 650px) {
+    .navSearch {
+      display: none;
+    }
+  }
+
+  .navLink {
+    min-width: 130px;
+
+    li {
+      display: inline-block;
+      cursor: pointer;
+
+      img {
+        width: 22px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .navLink img {
+    width: 22px;
+    margin-left: 10px;
+  }
+}

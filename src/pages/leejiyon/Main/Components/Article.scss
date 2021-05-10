@@ -1,0 +1,203 @@
+@import '/src/styles/variables.scss';
+
+.ArticleJY {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+
+  .articleHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+
+    .profileImg {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .profileName {
+      color: black;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .viewMore {
+      position: absolute;
+      right: 10px;
+      background-color: transparent;
+      font-size: 0.8rem;
+      color: #525252;
+      outline: none;
+      border: none;
+    }
+  }
+
+  .articleImg {
+    width: 100%;
+  }
+
+  .articleLnb {
+    display: flex;
+    position: relative;
+    padding: 14px;
+    padding-bottom: 0;
+
+    button {
+      margin-right: 10px;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    .lnbImg {
+      background: url('http://localhost:3000/images/leejiyon/sprite.png');
+      width: 25px;
+      height: 25px;
+    }
+
+    .heartImg {
+      background-position: -130px -478px;
+    }
+
+    .emptyImg {
+      background-position: -156px -478px;
+    }
+
+    .msgImg {
+      background-position: -307px -401px;
+    }
+
+    .shareImg {
+      background-position: -517px -364px;
+    }
+
+    .bookmarkImg {
+      position: absolute;
+      right: 14px;
+      background-position: -517px -260px;
+    }
+  }
+
+  .articleComment {
+    position: relative;
+    padding: 14px;
+    margin-bottom: 10px;
+
+    .articleLikes {
+      font-size: 13px;
+      margin-bottom: 15px;
+
+      span {
+        font-weight: bold;
+        font-size: 13px;
+      }
+    }
+
+    .commentWrap {
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .commenter {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    .myComment {
+      display: inline-block;
+      width: 190px;
+      padding-bottom: 1px;
+      font-size: 13px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .comment {
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    .commentBtn {
+      position: absolute;
+      right: 0;
+      width: 12.8px;
+      height: 12.8px;
+      border: none;
+      background-color: transparent;
+      color: #868686;
+      font-size: 0.8rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .fa-heart {
+      position: absolute;
+      right: 0;
+    }
+
+    .commentDeleteBtn {
+      right: 24px;
+      top: 4px;
+    }
+
+    .commentTime {
+      position: absolute;
+      bottom: -5px;
+      font-size: 13px;
+      color: #999999;
+    }
+  }
+
+  .articlePostComment {
+    position: relative;
+  }
+
+  .postCommentInput {
+    width: 100%;
+    padding: 15px 55px 15px 40px;
+    border: none;
+    border-top: 1px solid #efefef;
+
+    &::placeholder {
+      font-size: 13px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .articlePostComment {
+    .smile {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: transparent;
+      font-size: 20px;
+      border: none;
+    }
+    .postCommentBtn {
+      position: absolute;
+      right: 10px;
+      height: 100%;
+      font-size: 13px;
+      color: #72c2fa;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    .activeBtn {
+      color: blue;
+    }
+    .nonActibeBtn {
+      color: #72c2fa;
+    }
+  }
+}

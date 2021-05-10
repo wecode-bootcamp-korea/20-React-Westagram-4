@@ -1,0 +1,30 @@
+@import '/src/styles/variables.scss';
+
+.AsideContainerJY {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+
+  .asideHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .title {
+      color: grey;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .viewMore {
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+
+  .asideMain {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}

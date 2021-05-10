@@ -1,0 +1,15 @@
+@import '/src/styles/variables.scss';
+
+.MainSectionJY {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  border-top: 1px solid #e6e6e6;
+  background-color: #fafafa;
+
+  @media screen and (max-width: 1000px) {
+    .MainSectionJY aside {
+      display: none;
+    }
+  }
+}
