@@ -1,0 +1,81 @@
+@import '../../../../styles/variables.scss';
+
+.modal-containerYJ {
+  position: absolute;
+  top: 43px;
+  right: -10px;
+  display: none;
+  font-size: 14px;
+}
+
+.modalYJ {
+  width: 230px;
+  height: 157px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: white;
+  z-index: 100;
+
+  &__list {
+    @include flexSet(none);
+    text-align: center;
+    height: 37px;
+    padding: 12px 16px;
+
+    &:nth-last-of-type(2) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__menu:not(:last-of-type) {
+    margin-left: 10px;
+  }
+
+  &__line {
+    position: fixed;
+    top: 175px;
+    width: 230px;
+    height: 1px;
+    background-color: $border-gray;
+    z-index: 200;
+  }
+
+  &__arrow {
+    display: none;
+    position: fixed;
+    top: 53px;
+    right: 7.3%;
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+    transform: rotate(45deg);
+    z-index: 99;
+  }
+}
+
+.modal-openYJ {
+  display: block;
+}
+
+/* 모바일 */
+@media only screen and (max-width: 414px) {
+  .modalYJ {
+    top: 47px;
+    right: 10px;
+    width: 230px;
+    height: 157px;
+  }
+
+  .modalYJ__arrow {
+    top: 40px;
+    right: 13px;
+  }
+
+  .modalYJ__line {
+    top: 160px;
+  }
+}

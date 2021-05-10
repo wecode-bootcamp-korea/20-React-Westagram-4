@@ -1,0 +1,132 @@
+@import '../../../styles/variables.scss';
+
+.login-pageYJ {
+  @include flexColumnSet;
+  margin-top: 100px;
+  font-size: 14px;
+}
+
+.login-boxYJ {
+  @include flexColumnSet;
+  width: 350px;
+  height: 380px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  border: $border-gray-style;
+  border-radius: 1px;
+  background-color: white;
+
+  &__title {
+    padding: 20px 0px;
+    font: {
+      family: 'Lobster', cursive;
+      size: 40px;
+    }
+  }
+}
+
+.login-formYJ {
+  @include flexColumnSet;
+  padding: 10px 0px;
+
+  &__input {
+    width: 268px;
+    height: 38px;
+    margin-bottom: 7px;
+    padding: 0px 10px;
+    border: $border-gray-style;
+    border-radius: 3px;
+    background-color: $lightgray;
+    font-size: 12px;
+  }
+
+  &__button {
+    all: unset;
+    width: 250px;
+    height: 32px;
+    margin-top: 10px;
+    padding: 0px 9px;
+    border-radius: 4px;
+    background-color: $blue;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+
+    &--opacity {
+      opacity: 30%;
+    }
+  }
+
+  &__other {
+    @include flexSet;
+    margin: 20px 0px;
+  }
+
+  &__sns-login--facebook {
+    @include flexSet;
+    font-weight: 600;
+    color: $facebook-blue;
+  }
+}
+
+.lineYJ {
+  width: 104px;
+  height: 1px;
+  background-color: $border-gray;
+}
+
+.other-textYJ {
+  margin: 0px 18px;
+  font: {
+    size: 13px;
+    weight: 600;
+  }
+  color: $sub-text-gray;
+}
+
+.login-formYJ .facebookYJ {
+  margin-right: 5px;
+}
+
+.login-boxYJ .find-password__textYJ {
+  font-size: 12px;
+  color: $facebook-blue;
+}
+
+.join-boxYJ {
+  @include flexSet;
+  width: 350px;
+  height: 63px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  border: $border-gray-style;
+  border-radius: 1px;
+  background-color: white;
+
+  &__link {
+    margin-left: 5px;
+    font-weight: 600;
+    color: $blue;
+  }
+}
+
+.app-download-boxYJ {
+  @include flexColumnSet;
+  width: 350px;
+  height: 102px;
+  font-size: 12px;
+
+  &__title {
+    margin: 10px 0px;
+  }
+
+  &__banner {
+    width: 136px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+
+  &__banners {
+    margin: 10px 0px;
+  }
+}

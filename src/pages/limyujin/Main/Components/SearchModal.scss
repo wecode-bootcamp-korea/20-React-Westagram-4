@@ -1,0 +1,72 @@
+@import '../../../../styles/variables.scss';
+
+.search-modal-containerYJ {
+  position: absolute;
+  top: 40px;
+  right: -5px;
+  display: none;
+  font-size: 14px;
+}
+
+.search-modalYJ {
+  width: 230px;
+  height: 200px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: white;
+  z-index: 100;
+
+  &__ul {
+    height: 200px;
+    overflow: scroll;
+  }
+  &__list {
+    @include flexSet(none);
+    text-align: center;
+    padding: 12px 16px;
+
+    &:not(:last-child) {
+      border-bottom: $border-gray-style;
+    }
+
+    &:hover {
+      background-color: $lightgray;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__menu {
+    margin-left: 10px;
+  }
+
+  &__line {
+    position: fixed;
+    top: 175px;
+    width: 230px;
+    height: 1px;
+    background-color: $border-gray;
+    z-index: 200;
+  }
+}
+
+.search-modal-openYJ {
+  display: block;
+}
+
+/* 모바일 */
+@media only screen and (max-width: 414px) {
+  .search-modalYJ {
+    top: 47px;
+    right: 10px;
+    width: 230px;
+    height: 157px;
+  }
+
+  .search-modalYJ__line {
+    top: 160px;
+  }
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "author": "rilip_official",
+    "profileImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/94003553_231199768097287_5780010293664940032_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=EjeCkaUjMMgAX9m0Dym&edm=AEF8tYYAAAAA&ccb=7-4&oh=70612d83cfbfb530e39c0695f4af134b&oe=60A4EFD6&_nc_sid=a9513d",
+    "location": "suwon",
+    "mainImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/175260006_501085961251601_2268575138294333749_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=105&_nc_ohc=RJE0N2r6OsQAX8n_B-z&edm=AIQHJ4wAAAAA&ccb=7-4&oh=25fe99fccac6c74f937965f44b445884&oe=60A31BE1&_nc_sid=7b02f1",
+    "text": "위워크에서 진행한 베이크 클래스",
+    "time": 61200000,
+    "like": 70,
+    "story": true
+  },
+  {
+    "id": 2,
+    "author": "krtigersugar",
+    "profileImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/43778288_543710792708920_7607289634233516032_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=pWeqQfWFVmcAX_kmyQF&edm=AEF8tYYAAAAA&ccb=7-4&oh=4ec3ccefbd37ce11dc957b7838b77d05&oe=60A634E6&_nc_sid=a9513d",
+    "location": "",
+    "mainImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/175810080_497894738013789_23924597793451987_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=Tu_Wnsa9tiwAX80ztR3&edm=AIQHJ4wAAAAA&ccb=7-4&oh=d91ccc0c9d232e280584d62e6c2b4652&oe=60A513B3&_nc_sid=7b02f1",
+    "text": "✨신메뉴 소문내기 이벤트✨",
+    "time": 3360000,
+    "like": 34,
+    "story": false
+  },
+  {
+    "id": 3,
+    "author": "anko_8090",
+    "profileImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/163663946_197803795082398_1924950408015660072_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Jvc5nBmQBVYAX-SQowW&edm=AEF8tYYAAAAA&ccb=7-4&oh=f33f3a525c2908fd436991a6de94643d&oe=60A7CC97&_nc_sid=a9513d",
+    "location": "",
+    "mainImg": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/176282393_1404333343292706_135428849258000862_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=tH6ZNMQ8JUoAX9tGaTC&tn=E3vZwT1zJnhTn-R6&edm=AIQHJ4wAAAAA&ccb=7-4&oh=53efa849b2a73835e8ea08a5f35ce7dc&oe=60A6C3FF&_nc_sid=7b02f1",
+    "text": "알박기 제법...",
+    "time": 72000000,
+    "like": 13,
+    "story": false
+  },
+  {
+    "id": 4,
+    "author": "nail_by.jjoo",
+    "profileImg": "/images/limyujin/jjoo_profile.jpg",
+    "location": "",
+    "mainImg": "/images/limyujin/jjoo_main.jpg",
+    "text": "오늘 제거없으신분2시5시반 가능해요😉",
+    "time": 3180000,
+    "like": 178,
+    "story": true
+  },
+  {
+    "id": 5,
+    "author": "reu_nail",
+    "profileImg": "/images/limyujin/reu_profile.jpg",
+    "location": "르우네일",
+    "mainImg": "/images/limyujin/reu_main.jpg",
+    "text": "글리터로 포인트 ✨",
+    "time": 86400001,
+    "like": 417,
+    "story": true
+  },
+  {
+    "id": 6,
+    "author": "taeyeon_ss",
+    "profileImg": "/images/limyujin/tae_profile.jpg",
+    "location": "",
+    "mainImg": "/images/limyujin/tae_main.jpg",
+    "text": "오늘 놀토 게스트 '소녀시대' 💗",
+    "time": 86400001,
+    "like": 787927,
+    "story": false
+  },
+  {
+    "id": 7,
+    "author": "skullhong12",
+    "profileImg": "/images/limyujin/sku_profile.jpg",
+    "location": "",
+    "mainImg": "/images/limyujin/sku_main.jpg",
+    "text": "붕어야???어딧어???",
+    "time": 86400001,
+    "like": 69198,
+    "story": true
+  }
+]

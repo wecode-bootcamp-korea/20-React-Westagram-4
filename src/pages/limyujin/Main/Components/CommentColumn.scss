@@ -1,0 +1,31 @@
+@import '../../../../styles/variables.scss';
+
+.js-feed-commentYJ {
+  @include flexSet(none);
+  margin-bottom: 3px;
+
+  &__text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.js-feed-commentYJ span:first-of-type {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.js-feed-commentYJ span:nth-of-type(2) {
+  width: 80%;
+}
+
+.js-comment-btnsYJ {
+  @include flexSet;
+}
+
+.js-comment-btnYJ {
+  all: unset;
+  margin-left: 10px;
+}
